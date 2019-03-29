@@ -60,99 +60,25 @@
           <div class="span12">
             <?php for($producto = 0; $producto <= 10; $producto++){?>
               <div class="row">
-                <!-- Service Container -->
-                <div class="span4">
-                  <!-- Service Icon -->
-                  <div class="ic-1"><i class="icon-lightbulb"></i></div>
-                  <!-- Service Title -->
-                  <div class="title-1"><h4>Powerful clean design</h4></div>
-                  <!-- Service Content -->
-                  <div class="text-1">
-                    On sait depuis longake apple pie. Gingerbread cotton candy
-                    icing ice cream applicake wafetemps nnaire de plus de 200 mots
-                    pluskan rlatin
+              <?php for($maximoAncho = 0; $maximoAncho < 3; $maximoAncho++){ ?>
+                  <!-- Service Container -->
+                  <div class="span4">
+                    <!-- Service Icon -->
+                    <div class="ic-1"><i class="icon-lightbulb"></i></div>
+                    <!-- Service Title -->
+                    <div class="title-1"><h4>Powerful clean design</h4></div>
+                    <!-- Service Content -->
+                    <div class="text-1">
+                      On sait depuis longake apple pie. Gingerbread cotton candy
+                      icing ice cream applicake wafetemps nnaire de plus de 200 mots
+                      pluskan rlatin
+                    </div>
                   </div>
-                </div>
-                <!-- Service Container End -->
-
-                <!-- Service Container -->
-                <div class="span4">
-                  <!-- Service Icon -->
-                  <div class="ic-1"><i class="icon-lightbulb"></i></div>
-                  <!-- Service Title -->
-                  <div class="title-1"><h4>Powerful clean design</h4></div>
-                  <!-- Service Content -->
-                  <div class="text-1">
-                    On sait depuis longake apple pie. Gingerbread cotton candy
-                    icing ice cream applicake wafetemps nnaire de plus de 200 mots
-                    pluskan rlatin
-                  </div>
-                </div>
-                <!-- Service Container End -->
-                
-                <!-- Service Container -->
-                <div class="span4">
-                  <!-- Service Icon -->
-                  <div class="ic-1"><i class="icon-lightbulb"></i></div>
-                  <!-- Service Title -->
-                  <div class="title-1"><h4>Powerful clean design</h4></div>
-                  <!-- Service Content -->
-                  <div class="text-1">
-                    On sait depuis longake apple pie. Gingerbread cotton candy
-                    icing ice cream applicake wafetemps nnaire de plus de 200 mots
-                    pluskan rlatin
-                  </div>
-                </div>
-                <!-- Service Container End -->
+                  <!-- Service Container End -->
+              <?php } ?>
               </div>
               <div class="row space40"></div>
             <?php }?>
-            <div class="row">
-                <!-- Service Container -->
-                <div class="span4">
-                  <!-- Service Icon -->
-                  <div class="ic-1"><i class="icon-lightbulb"></i></div>
-                  <!-- Service Title -->
-                  <div class="title-1"><h4>Powerful clean design</h4></div>
-                  <!-- Service Content -->
-                  <div class="text-1">
-                    On sait depuis longake apple pie. Gingerbread cotton candy
-                    icing ice cream applicake wafetemps nnaire de plus de 200 mots
-                    pluskan rlatin
-                  </div>
-                </div>
-                <!-- Service Container End -->
-  
-                <!-- Service Container -->
-                <div class="span4">
-                  <!-- Service Icon -->
-                  <div class="ic-1"><i class="icon-lightbulb"></i></div>
-                  <!-- Service Title -->
-                  <div class="title-1"><h4>Powerful clean design</h4></div>
-                  <!-- Service Content -->
-                  <div class="text-1">
-                    On sait depuis longake apple pie. Gingerbread cotton candy
-                    icing ice cream applicake wafetemps nnaire de plus de 200 mots
-                    pluskan rlatin
-                  </div>
-                </div>
-                <!-- Service Container End -->
-                
-                <!-- Service Container -->
-                <div class="span4">
-                  <!-- Service Icon -->
-                  <div class="ic-1"><i class="icon-lightbulb"></i></div>
-                  <!-- Service Title -->
-                  <div class="title-1"><h4>Powerful clean design</h4></div>
-                  <!-- Service Content -->
-                  <div class="text-1">
-                    On sait depuis longake apple pie. Gingerbread cotton candy
-                    icing ice cream applicake wafetemps nnaire de plus de 200 mots
-                    pluskan rlatin
-                  </div>
-                </div>
-                <!-- Service Container End -->
-              </div>
           </div>
         </div>
       </div>
