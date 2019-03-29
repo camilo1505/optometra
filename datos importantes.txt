@@ -4,7 +4,7 @@ contraseña: pr0y3cto
 
 HOSTING: 000webhost.com
 proyectogradomarisol@gmail.com
-contraseña: pr0y3cto
+contraseña: pr0y3ct0
 
 PAGINA WEB:
 usuario: opticashenao
