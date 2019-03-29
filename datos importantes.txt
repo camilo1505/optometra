@@ -1,6 +1,6 @@
 CORREO:
 proyectogradomarisol@gmail.com
-contraseña: pr0y3cto
+contraseña: pr0y3ct0
 
 HOSTING: 000webhost.com
 proyectogradomarisol@gmail.com
