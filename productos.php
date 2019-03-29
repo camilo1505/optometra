@@ -31,8 +31,8 @@
               <a href="#nav" title="Show navigation">Show navigation</a>
               <a href="#" title="Hide navigation">Hide navigation</a>
               <ul class="clearfix">
-                <li class="active"><a href="index.html" title="">Inicio</a></li>
-                <li><a href="productos.php" title="">Productos</a></li>
+                <li><a href="index.html" title="">Inicio</a></li>
+                <li class="active"><a href="productos.php" title="">Productos</a></li>
                 <li><a href="login.html" title="">Iniciar Sesion</a></li>
                 <li><a href="contactanos.html" title="">contactenos</a></li>
               </ul>
