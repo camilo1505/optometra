@@ -1,23 +1,23 @@
 <?php
 include("BDconection.php");
 
-function obtenerCatalogo() {
+function getData($sql) {
     $conexion = conectarBDAdministrador();
-    $consultaProductos = 'SELECT id_producto, nombre_producto FROM producto';
-    $consultaCatalogo = 'SELECT id_catalogo, fk_producto, fk_usuario, referencia, marca, tipo, imagen, costo, descripcion FROM catalogo';
 
-    $productos = $conexion -> query($consultaProductos);
-    $catalogo = $conexion -> query($consultaCatalogo);
+    mysqli_set_charset($conexion, "utf8");
 
-    if ($productos->num_rows > 0) {
-        if($catalogo->num_rows > 0){
-            $productosArray = array.array();
-            $catalogoArray = array.array();
-            while($row = $productos->fetch_assoc()){
-                $productosArray.array_push($row);
-            }
-        }
+    if(!$result = mysqli_query($conexion, $sql)) die();
+
+    $rawdata = array();
+
+    $i=0;
+    while($row = mysqli_fetch_array($result)) {
+        $rawdata[$i] = $row;
+        $i++;
     }
+    disconnectDB($conexion);
+    jsonResponse = json_encode($rawdata);
+    return jsonResponse;
 }
 
 ?>

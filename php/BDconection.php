@@ -9,10 +9,21 @@ function conectarBDAdministrador() {
     $conexion = new mysqli($servername, $username, $password);
 
     //comprbando conexion
-    if($conexion -> connect_error) {
-        die("Conexion Fallida: ".$conexion -> connect_error);
+    if($conexion) {
+        echo "La conexion a la base de datos se ha hecho satisfactoriamente";
+    } else {
+        echo "Ha sucedido un error inesperado en la conexion con la base de datos";
     }
-    echo "Conexion Exitosa";
     return $conexion;
+}
+
+function desconectarBD($conexion){
+    $close = mysqli_close($conexion);
+    if($close){
+        echo "La conexion se ha cerrado satisfactoriamente";
+    } else {
+        echo "Ha sucedido un error inesperado cerrando la conexion";
+    }
+    return $close;
 }
 ?>
