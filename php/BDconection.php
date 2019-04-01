@@ -25,8 +25,7 @@ function desconectarBD($conexion){
     return $close;
 }
 
-function getData($sql, $username, $password) {
-    $conexion = conectarBD($username, $password);
+function getData($sql,$conexion) {
 
     mysqli_set_charset($conexion, "utf8");
 
@@ -40,7 +39,7 @@ function getData($sql, $username, $password) {
         $i++;
     }
     disconnectDB($conexion);
-    jsonResponse = json_encode($rawdata);
+    $jsonResponse = json_encode($rawdata);
     return jsonResponse;
 }
 
