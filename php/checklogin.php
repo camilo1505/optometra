@@ -2,25 +2,16 @@
 	session_start();
 ?>
 <?php
-	$host_db = "localhost";
-	$user_db = "root";
-	$pass_db = "";
-	$db_name = "optometria";
-	$tbl_name = "usuario";
-
-	$conexion = new mysqli($host_db, $user_db, $pass_db, $db_name);
-
-	if ($conexion->connect_error) {
-	 die("La conexion falló: " . $conexion->connect_error);
-	}
+	include("BDconection.php");
 
 	$username = $_POST['usuario'];
 	$password = $_POST['contrasena'];
 
 	/*busqueda de usuario en la base de datos*/
-	$sql = "SELECT * FROM $tbl_name WHERE cedula = '$username'";
-	$result = $conexion->query($sql);
-	$usuario = $result->fetch_array(MYSQLI_ASSOC);
+	$sql = "SELECT * FROM usuario WHERE cedula = '$username'";
+	conectarBDAdministrador();
+	$result = getData($sql);
+
 	if($result->num_rows > 0){
 		/*busqueda de tipo de rol*/
 		$idUsuario= $usuario["id_usuario"];
