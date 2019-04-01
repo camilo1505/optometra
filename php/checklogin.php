@@ -9,12 +9,13 @@
 
 	/*busqueda de usuario en la base de datos*/
 	$sql = "SELECT * FROM usuario WHERE cedula = '$username'";
-	conectarBDAdministrador();
-	$result = getData($sql);
-
-	if($result->num_rows > 0){
+	$conexion = conectarBDAdministrador('root','');
+	$result = getData($sql, $conexion);
+	echo $result;
+	if(count($result) > 0){
 		/*busqueda de tipo de rol*/
-		$idUsuario= $usuario["id_usuario"];
+		$idUsuario= $result.id_usuario;
+		echo $idUsuario;
 		$sql = "SELECT * FROM roles WHERE fk_usuario = '$idUsuario'";
 		$result = $conexion->query($sql);
 		$row1 = $result->fetch_array(MYSQLI_ASSOC);
