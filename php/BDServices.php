@@ -19,5 +19,4 @@ function getData($sql) {
     jsonResponse = json_encode($rawdata);
     return jsonResponse;
 }
-
 ?>
