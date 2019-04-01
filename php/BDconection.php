@@ -1,6 +1,6 @@
 <?php
 
-function conectarBDAdministrador($username, $password) {
+function conectarBD($username, $password) {
     $serverName = "localhost";
 
     //Creando la conexion
@@ -25,8 +25,8 @@ function desconectarBD($conexion){
     return $close;
 }
 
-function getData($sql) {
-    $conexion = conectarBDAdministrador();
+function getData($sql, $username, $password) {
+    $conexion = conectarBD($username, $password);
 
     mysqli_set_charset($conexion, "utf8");
 
