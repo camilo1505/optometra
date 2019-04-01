@@ -1,6 +1,6 @@
 <?php
 
-function conectarBDAdministrador($username, $password) {
+function conectarBD($username, $password) {
     $serverName = "localhost";
 
     //Creando la conexion
