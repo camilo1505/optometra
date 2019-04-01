@@ -60,7 +60,8 @@
           <div class="span12">
             <?php
               include("php/BDServices.php");
-              echo getCatalogo();
+              $catalogo = getCatalogo();
+              echo $catalogo;
             ?>
             <?php for($producto = 0; $producto <= 10; $producto++){?>
               <div class="row">

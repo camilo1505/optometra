@@ -40,7 +40,7 @@ function getData($sql, $username, $password) {
     $rawdata = array();
 
     $i=0;
-    while($row = mysqli_fetch_array($result)) {
+    while($row = mysqli_fetch_assoc($result)) {
         $rawdata[$i] = $row;
         $i++;
     }
