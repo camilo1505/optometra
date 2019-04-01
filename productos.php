@@ -61,7 +61,8 @@
             <?php
               include("php/BDServices.php");
               $catalogo = getCatalogo();
-              echo $catalogo;
+              print_r($catalogo);
+              echo $catalogo[0]["nombre_producto"]
             ?>
             <?php for($producto = 0; $producto <= 10; $producto++){?>
               <div class="row">

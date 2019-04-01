@@ -45,8 +45,7 @@ function getData($sql, $username, $password) {
         $i++;
     }
     desconectarBD($conexion);
-    $jsonResponse = json_encode($rawdata);
-    return $jsonResponse;
+    return $rawdata;
 }
 
 ?>
