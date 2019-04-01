@@ -11,7 +11,7 @@
 	$sql = "SELECT * FROM usuario WHERE cedula = '$username'";
 	$conexion = conectarBDAdministrador('root','');
 	$result = getData($sql, $conexion);
-	echo $result;
+	echo "hola señor usuario".$result.id_usuario;
 	if(count($result) > 0){
 		/*busqueda de tipo de rol*/
 		$idUsuario= $result.id_usuario;
