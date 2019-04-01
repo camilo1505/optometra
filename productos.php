@@ -58,6 +58,10 @@
         <div class="row space40"></div>
         <div class="row">
           <div class="span12">
+            <?php
+              include("php/BDServices.php");
+              echo getCatalogo();
+            ?>
             <?php for($producto = 0; $producto <= 10; $producto++){?>
               <div class="row">
               <?php for($maximoAncho = 0; $maximoAncho < 3; $maximoAncho++){ ?>
