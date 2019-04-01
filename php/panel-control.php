@@ -81,12 +81,7 @@ if ($_SESSION['tipoUsuario'] == "cliente"){
 
 <?php	
 }
-function redirect($url, $statusCode = 303)
-	{
-	   header('Location: ' . $url, true, $statusCode);
-	   die();
-	   
-	}
+
 ?>
 <html>
     <!-- Footer -->
