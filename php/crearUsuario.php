@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opticas Henao</title>
     <link href="../css/styles.css" rel="stylesheet">
-    <link href="../css/bootstrap-override.css" rel="stylesheet">
+    
 </head>
 <body>
     <header id="header">
@@ -34,7 +34,8 @@
 ?>
 <center>
 <h2>Formulario de ingreso a nuevos clientes</h2>
-
+    <div id="container">
+        <div class="content">
 	<form action="php/registrar-usuario.php" method="post">
         <table class="table">
                 <thead>
@@ -44,33 +45,45 @@
                     <th scope="col">Primer Apellido </th>
                     <th scope="col">Segundo Apellido </th>
                     <th scope="col"> Edad </th>
-                    <th scope="col"> Ciudad </th>
-                    <th scope="col"> Direccion </th>
-                    <th scope="col"> Telefono </th>
-                    <th scope="col"> Celular </th>
-                    <th scope="col"> Correo Electronico </th>
-                    <th scope="col"> Disponible para llamadas? </th>
-                    <th scope="col"> usa Gafas? </th>
                 </thead>
                 <tbody>
+                    <td><input type="number" name="edad" placeholder="ej : 12" required="required"></td>
                     <td><input type="text" name="cedula" placeholder="ej: 1087324517" required="required" ></td>
                     <td><input type="text" name="primerNombre" placeholder="ej: Juan" required="required" ></td>
                     <td><input type="text" name="segundoNombre" placeholder="ej: Carlos" value=""></td>
                     <td><input type="text" name="primerApellido" placeholder="ej: Ramirez" required="required" ></td>
                     <td><input type="text" name="segundoApellido" placeholder="ej: Sanchez" value=""></td>
-                    <td><input type="number" name="edad" placeholder="ej : 12" required="required"></td>
-                    <td><input type="text" name="ciudad" placeholder="ej: Pereira" required="required"></td>
-                    <td><input type="text" name="direccion" placeholder="ej: barrio alamos mz 6 cs 28" value=""></td>
-                    <td><input type="number" name="telefono" placeholder="ej: 3502742" value=""></td>
-                    <td><input type="number" name="celular" placeholder="ej : 312 3222 222" value=""></td>
-                    <td><input type="text" name="email" placeholder="ej: besto@gmail.com" value=""></td>
-                    <td><input type="checkbox" name="disponibleLlamadas" required="required"></td>
-                    <td><input type="checkbox" name="usaGafas" required="required"></td>
+
                 </tbody>
-            </div>	
+            </div>
+            <thead>
+                <th scope="col"> Ciudad </th>
+                <th scope="col"> Direccion </th>
+                <th scope="col"> Telefono </th>
+                <th scope="col"> Celular </th>
+                <th scope="col"> Correo Electronico </th>
+            </thead>
+            <tbody>
+                <td><input type="text" name="ciudad" placeholder="ej: Pereira" required="required"></td>
+                <td><input type="text" name="direccion" placeholder="ej: barrio alamos mz 6 cs 28" value=""></td>
+                <td><input type="number" name="telefono" placeholder="ej: 3502742" value=""></td>    
+                <td><input type="number" name="celular" placeholder="ej : 312 3222 222" value=""></td>
+                <td><input type="text" name="email" placeholder="ej: besto@gmail.com" value=""></td>  
+   
+            </tbody>
+            <thead>
+                <th scope="col"> Disponible para llamadas? </th>
+                <th scope="col"> usa Gafas? </th>
+            </thead>
+            <tbody>                  
+                <td><input type="checkbox" name="disponibleLlamadas" required="required"></td>
+                <td><input type="checkbox" name="usaGafas" required="required"></td> 
+            </tbody>
         </table>
 			<button class="site-btn">Guardar</button>
     </form>
+    </div>
+    </div>
 </center>
 <?php	
 }

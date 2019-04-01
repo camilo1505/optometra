@@ -879,7 +879,7 @@ header {
 /* --------------------------------------------------------	*/
 
 table {
-  width:100%;
+  width:80%;
   border-radius:0px !important;
   border:0px !important;
   border-collapse:collapse !important;
@@ -887,19 +887,19 @@ table {
 
 th {
   color:#fff;
-  background:#fda056;
+  background:#5b3eff;
   border-radius:0px !important;
   border:1px solid #3b3b3b !important;
   font-weight:normal !important;
-  padding:15px 20px !important;
+  padding:10px 4px !important;
 }
 
 td {
   color:#83adff;
-  background:#fb8865;
+  background:#b9acf1;
   border-radius:0px !important;
   border:1px solid #3b3b3b !important;
-  padding:15px 20px !important;
+  padding:10px 5px !important;
 }
 
 table a:hover{
@@ -912,8 +912,8 @@ table a:hover{
 
 .form-main input, .form-main textarea {
   position:relative;
-  height:20px;
-  width:95%;
+  height:10px;
+  width:70%;
   padding:16px 12px 14px 12px; 
   margin-top:10px;
   background:#464646;
@@ -1024,7 +1024,7 @@ table a:hover{
   }   
   
   .form-comment input, .form-comment textarea {
-    width:93.4%;
+    width:70%;
     color:#fff;
     background:#fb8865;
     margin-top:10px;
