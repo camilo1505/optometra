@@ -1,5 +1,5 @@
 <?php
-include("php/BDconection.php");
+include("BDconection.php");
 
 function getCatalogo(){
     $username = "root";

@@ -1,20 +1,20 @@
 <?php
+	include("BDServices.php");
 	session_start();
 ?>
 <?php
-	include("BDconection.php");
-	include("BDServices.php");
 
 	$username = $_POST['usuario'];
 	$password = $_POST['contrasena'];
 
 	/*busqueda de usuario en la base de datos*/
 	$sql = "SELECT * FROM usuario WHERE cedula = '$username'";
-	$conexion = conectarBD('root','');
 	$result = getData($sql,'root','') ;
-	if(count($result) > 0){
+	echo $result;
+	echo $result[0];
+	if(count($result[0]) > 0){
 		/*busqueda de tipo de rol*/
-		$idUsuario= $result.id_usuario;
+		$idUsuario= $result[2];
 		echo $idUsuario;
 		$sql = "SELECT * FROM roles WHERE fk_usuario = '$idUsuario'";
 		$result = $conexion->query($sql);
@@ -27,16 +27,13 @@
 			$_SESSION['start'] = time();
 			$_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
 
-			
-			echo "Bienvenido! " . $_SESSION['cedula'];
+			redirect("panel-control.php");
+
 		}else { 
 	    
 			echo "<script>alert('El usuario no existe');</script>";
+			
 		}
+
 	}
-	redirect("../error.php");
-	
-
-	
-
 ?>
