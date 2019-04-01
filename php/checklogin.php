@@ -3,15 +3,15 @@
 ?>
 <?php
 	include("BDconection.php");
+	include("BDServices.php");
 
 	$username = $_POST['usuario'];
 	$password = $_POST['contrasena'];
 
 	/*busqueda de usuario en la base de datos*/
 	$sql = "SELECT * FROM usuario WHERE cedula = '$username'";
-	$conexion = conectarBDAdministrador('root','');
-	$result = getData($sql, $conexion);
-	echo "hola señor usuario".$result.id_usuario;
+	$conexion = conectarBD('root','');
+	$result = getData($sql,'root','') ;
 	if(count($result) > 0){
 		/*busqueda de tipo de rol*/
 		$idUsuario= $result.id_usuario;
@@ -34,14 +34,9 @@
 			echo "<script>alert('El usuario no existe');</script>";
 		}
 	}
-	mysqli_close($conexion); 
+	redirect("../error.php");
 	
 
-	function redirect($url, $statusCode = 303)
-	{
-	   header('Location: ' . $url, true, $statusCode);
-	   die();
-	   
-	}
+	
 
 ?>
