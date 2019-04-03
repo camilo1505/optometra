@@ -64,25 +64,19 @@
               print_r($catalogo);
               echo $catalogo[0]["nombre_producto"]
             ?>
-            <?php for($producto = 0; $producto <= 10; $producto++){?>
-              <div class="row">
-              <?php for($maximoAncho = 0; $maximoAncho < 3; $maximoAncho++){ ?>
-                  <!-- Service Container -->
-                  <div class="span4">
-                    <!-- Service Icon -->
-                    <div class="ic-1"><i class="icon-lightbulb"></i></div>
-                    <!-- Service Title -->
-                    <div class="title-1"><h4>Powerful clean design</h4></div>
-                    <!-- Service Content -->
-                    <div class="text-1">
-                      On sait depuis longake apple pie. Gingerbread cotton candy
-                      icing ice cream applicake wafetemps nnaire de plus de 200 mots
-                      pluskan rlatin
-                    </div>
-                  </div>
-                  <!-- Service Container End -->
-              <?php } ?>
-              </div>
+            <?php 
+              $col = 0;
+              for($contador = 0; $contador <= sizeof($catalogo); $contador++){
+                if($col == 3) {
+                  $col = 0;
+                }
+                $col = $col + 1;
+            ?>
+            <div class="span4">
+              <div class="ic-1"><i class="icon-lightbulb"></i></div>
+              <div class="title-1"><h4><?php echo $catalogo[$contador]["nombre_producto"] ?></h4></div>
+              <div class="text-1"><?php echo $catalogo[$contador]["descripcion"] ?></div>
+            </div>
               <div class="row space40"></div>
             <?php }?>
           </div>
