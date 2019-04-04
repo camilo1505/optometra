@@ -24,7 +24,7 @@ function newProducto($producto){
         return TRUE;
     }
     if(! setData($consulta, $username, $password)){
-        echo "Error trying to save the data";
+        echo FALSE;
     }
 }
 
