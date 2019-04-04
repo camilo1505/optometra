@@ -41,69 +41,67 @@ exit;
                 </div>            
         </div>
     </header>
-          
-<?php
-//if ($_SESSION['tipoUsuario'] == "cliente"){
-    if (1==1){
-?>
 <center>
+</html>
+<?php
+    $sql = "SELECT * FROM cliente ";
+    $result = getData($sql,'root','');
+    print_r($result);
+?>
+<html>
 <h2>Formulario de ingreso a nuevos clientes</h2>
     <div id="container">
         <div class="content">
-	<form action="php/registrar-usuario.php" method="post">
         <table class="table">
-                <thead>
-                    <th scope="col">Cedula o Nit Cliente </th>
-                    <th scope="col">Primer Nombre </th>
-                    <th scope="col">Segundo Nombre </th>
-                    <th scope="col">Primer Apellido </th>
-                    <th scope="col">Segundo Apellido </th>
-                    <th scope="col"> Edad </th>
-                </thead>
-                <tbody>
-                    
-                    <td><input type="text" name="cedula" placeholder="ej: 1087324517" required="required" ></td>
-                    <td><input type="text" name="primerNombre" placeholder="ej: Juan" required="required" ></td>
-                    <td><input type="text" name="segundoNombre" placeholder="ej: Carlos" value=""></td>
-                    <td><input type="text" name="primerApellido" placeholder="ej: Ramirez" required="required" ></td>
-                    <td><input type="text" name="segundoApellido" placeholder="ej: Sanchez" value=""></td>
-                    <td><input type="number" name="edad" placeholder="ej : 12" required="required"></td>
-                </tbody>
-            </div>
             <thead>
+                <th scope="col">Cedula o Nit Cliente </th>
+                <th scope="col">Primer Nombre </th>
+                <th scope="col">Segundo Nombre </th>
+                <th scope="col">Primer Apellido </th>
+                <th scope="col">Segundo Apellido </th>
+                <th scope="col"> Edad </th>
                 <th scope="col"> Ciudad </th>
                 <th scope="col"> Direccion </th>
                 <th scope="col"> Telefono </th>
                 <th scope="col"> Celular </th>
                 <th scope="col"> Correo Electronico </th>
-            </thead>
-            <tbody>
-                <td><input type="text" name="ciudad" placeholder="ej: Pereira" required="required"></td>
-                <td><input type="text" name="direccion" placeholder="ej: barrio alamos mz 6 cs 28" value=""></td>
-                <td><input type="number" name="telefono" placeholder="ej: 3502742" value=""></td>    
-                <td><input type="number" name="celular" placeholder="ej : 312 3222 222" value=""></td>
-                <td><input type="text" name="email" placeholder="ej: besto@gmail.com" value=""></td>  
-   
-            </tbody>
-            <thead>
                 <th scope="col"> Disponible para llamadas? </th>
                 <th scope="col"> usa Gafas? </th>
             </thead>
-            <tbody>                  
-                <td><input type="checkbox" name="disponibleLlamadas" required="required"></td>
-                <td><input type="checkbox" name="usaGafas" required="required"></td> 
-            </tbody>
-        </table>
-			<button class="btn btn-secondary">Guardar</button>
-    </form>
+            <tbody>
+                <?php
+                $i=-1;
+                foreach($result as $resultado){
+                    $i=$i+1;
+                ?>
+                    <html>
+                    <form action="guardarModificacionAutor.php" method="get">
+                        <tr>
+                            <td><input name="cedula" type="number" value="<?php echo $resultado[$i]['cedula'];?>" readonly="readonly"> </td>
+                            <td><input name="primerNombre" type="text" value="<?php echo $resultado[$i]['primer_nombre'];?>"> </td>
+                            <td><input name="segundoNombre" type="text" value="<?php echo $resultado[$i]['segundo_nombre'];?>"> </td>
+                            <td><input name="primerApellido" type="text" value="<?php echo $resultado[$i]['primer_apellido'];?>"> </td>
+                            <td><input name="segundoApellido" type="number" value="<?php echo $resultado[$i]['segundo_apellido'];?>"> </td>
+                            <td><input name="edad" type="date" value="<?php echo $resultado[$i]['fecha_nacimiento'];?>"> </td>
+                            <td><input name="ciudad" type="number" value="<?php echo $resultado[$i]['ciudad_vivienda'];?>"> </td>
+                            <td><input name="direccion" type="text" value="<?php echo $resultado[$i]['direccion_vivienda'];?>"> </td>
+                            <td><input name="telefono" type="text" value="<?php echo $resultado[$i]['telefono'];?>"> </td>
+                            <td><input name="celular" type="text" value="<?php echo $resultado[$i]['celular'];?>"> </td>
+                            <td><input name="email" type="number" value="<?php echo $resultado[$i]['correo'];?>"> </td>
+                            <td><input name="disponibleLlamadas" type="date" value="<?php echo $resultado[$i]['disponible_llamadas'];?>"> </td>
+                            <td><input name="usaGafas" type="number" value="<?php echo $resultado[$i]['usa_gafas'];?>"> </td>
+                            <td><button>guardar</button> </td>
+                        </tr>
+                    </form>
+                <?php
+                }
+                ?>
+                </tbody>
+            </table>
     </div>
     <button class="btn btn-primary" > <a href="usuarios.php">Volver</a></button>
     </div>
 </center>
-<?php	
-}
-
-?>
 <html>
     <!-- Footer -->
     <footer id="footer">
