@@ -9,30 +9,22 @@
 
 	/*busqueda de usuario en la base de datos*/
 	$sql = "SELECT * FROM usuario WHERE cedula = '$username'";
-	$result = getData($sql,'root','') ;
-	echo $result;
-	echo $result[0];
-	if(count($result[0]) > 0){
+	$result = getData($sql,'root','');
+	if(count($result)>0){
 		/*busqueda de tipo de rol*/
-		$idUsuario= $result[2];
-		echo $idUsuario;
+		$idUsuario= $result[0]["id_usuario"];
 		$sql = "SELECT * FROM roles WHERE fk_usuario = '$idUsuario'";
-		$result = $conexion->query($sql);
-		$row1 = $result->fetch_array(MYSQLI_ASSOC);
-		$tipoUsuario= $row1["fk_rol"];
-		if(password_verify($password, $usuario['usuario_password'])){ 
-			$_SESSION['fk_rol'] = $tipoUsuario;
+		$tipoUsuario = getData($sql,'root','');
+		if(password_verify($password, $result[0]["usuario_password"])){ 
+			$_SESSION['rol'] = $tipoUsuario[0]['fk_rol'];
 			$_SESSION['loggedin'] = true;
 			$_SESSION['cedula'] = $username;
+			$_SESSION['usuario'] = $result[0]['nombres'];
 			$_SESSION['start'] = time();
-			$_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
-
+			$_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
 			redirect("panel-control.php");
-
 		}else { 
-	    
-			echo "<script>alert('El usuario no existe');</script>";
-			
+			redirect("../error.php");
 		}
 
 	}

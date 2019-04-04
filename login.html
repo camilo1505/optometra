@@ -19,7 +19,7 @@
                     </div>            
                 </div>
             
-            <div class="span9">
+            <div class="span7">
                 <div class="row space10"></div>
                 <img src="nombre.png" alt="">
                     <nav id="nav" role="navigation">
