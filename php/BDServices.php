@@ -4,7 +4,6 @@ include("BDconection.php");
 function getCatalogo(){
     $username = "root";
     $password = "";
-    $consulta2 = "SELECT * FROM catalogo";
 
     $consulta = "SELECT producto.nombre_producto, catalogo.costo, catalogo.descripcion, catalogo.imagen, catalogo.marca, catalogo.referencia
                  FROM producto, catalogo 
@@ -34,4 +33,17 @@ function redirect($url, $statusCode = 303)
 	die();
 	   
 }
+
+function getProductos() {
+    $username = "root";
+    $password = "";
+    $consulta = "SELECT producto.nombre_producto FROM producto";
+
+    $respuesta = getData($consulta, $username, $password);
+
+    echo $respuesta;
+
+    return $respuesta;
+}
+
 ?>

@@ -1,6 +1,12 @@
 <?php
-              include("php/BDServices.php");
-              $catalogo = getCatalogo();
-              print_r($catalogo);
-              echo $catalogo[0]["nombre_producto"]
+    include("php/BDconection.php");
+    $username = "root";
+    $password = "";
+    $consulta = "SELECT producto.nombre_producto FROM producto";
+
+    $respuesta = getData($consulta, $username, $password);
+
+    print($respuesta[0]["nombre_producto"]);
+
+    print_r ($respuesta);
 ?>

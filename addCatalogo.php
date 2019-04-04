@@ -64,7 +64,7 @@
       <div class="container">
         <div class="jumbotron">
           <h1>Añada un nuevo Producto al Catalogo.</h1>
-                <form action="php/enviarProducto.php" method="get">
+                <form action="php/enviarCatalogo.php" method="get">
                     <div class="row">
                         <div class="col-sm">
                             <label for="referencia">Referencia del Producto:</label>
@@ -94,8 +94,19 @@
                         </div>
                     </div>
                     <div class="row" >
-                        <div class="col-sm"></div>
-                        <div class="col-sm"></div>
+                        <div class="col-sm">
+                            <br>
+                            <select name="producto" class="selectpicker">
+                                <?php
+                                    include("php/BDServices.php");
+                                    $productos = getProductos();
+                                    print($productos);
+                                    for($i = 0; $i < sizeof($productos); $i++){
+                                ?>
+                                    <option value="<?php print ($productos[$i]["nombre_producto"]); ?>"> <?php print ($productos[$i]["nombre_producto"]);?></option>
+                                <?php }?>
+                            </select>
+                        </div>
                     </div>
                     <br>
                     <input type="submit" class="btn btn-primary">
