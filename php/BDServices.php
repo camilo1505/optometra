@@ -14,12 +14,24 @@ function getCatalogo(){
 
     return $respuesta;
 }
-function redirect($url, $statusCode = 303)
-	{
-	   header('Location: ' . $url, true, $statusCode);
-	   die();
-	   
-    }
-    
 
+function newProducto($producto){
+    $username = "root";
+    $password = "";
+    $consulta = "INSERT INTO producto(nombre_producto) VALUES('$producto')";
+
+    if(setData($consulta, $username, $password)){
+        return TRUE;
+    }
+    if(! setData($consulta, $username, $password)){
+        echo FALSE;
+    }
+}
+
+function redirect($url, $statusCode = 303)
+{
+	header('Location: ' . $url, true, $statusCode);
+	die();
+	   
+}
 ?>
