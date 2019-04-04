@@ -1,5 +1,4 @@
 <?php
-
 include("BDServices.php");
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
@@ -23,10 +22,10 @@ exit;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opticas Henao</title>
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/bootstrap-override.css" rel="stylesheet">
-    <link href="css/font-awesome/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen">
+    <link href="../css/styles.css" rel="stylesheet">
+    <link href="../css/bootstrap-override.css" rel="stylesheet">
+    <link href="../css/font-awesome/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/flexslider.css" type="text/css" media="screen">
 </head>
 <body>
     <header id="header">
@@ -34,21 +33,21 @@ exit;
             <div class="row t-container">
                 <div class="span3">
                   <div class="logo">
-                    <a href="index.html"><img src="logo.png" alt="" ></a>
+                    <a href="index.html"><img src="../logo.png" alt="" ></a>
                     </div>            
                 </div>
             
-            <div class="span9">
+            <div class="span7">
                 <div class="row space10"></div>
-                <img src="nombre.png" alt="">
+                <img src="../nombre.png" alt="">
                     <nav id="nav" role="navigation">
                         <a href="#nav" title="Show navigation">Show navigation</a>
                         <a href="#" title="Hide navigation">Hide navigation</a>
                         <ul class="clearfix">
                             <li ><a href="index.html" title="">Inicio</a></li>
                             <li><a href="productos.php" title="">Productos</a></li>
-                            <li class="active"><a href="login.html" title="">Iniciar Sesion</a></li>
                             <li><a href="contactanos.html" title="">contactenos</a></li>
+                            <li class="active"><a href=logout.php>Cerrar Sesion</a></li>
                         </ul>
                     </nav>
                 </div>            
@@ -57,28 +56,37 @@ exit;
 
     <div id="content">
             <div class="container">
-               <div class="f-center">
-                      <h2>Ups! algo salio mal, pero no te preocupes, contactanos y te ayudaremos</h2>                    
-               </div>
+               <div class="f-center"> 
+                  <div class="list-group">   
+                <?php
+                  //echo "Tipo de usuario:".$_SESSION['usuario'];
+                if ($_SESSION['rol'] == "1"){
+                ?>
+                      <a class="list-group-item list-group-item-action" href="">Usuarios</a>
+                      <?php
+                      if(in_array($_SESSION['rol'],array("1","3"))){
+                      ?>
+                      <a class="list-group-item list-group-item-action" href="">Catalogo</a>
+                      <?php
+                        }
+                        if(in_array($_SESSION['rol'],array("1","2","3"))){
+                      ?>
+                      <a class="list-group-item list-group-item-action" href="crearUsuario.php">Clientes</a>
+                      <?php
+                        }
+                        if(in_array($_SESSION['rol'],array("1","2"))){
+                      ?>
+                      <a class="list-group-item list-group-item-action" href="">Historias Clinicas</a>
+                      <?php
+                        }
+                      ?>
+                  </div>
+</div>
        
             </div>
           </div>
           <!-- Content End -->
           
-          
-<?php
-echo "Tipo de usuario:".$_SESSION['tipoUsuario'];
-if ($_SESSION['tipoUsuario'] == "cliente"){
-
-?>
-<ul>
-  <li><a href="../historiasClinicas.php">Historias de usuaro</a></li>
-  <li>Editar Preferencias</li>
-  <li>Editar Configuracion</li>
-  <li>etc.</li>
-</ul>
-<a href=logout.php>Cerrar Sesion X </a>
-
 <?php	
 }
 

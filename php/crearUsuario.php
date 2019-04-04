@@ -1,6 +1,20 @@
 <?php
+include("BDServices.php");
+session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+} else {
+  redirect("../error.php");
+exit;
+}
 
+$now = time();
 
+if($now > $_SESSION['expire']) {
+session_destroy();
+
+echo "<script>alert('su sesion ya termino');</script>";
+exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,7 +35,7 @@
                     </div>            
                 </div>
             
-            <div class="span9">
+            <div class="span7">
                 <div class="row space10"></div>
                     <img src="../nombre.png" alt="">
                 </div>            
