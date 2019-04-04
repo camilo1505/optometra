@@ -14,10 +14,24 @@ function getCatalogo(){
 
     return $respuesta;
 }
+
+function newProducto($producto){
+    $username = "root";
+    $password = "";
+    $consulta = "INSERT INTO producto(nombre_producto) VALUES('$producto')";
+
+    if(setData($consulta, $username, $password)){
+        return TRUE;
+    }
+    if(! setData($consulta, $username, $password)){
+        echo "Error trying to save the data";
+    }
+}
+
 function redirect($url, $statusCode = 303)
-	{
-	   header('Location: ' . $url, true, $statusCode);
-	   die();
+{
+	header('Location: ' . $url, true, $statusCode);
+	die();
 	   
-	}
+}
 ?>

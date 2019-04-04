@@ -48,4 +48,22 @@ function getData($sql, $username, $password) {
     return $rawdata;
 }
 
+function setData($sql, $username, $password) {
+
+    $conexion = conectarBD($username, $password);
+
+    mysqli_set_charset($conexion, "utf8");
+    
+    if ($conexion->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    if ($conexion->query($sql) === TRUE) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+
+    desconectarBD($conexion);
+}
 ?>
