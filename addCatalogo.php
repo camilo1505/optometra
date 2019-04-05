@@ -64,29 +64,29 @@
       <div class="container">
         <div class="jumbotron">
           <h1>Añada un nuevo Producto al Catalogo.</h1>
-                <form action="php/enviarProducto.php" method="get">
+                <form action="php/enviarCatalogo.php" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-sm">
                             <label for="referencia">Referencia del Producto:</label>
-                            <input type="text" class="form-control" name="referencia">
+                            <input type="text" class="form-control" name="referencia" required>
                         </div>
                         <div class="col-sm">
                             <label for="marca">Marca del Producto:</label>
-                            <input type="text" class="form-control" name="marca">
+                            <input type="text" class="form-control" name="marca" required>
                         </div>
                         <div class="col-sm">
                             <label for="tipo">Tipo del Producto:</label>
-                            <input type="text" class="form-control" name="tipo">
+                            <input type="text" class="form-control" name="tipo" required>
                         </div>
                     </div>
                     <div class="row" >
                         <div class="col-sm">
                             <label for="imagen">Imagen del Producto:</label>
-                            <input type="file" class="form-control" name="imagen">
+                            <input type="file" class="form-control" name="imagen" required>
                         </div>
                         <div class="col-sm">
                             <label for="costo">Costo del Producto:</label>
-                            <input type="number" class="form-control" name="costo">
+                            <input type="number" class="form-control" name="costo" required>
                         </div>
                         <div class="col-sm">
                             <label for="descripcion">Descripcion del Producto:</label>
@@ -94,8 +94,19 @@
                         </div>
                     </div>
                     <div class="row" >
-                        <div class="col-sm"></div>
-                        <div class="col-sm"></div>
+                        <div class="col-sm">
+                            <br>
+                            <select name="producto" class="selectpicker">
+                                <?php
+                                    include("php/BDServices.php");
+                                    $productos = getProductos();
+                                    print($productos);
+                                    for($i = 0; $i < sizeof($productos); $i++){
+                                ?>
+                                    <option value="<?php print ($productos[$i]["id_producto"]); ?>"> <?php print ($productos[$i]["nombre_producto"]);?></option>
+                                <?php }?>
+                            </select>
+                        </div>
                     </div>
                     <br>
                     <input type="submit" class="btn btn-primary">
