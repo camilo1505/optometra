@@ -6,12 +6,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
   redirect("../error.php");
 exit;
 }
-
 $now = time();
-
 if($now > $_SESSION['expire']) {
 session_destroy();
-
 echo "<script>alert('su sesion ya termino');</script>";
 exit;
 }
@@ -44,9 +41,9 @@ exit;
                         <a href="#nav" title="Show navigation">Show navigation</a>
                         <a href="#" title="Hide navigation">Hide navigation</a>
                         <ul class="clearfix">
-                            <li ><a href="../index.html" title="">Inicio</a></li>
-                            <li><a href="../productos.php" title="">Productos</a></li>
-                            <li><a href="../contactanos.html" title="">contactenos</a></li>
+                            <li ><a href="index.html" title="">Inicio</a></li>
+                            <li><a href="productos.php" title="">Productos</a></li>
+                            <li><a href="contactanos.html" title="">contactenos</a></li>
                             <li class="active"><a href=logout.php>Cerrar Sesion</a></li>
                         </ul>
                     </nav>
@@ -57,41 +54,15 @@ exit;
     <div id="content">
             <div class="container">
                <div class="f-center"> 
-                  <div class="list-group">   
-                <?php
-                  //echo "Tipo de usuario:".$_SESSION['usuario'];
-                if ($_SESSION['rol'] == "1"){
-                  ?>
-                      <a class="list-group-item list-group-item-action" href="usuarios.php">Usuarios</a>
-                      <?php
-                      if(in_array($_SESSION['rol'],array("1","3"))){
-                      ?>
-                      <a class="list-group-item list-group-item-action" href="">Catalogo</a>
-                      <?php
-                        }
-                        if(in_array($_SESSION['rol'],array("1","2","3"))){
-                      ?>
-                      <a class="list-group-item list-group-item-action" href="clientes.php">Clientes</a>
-                      <?php
-                        }
-                        if(in_array($_SESSION['rol'],array("1","2"))){
-                      ?>
-                      <a class="list-group-item list-group-item-action" href="">Historias Clinicas</a>
-                      <?php
-                        }
-                      ?>
+                <div class="list-group">   
+                    <a class="list-group-item list-group-item-action" href="usuarios/crearUsuario.php">Crear Usuarios</a>
+                    <a class="list-group-item list-group-item-action" href="usuarios/editarUsuario.php">Editar Usuarios</a>
+                    <a class="list-group-item list-group-item-action" href="usuarios/eliminarUsuario.php">Eliminar Usuarios</a>
                   </div>
-</div>
-       
+                <button class="btn btn-primary" > <a href="panel-control.php">Volver</a></button>
             </div>
           </div>
           <!-- Content End -->
-          
-<?php	
-}
-
-?>
-<html>
     <!-- Footer -->
     <footer id="footer">
             <div class="container">
