@@ -54,13 +54,11 @@ exit;
     <div id="content">
             <div class="container">
                <div class="f-center"> 
-               <div class="list-group">   
-                      <a class="list-group-item list-group-item-action" href="crearUsuario.php">Crear Usuario</a>
-                      <a class="list-group-item list-group-item-action" href="editarUsuarios.php">Editar Usuario</a>
-                      <a class="list-group-item list-group-item-action" href="eliminarUsuario.php">Eliminar Usuario</a>
-                      <a class="list-group-item list-group-item-action" href="consultarUsuario.php">Consultar Usuario</a>
-
-                </div>
+                <div class="list-group">   
+                    <a class="list-group-item list-group-item-action" href="clientes/crearCliente.php">Crear Clientes</a>
+                    <a class="list-group-item list-group-item-action" href="clientes/editarCliente.php">Editar Clientes</a>
+                    <a class="list-group-item list-group-item-action" href="clientes/eliminarCliente.php">Eliminar Clientes</a>
+                  </div>
                 <button class="btn btn-primary" > <a href="panel-control.php">Volver</a></button>
             </div>
           </div>

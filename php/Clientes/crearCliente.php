@@ -1,9 +1,9 @@
 <?php
-include("BDServices.php");
+include("../BDServices.php");
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 } else {
-  redirect("../error.php");
+  redirect("../../error.php");
 exit;
 }
 
@@ -22,7 +22,7 @@ exit;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opticas Henao</title>
-    <link href="../css/styles.css" rel="stylesheet">
+    <link href="../../css/styles.css" rel="stylesheet">
     
 </head>
 <body>
@@ -31,26 +31,21 @@ exit;
             <div class="row t-container">
                 <div class="span3">
                   <div class="logo">
-                    <a href="../index.html"><img src="../logo.png" alt="" ></a>
+                    <a href="../../index.html"><img src="../../logo.png" alt="" ></a>
                     </div>            
                 </div>
             
             <div class="span7">
                 <div class="row space10"></div>
-                    <img src="../nombre.png" alt="">
+                    <img src="../../nombre.png" alt="">
                 </div>            
         </div>
     </header>
-          
-<?php
-//if ($_SESSION['tipoUsuario'] == "cliente"){
-    if (1==1){
-?>
 <center>
 <h2>Formulario de ingreso a nuevos clientes</h2>
     <div id="container">
         <div class="content">
-	<form action="php/registrar-usuario.php" method="post">
+	<form action="registrar.php" method="post">
         <table class="table">
                 <thead>
                     <th scope="col">Cedula o Nit Cliente </th>
@@ -97,13 +92,9 @@ exit;
 			<button class="btn btn-secondary">Guardar</button>
     </form>
     </div>
-    <button class="btn btn-primary" > <a href="usuarios.php">Volver</a></button>
+    <button class="btn btn-primary" > <a href="../clientes.php">Volver</a></button>
     </div>
 </center>
-<?php	
-}
-
-?>
 <html>
     <!-- Footer -->
     <footer id="footer">
@@ -146,9 +137,9 @@ exit;
           </footer>
           <!-- Footer End -->
            <!-- JavaScripts -->
-    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script> 
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>  
-    <script type="text/javascript" src="js/functions.js"></script>
-    <script type="text/javascript" defer src="js/jquery.flexslider.js"></script>        
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js"></script> 
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>  
+    <script type="text/javascript" src="../../js/functions.js"></script>
+    <script type="text/javascript" defer src="../../js/jquery.flexslider.js"></script>        
 </body>
 </html>
