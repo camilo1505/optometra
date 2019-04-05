@@ -57,4 +57,17 @@ function newCatalogo($producto) {
     }
 }
 
+function editarProducto($IdProducto, $producto){
+    $username = "root";
+    $password = "";
+    $consulta = "UPDATE producto SET nombre_producto = '$producto' WHERE id_producto = '$IdProducto'";
+
+    if(setData($consulta, $username, $password)){
+        return TRUE;
+    }
+    if(! setData($consulta, $username, $password)){
+        return FALSE;
+    }
+}
+
 ?>

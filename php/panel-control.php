@@ -44,9 +44,9 @@ exit;
                         <a href="#nav" title="Show navigation">Show navigation</a>
                         <a href="#" title="Hide navigation">Hide navigation</a>
                         <ul class="clearfix">
-                            <li ><a href="index.html" title="">Inicio</a></li>
-                            <li><a href="productos.php" title="">Productos</a></li>
-                            <li><a href="contactanos.html" title="">contactenos</a></li>
+                            <li ><a href="../index.html" title="">Inicio</a></li>
+                            <li><a href="../productos.php" title="">Productos</a></li>
+                            <li><a href="../contactanos.html" title="">contactenos</a></li>
                             <li class="active"><a href=logout.php>Cerrar Sesion</a></li>
                         </ul>
                     </nav>

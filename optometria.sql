@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-03-2019 a las 01:38:59
+-- Tiempo de generación: 06-04-2019 a las 00:21:49
 -- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.3
+-- Versión de PHP: 7.1.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -142,6 +142,19 @@ CREATE TABLE `producto` (
   `nombre_producto` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`id_producto`, `nombre_producto`) VALUES
+(11, 'Estuche Gafas'),
+(40, 'Gafas bien Gays'),
+(1, 'Gafas de Sol Solaris'),
+(2, 'Gafas Gucchi'),
+(16, 'lentes de Contacto'),
+(3, 'Liquido Aqua'),
+(37, 'Pañuelo');
+
 -- --------------------------------------------------------
 
 --
@@ -152,6 +165,13 @@ CREATE TABLE `rol` (
   `id_rol` bigint(20) UNSIGNED NOT NULL,
   `rol` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `rol`
+--
+
+INSERT INTO `rol` (`id_rol`, `rol`) VALUES
+(1, 'administrador');
 
 -- --------------------------------------------------------
 
@@ -164,6 +184,13 @@ CREATE TABLE `roles` (
   `fk_usuario` bigint(20) UNSIGNED DEFAULT NULL,
   `fk_rol` bigint(20) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `roles`
+--
+
+INSERT INTO `roles` (`id_roles`, `fk_usuario`, `fk_rol`) VALUES
+(3, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -180,6 +207,13 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `cedula`, `nombres`, `apellidos`, `usuario_password`) VALUES
+(2, 'admin', 'administrador', 'administrador', '$2y$10$FCRhwIVKQ6kgWQQtG7wjEu1L8lTTgst0cwq3xWxKlg9fnsHlrIoG2');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -188,6 +222,7 @@ CREATE TABLE `usuario` (
 --
 ALTER TABLE `catalogo`
   ADD PRIMARY KEY (`id_catalogo`),
+  ADD UNIQUE KEY `referencia` (`referencia`),
   ADD KEY `fk_producto` (`fk_producto`,`fk_usuario`),
   ADD KEY `fk_usuario` (`fk_usuario`);
 
@@ -195,7 +230,8 @@ ALTER TABLE `catalogo`
 -- Indices de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`id_cliente`);
+  ADD PRIMARY KEY (`id_cliente`),
+  ADD UNIQUE KEY `cedula` (`cedula`);
 
 --
 -- Indices de la tabla `historia_clinica`
@@ -209,13 +245,15 @@ ALTER TABLE `historia_clinica`
 -- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD PRIMARY KEY (`id_producto`);
+  ADD PRIMARY KEY (`id_producto`),
+  ADD UNIQUE KEY `nombre_producto` (`nombre_producto`);
 
 --
 -- Indices de la tabla `rol`
 --
 ALTER TABLE `rol`
-  ADD PRIMARY KEY (`id_rol`);
+  ADD PRIMARY KEY (`id_rol`),
+  ADD UNIQUE KEY `rol` (`rol`);
 
 --
 -- Indices de la tabla `roles`
@@ -229,7 +267,8 @@ ALTER TABLE `roles`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_usuario`);
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD UNIQUE KEY `cedula` (`cedula`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -257,25 +296,25 @@ ALTER TABLE `historia_clinica`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_producto` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
-  MODIFY `id_rol` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_rol` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id_roles` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_roles` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
