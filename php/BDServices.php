@@ -23,7 +23,7 @@ function newProducto($producto){
         return TRUE;
     }
     if(! setData($consulta, $username, $password)){
-        echo FALSE;
+        return FALSE;
     }
 }
 
@@ -36,13 +36,25 @@ function redirect($url, $statusCode = 303)
 function getProductos() {
     $username = "root";
     $password = "";
-    $consulta = "SELECT producto.nombre_producto FROM producto";
+    $consulta = "SELECT producto.id_producto, producto.nombre_producto FROM producto";
 
     $respuesta = getData($consulta, $username, $password);
 
-    echo $respuesta;
-
     return $respuesta;
+}
+
+function newCatalogo($producto) {
+    $username = "root";
+    $password = "";
+    $consulta = "INSERT INTO catalogo(fk_producto, fk_usuario, referencia, marca, tipo, imagen, costo, descripcion)
+                 VALUES('$producto[6]',1,'$producto[0]','$producto[1]','$producto[2]','$producto[3]','$producto[4]','$producto[5]')";
+
+    if(setData($consulta, $username, $password)){
+        return TRUE;
+    }
+    if(! setData($consulta, $username, $password)){
+        return FALSE;
+    }
 }
 
 ?>

@@ -1,8 +1,10 @@
 <?php
     include("BDservices.php");
-    $producto = $_GET["nombre_producto"];
+    $producto = $_POST["nombre_producto"];
 
-    if(newProducto($producto)) {
+    $done = newProducto($producto)
+
+    if($done) {
         echo "
             <script>
                 alert('Guardado Correctamente');
@@ -10,7 +12,7 @@
             </script>
         ";
     }
-    if(! newProducto($producto)) {
+    if(! $done) {
         echo "
             <script>
                 alert('Error Guardando el Producto');
