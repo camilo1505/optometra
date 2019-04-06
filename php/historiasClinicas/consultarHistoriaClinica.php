@@ -6,7 +6,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
   redirect("../../error.php");
 exit;
 }
+
 $now = time();
+
 if($now > $_SESSION['expire']) {
 session_destroy();
 
@@ -43,46 +45,179 @@ exit;
                 </div>            
         </div>
     </header>
-<center>
-<h2>Formulario de ingreso a nuevos clientes</h2>
-    <div id="container">
-        <div class="content">
-	<form action="registrar.php" method="post">
-        <table class="table">
-                <thead>
-                    <th scope="col">identificacion Usuario </th>
-                    <th scope="col">Nombres </th>
-                    <th scope="col">Apellidos </th>
-                    <th scope="col">contraseña </th>
-                    <th scope="col"> rol </th>
-                </thead>
-                <tbody>
-                    
-                    <td><input type="text" name="cedula" placeholder="ej: 1087324517" required="required" ></td>
-                    <td><input type="text" name="Nombres" placeholder="ej: Juanes alvaro" required="required" ></td>
-                    <td><input type="text" name="Apellidos" placeholder="ej: duarte gonzales " value=""></td>
-                    <td><input type="text" name="contraseña" placeholder="ej: 12345" required="required" ></td>
-                    <td>
-                        <select name="rol">
-                            <?php
-                                foreach($result as $resultado){
-                            ?>
-                                <option value="<?php echo $resultado['id_rol'];?>"><?php echo $resultado['rol'];?></option>
-                            <?php
-                                }
-                            ?>
-                        </select>
-                    </td>
-                </tbody>
-            </div>
-            </table>
-			<button class="btn btn-secondary">Guardar</button>
-    </form>
+    <center>
+    <h2>Formulario Historias Clinicas</h2>
+		<br>
+		<div class="col-md col-pull">
+			<form class="form-class" id="con_form" align="center">
+				<div class="row">
+					<div class="col-sm-4">
+						<h3 style="color: red">Cedula o Nit Paciente</h3>
+						<input type="text" name="cedula" placeholder="Cedula o Nit Paciente" required="required">
+					</div>
+				</div>
+
+				<table class="form-class" >
+					<br>
+					<div>
+						<tr  >
+							<td colspan="4">
+								<br>
+								<h3>Antecedentes Patologicos</h3>
+								<br>
+							</td>
+						</tr>
+						<tr>
+                            <th>Patologia</th>
+							<th>Tratamiento</th>
+							<th>Cronicidad</th>
+                            <th>Observacion</th>
+                        </tr>
+						<tr>
+							<td><div class="col-sm-12"><input type="text" name="patologia1" placeholder="Patologia" required="required" ></div></td>
+							<td><div class="col-sm-12"><input type="text" name="tratamiento1" placeholder="Tratamiento" required="required" ></div></td>
+							<td><div class="col-sm-12"><input type="text" name="cronicidad1" placeholder="Cronicidad" required="required" ></div></td>
+							<td><div class="col-sm-12"><textarea type="text" name="observacion1" placeholder="Observacion" required="required" ></textarea></div></td>
+						</tr>
+						<tr>
+							<td><div class="col-sm-12"><input type="text" name="patologia2" placeholder="Patologia"></div></td>
+							<td><div class="col-sm-12"><input type="text" name="tratamiento2" placeholder="Tratamiento"></div></td>
+							<td><div class="col-sm-12"><input type="text" name="cronicidad2" placeholder="Cronicidad"></div></td>
+							<td><div class="col-sm-12"><textarea type="text" name="observacion2" placeholder="Observacion"></textarea></div></td>
+						</tr>
+						<tr>
+							<td><div class="col-sm-12"><input type="text" name="patologia3" placeholder="Patologia"></div></td>
+							<td><div class="col-sm-12"><input type="text" name="tratamiento3" placeholder="Tratamiento"></div></td>
+							<td><div class="col-sm-12"><input type="text" name="cronicidad3" placeholder="Cronicidad"></div></td>
+							<td><div class="col-sm-12"><textarea type="text" name="observacion3" placeholder="Observacion"></textarea></div></td>
+						</tr>
+					</div>	
+				</table>
+				<table class="form-class">
+					<br>
+					<div>
+						<tr>
+							<td colspan="4">
+								<br>
+								<h3>Informacion Extra</h3>
+								<br>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<th>Av Sin RX</th>
+							<th>Estenpeico</th>
+							<th>Av Rx Anterior</th>
+						</tr>
+						<tr>
+
+							<th>Ojo Derecho</th>
+							<td><div class="col-sm-12"><input type="text" name="avSinRxOd" placeholder=""></div></td>
+							<td><div class="col-sm-12"><input type="text" name="estenpeicoOd" placeholder=""></div></td>
+							<td><div class="col-sm-12"><input type="text" name="avRxAnteriorOd" placeholder=""></div></td>
+						</tr>
+						<tr>
+
+							<th>Ojo Izquierdo</th>
+							<td><div class="col-sm-12"><input type="text" name="avSinRxOi" placeholder=""></div></td>
+							<td><div class="col-sm-12"><input type="text" name="estenpeicoOi" placeholder=""></div></td>
+							<td><div class="col-sm-12"><input type="text" name="avRxAnteriorOi" placeholder=""></div></td>
+						</tr>
+						<tr>
+                    </table>
+                    <table class="form-class">
+                        <br>
+							<td colspan="2">
+								<br>
+								<br>
+								<h3>Refraccion</h3>
+								<br>
+
+							</td>
+						</tr>
+
+						<tr>
+							<th>Ojo Derecho</td>
+							<td><div class="col-sm-12"><input type="text" name="refraccionOd"  placeholder=""></div></td>
+						</tr>
+
+						<tr>
+							<th>Ojo Izquierdo</td>
+							<td><div class="col-sm-12"><input type="text" name="refraccionOi"  placeholder=""></div></td>
+							</tr>
+					</div>	
+				</table>
+				<table class="form-class">
+					<br>
+					<div>
+						<tr>
+							<td colspan="4">
+								<br>
+								<h3>Antecedentes Patologicos</h3>
+								<br>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<th>ojo Derecho</th>
+							<th>ojo Izquierdo</th>
+						</tr>
+						<tr>
+							<th>Papila</th>
+							<td><div class="col-sm-12"><input type="text" name="papilaOd" ></div></td>
+							<td><div class="col-sm-12"><input type="text" name="papilaOi" ></div></td>
+						</tr>
+						<tr>
+							<th>Excavacion</th>
+							<td><div class="col-sm-12"><input type="text" name="excavacionOd" ></div></td>
+							<td><div class="col-sm-12"><input type="text" name="excavacionOi" ></div></td>
+							
+						</tr>
+						<tr>
+							<th>Retina</th>
+							<td><div class="col-sm-12"><input type="text" name="retinaOd" ></div></td>
+							<td><div class="col-sm-12"><input type="text" name="retinaOi" ></div></td>
+							
+						</tr>
+						<tr>
+							<th>Radio</th>
+							<td><div class="col-sm-12"><input type="text" name="radioOd" ></div></td>
+							<td><div class="col-sm-12"><input type="text" name="radioOi" ></div></td>
+							
+						</tr>
+						<tr>
+							<th>Vaso</th>
+							<td><div class="col-sm-12"><input type="text" name="vasoOd" ></div></td>
+							<td><div class="col-sm-12"><input type="text" name="vasoOi" ></div></td>
+							
+						</tr>
+						<tr>
+							<th>Rav</th>
+							<td><div class="col-sm-12"><input type="text" name="ravOd" ></div></td>
+							<td><div class="col-sm-12"><input type="text" name="ravOi" ></div></td>
+							
+						</tr>
+						<tr>
+							<th>Macula</th>
+							<td><div class="col-sm-12"><input type="text" name="maculaOd" ></div></td>
+							<td><div class="col-sm-12"><input type="text" name="maculaOi" ></div></td>
+							
+						</tr>
+						<tr>
+							<th>Reflejo</th>
+							<td><div class="col-sm-12"><input type="text" name="reflejoOd" ></div></td>
+							<td><div class="col-sm-12"><input type="text" name="reflejoOi" ></div></td>
+							
+						</tr>
+					</div>	
+				</table>
+				<br>
+				<button class="site-btn">Guardar</button>
+			</form>
+			<br>
+		</div>
     </div>
-    <button class="btn btn-primary" > <a href="../historiasClinicas.php">Volver</a></button>
-    </div>
-</center>
-<html>
+    </center>
     <!-- Footer -->
     <footer id="footer">
             <div class="container">
