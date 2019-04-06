@@ -25,6 +25,10 @@ exit;
     <link href="../../css/styles.css" rel="stylesheet">
     
 </head>
+<?php
+    $sql = "SELECT * FROM rol ";
+    $result = getData($sql,'root','');
+?>
 <body>
     <header id="header">
         <div class="container">
@@ -42,59 +46,42 @@ exit;
         </div>
     </header>
 <center>
-</html>
-<?php
-    $sql = "SELECT * FROM usuario ";
-    $result = getData($sql,'root','');
-    
-?>
-<html>
 <h2>Formulario de ingreso a nuevos clientes</h2>
     <div id="container">
         <div class="content">
+	<form action="registrar.php" method="post">
         <table class="table">
-            <thead>
-                <th scope="col">Cedula</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">rol</th>
-            </thead>
-            <tbody>
-                <?php
-                foreach($result as $resultado){
-                ?>
-                    <html>
-                    <form action="modificar.php" method="post">
-                        <tr>
-                            <td><input name="cedula" type="text" value="<?php echo $resultado['cedula'];?>" readonly="readonly"> </td>
-                            <td><input name="nombre" type="text" value="<?php echo $resultado['nombres'];?>"> </td>
-                            <td><input name="apellido" type="text" value="<?php echo $resultado['apellidos'];?>"> </td>
-                            <td>
-                                <select name="rol">
+                <thead>
+                    <th scope="col">identificacion Usuario </th>
+                    <th scope="col">Nombres </th>
+                    <th scope="col">Apellidos </th>
+                    <th scope="col">contraseña </th>
+                    <th scope="col"> rol </th>
+                </thead>
+                <tbody>
+                    
+                    <td><input type="text" name="cedula" placeholder="ej: 1087324517" required="required" ></td>
+                    <td><input type="text" name="Nombres" placeholder="ej: Juanes alvaro" required="required" ></td>
+                    <td><input type="text" name="Apellidos" placeholder="ej: duarte gonzales " value=""></td>
+                    <td><input type="text" name="contraseña" placeholder="ej: 12345" required="required" ></td>
+                    <td>
+                        <select name="rol">
                             <?php
-                                $sql = "SELECT * FROM rol";
-                                $resultado_rol = getData($sql,'root','');
-                                foreach($resultado_rol as $roles){
-                                    $sql = "SELECT * FROM roles WHERE fk_usuario =".$resultado['id_usuario'];
-                                    $result_rol = getData($sql,'root','');
+                                foreach($result as $resultado){
                             ?>
-                                <option name="rol" value="<?php echo $roles['rol'];?>">
-                                    <?php echo $roles['rol'];?>
-                                </option>
+                                <option value="<?php echo $resultado['id_rol'];?>"><?php echo $resultado['rol'];?></option>
                             <?php
                                 }
                             ?>
-                        </select></td>
-                            <td><button>guardar</button> </td>
-                        </tr>
-                    </form>
-                <?php
-                }
-                ?>
+                        </select>
+                    </td>
                 </tbody>
+            </div>
             </table>
+			<button class="btn btn-secondary">Guardar</button>
+    </form>
     </div>
-    <button class="btn btn-primary" > <a href="../usuarios.php">Volver</a></button>
+    <button class="btn btn-primary" > <a href="../historiasClinicas.php">Volver</a></button>
     </div>
 </center>
 <html>
@@ -139,9 +126,9 @@ exit;
           </footer>
           <!-- Footer End -->
            <!-- JavaScripts -->
-    <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script> 
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>  
-    <script type="text/javascript" src="../js/functions.js"></script>
-    <script type="text/javascript" defer src="../js/jquery.flexslider.js"></script>        
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js"></script> 
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>  
+    <script type="text/javascript" src="../../js/functions.js"></script>
+    <script type="text/javascript" defer src="../../js/jquery.flexslider.js"></script>        
 </body>
 </html>

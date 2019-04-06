@@ -44,8 +44,10 @@ exit;
 <center>
 </html>
 <?php
-    $sql = "SELECT * FROM cliente ";
+    $sql = "SELECT * FROM usuario ";
     $result = getData($sql,'root','');
+
+
 ?>
 <html>
 <h2>Formulario de ingreso a nuevos clientes</h2>
@@ -53,30 +55,30 @@ exit;
         <div class="content">
         <table class="table">
             <thead>
-                <th scope="col">Cedula o Nit Cliente </th>
-                <th scope="col">Primer Nombre </th>
-                <th scope="col">Segundo Nombre </th>
-                <th scope="col">Primer Apellido </th>
-                <th scope="col">Segundo Apellido </th>
-                <th scope="col"> Fecha de Nacimiento </th>
-                <th scope="col"> Ciudad </th>
-                <th scope="col"> Direccion </th>
-                <th scope="col"> Telefono </th>
-                <th scope="col"> Celular </th>
-                <th scope="col"> Correo Electronico </th>
+                <th scope="col">Cedula</th>
+                <th scope="col">Nombre </th>
+                <th scope="col">Apellido </th>
+                <th scope="col">Rol </th>
             </thead>
             <tbody>
                 <?php
+                
                 foreach($result as $resultado){
+                    $rol = $resultado['id_usuario'];
+                    $sql = "SELECT * from roles WHERE fk_usuario = '$rol'";
+                    $result_roles = getData($sql,'root','');
+                    $roles = $result_roles[0]['fk_rol'];
+                    $sql = "SELECT * FROM rol WHERE id_rol = '$roles'";
+                    $result_rol = getData($sql,'root','');
+                    $rol = $result_rol[0]['rol'];
                 ?>
                     <html>
                     <form action="eliminar.php" method="post">
                         <tr>
                             <td><input type="text" name="cedula" value="<?php echo $resultado['cedula'];?>" readonly="readonly"></td>
-                            <td><p style="color:white;"><?php echo $resultado['primer_nombre'];?></p></td>
-                            <td><p style="color:white;"><?php echo $resultado['segundo_nombre'];?></p></td>
-                            <td><p style="color:white;"><?php echo $resultado['primer_apellido'];?></p></td>
-                            <td><p style="color:white;"><?php echo $resultado['segundo_apellido'];?></p></td>
+                            <td><p style="color:white;"><?php echo $resultado['nombres'];?></p></td>
+                            <td><p style="color:white;"><?php echo $resultado['apellidos'];?></p></td>
+                            <td><p style="color:white;"><?php echo $rol;?></p></td>
                             <td><button>eliminar</button> </td>
                         </tr>
                     </form>
@@ -86,7 +88,7 @@ exit;
                 </tbody>
             </table>
     </div>
-    <button class="btn btn-primary" > <a href="../clientes.php">Volver</a></button>
+    <button class="btn btn-primary" > <a href="../usuarios.php">Volver</a></button>
     </div>
 </center>
 <html>

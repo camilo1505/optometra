@@ -76,7 +76,7 @@ exit;
                         }
                         if(in_array($_SESSION['rol'],array("1","2"))){
                       ?>
-                      <a class="list-group-item list-group-item-action" href="">Historias Clinicas</a>
+                      <a class="list-group-item list-group-item-action" href="historiasClinicas.php">Historias Clinicas</a>
                       <?php
                         }
                       ?>
