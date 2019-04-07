@@ -1,5 +1,5 @@
 <?php
-    include("BDservices.php");
+    include("../BDservices.php");
     $IdProducto = $_POST["ID_producto"];
     $producto = $_POST["nombre_producto"];
 
@@ -12,7 +12,7 @@
         echo "
             <script>
                 alert('Guardado Correctamente');
-                window.location.href='../editarProducto.php';
+                window.location.href='../../editarProducto.php';
             </script>
         ";
     }
@@ -20,7 +20,7 @@
         echo "
             <script>
                 alert('Error Guardando el Producto');
-                window.location.href='../editarProducto.php';
+                window.location.href='../../editarProducto.php';
             </script>
         ";
     }

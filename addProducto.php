@@ -64,7 +64,7 @@
       <div class="container">
         <div class="jumbotron">
           <h1>Añada un nuevo Producto.</h1>
-            <form action="php/enviarProducto.php" method="POST">
+            <form action="php/productos/enviarProducto.php" method="POST">
                     <div class="form-group">
                         <label for="nombre_producto">Nombre del Producto:</label>
                         <input type="text" class="form-control" name="nombre_producto" required>

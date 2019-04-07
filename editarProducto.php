@@ -63,31 +63,31 @@
     <div id="content">
       <div class="container">
         <div class="jumbotron">
-          <h1>Edite un Producto.</h1>
-            <form action="php/editarProducto.php" method="POST">
-                    <div class="form-group">
-                          <ul class="list-group">
-                              <?php
-                                include("php/BDServices.php");
-                                $productos = getProductos();
-                                foreach($productos as $producto) {
-                              ?>
-                            <li class="list-group-item">
-                              <?php print ($producto["nombre_producto"]);?> :  <?php print ($producto["id_producto"]);?>
-                            </li>
-                              <?php }?>
-                          </ul>
-                      <br>
-                      <br>
-                      <label for="nombre_producto">ID del Producto a cambiar:</label>
-                      <input type="text" class="form-control" name="ID_producto" required>
-                      <br>
-                      <br>
-                      <label for="nombre_producto">Nuevo Nombre del Producto:</label>
-                      <input type="text" class="form-control" name="nombre_producto" required>
-                    </div>
-                    <input type="submit" class="btn btn-primary">
-            </form>
+          <h1>Edicion de Produductos.</h1>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre Producto</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+                include("php/BDServices.php");
+                $productos = getProductos();
+                foreach($productos as $producto) {
+              ?>
+                <tr>
+                  <form action="php/productos/editarProducto.php" method="POST">
+                    <th scope="row" width="5% "><input type="text" class="form-control" name="ID_producto" value="<?php print ($producto["id_producto"]);?>"readonly></th>
+                    <td> <input type="text" class="form-control" name="nombre_producto" value="<?php print($producto["nombre_producto"]); ?>" required></td>
+                    <td> <input type="submit" class="btn btn-primary" value="Guardar"> </input> </td>
+                  </form>
+                </tr>
+              <?php } ?>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

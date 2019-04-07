@@ -1,5 +1,5 @@
 <?php
-    include("BDservices.php");
+    include("../BDservices.php");
     $producto = $_POST["nombre_producto"];
 
     $done = newProducto($producto);
@@ -8,7 +8,7 @@
         echo "
             <script>
                 alert('Guardado Correctamente');
-                window.location.href='../addProducto.php';
+                window.location.href='../../addProducto.php';
             </script>
         ";
     }
@@ -16,7 +16,7 @@
         echo "
             <script>
                 alert('Error Guardando el Producto');
-                window.location.href='../addProducto.php';
+                window.location.href='../../addProducto.php';
             </script>
         ";
     }

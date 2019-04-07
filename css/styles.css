@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Titillium Web', sans-serif; 
   font-weight: 200;
   line-height: 1.25;
-  color: #3b3b3b;
+  color: #fff8f8;
   margin:0px;
   padding: 20px 0;
   clear:both;
@@ -115,7 +115,7 @@ img {
 	float:left;
 }
 .blue{
-  color:#fda056;
+  color:#6574fd;
 }
 
 .blue2{
@@ -123,7 +123,7 @@ img {
 }
 
 .blue-dark{
-  color:#fb8865;
+  color:#6574fd;
 }
 
 .bold {
@@ -429,7 +429,7 @@ header {
 					height: 3.125em; /* 50 */
 					text-align: left;
 					text-indent: -9999px;
-					background-color: #e15a1f;
+					background-color: #6574fd;
 					position: relative;
 				}
 					#nav > a:before,
@@ -516,7 +516,7 @@ header {
 }
 
 .ic-1 i {
-  color:#fb8865;
+  color:#6574fd;
 }
    
 .title-1 {
@@ -887,18 +887,18 @@ table {
 
 th {
   color:#fff;
-  background:#5b3eff;
+  background:#ffffff;
   border-radius:0px !important;
-  border:1px solid #3b3b3b !important;
+  border:1px solid #ffffff !important;
   font-weight:normal !important;
   padding:10px 4px !important;
 }
 
 td {
-  color:#83adff;
-  background:#b9acf1;
+  color:#ffffff;
+  background:#ffffff;
   border-radius:0px !important;
-  border:1px solid #3b3b3b !important;
+  border:1px solid #ffffff !important;
   padding:10px 5px !important;
 }
 
@@ -1052,7 +1052,7 @@ table a:hover{
 .pricing-tables th {
   font-size:16px;
   font-weight:bold;
-  background:#fda056;
+  background:#fcfbfa;
   text-align:center;
   padding: 30px !important;
 }
