@@ -5,9 +5,10 @@ function getCatalogo(){
     $username = "root";
     $password = "";
 
-    $consulta = "SELECT producto.nombre_producto, catalogo.costo, catalogo.descripcion, catalogo.imagen, catalogo.marca, catalogo.referencia
+    $consulta = "SELECT producto.id_producto, producto.nombre_producto, catalogo.costo, catalogo.descripcion, catalogo.imagen, catalogo.marca, catalogo.referencia
                  FROM producto, catalogo 
-                 WHERE producto.id_producto = catalogo.fk_producto";
+                 WHERE producto.id_producto = catalogo.fk_producto
+                 ORDER BY producto.id_producto";
 
     $respuesta = getData($consulta, $username, $password);
 
