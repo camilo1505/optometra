@@ -72,6 +72,7 @@
                             <th scope="col">Costo</th>
                             <th scope="col">Imagen</th>
                             <th scope="col">Descripcion</th>
+                            <th scope="col">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -79,18 +80,17 @@
                             include("php/BDServices.php");
                             $catalogo = getCatalogo();
                             foreach($catalogo as $producto) {
-                                print_r($producto);
-                                print("<br>");
                         ?>
                             <tr>
-                                <form action="php/catalogo/pruebas.php" method="POST">
-                                    <th scope="row" width="5% "><input type="text" class="form-control" name="id_catalogo" value="<?php print ($producto["id_producto"]);?>"readonly></th>
-                                    <td scope="row" width="17% "><input type="text" class="form-control" name="nombre_producto" value="<?php print ($producto["nombre_producto"]);?>"required></td>
+                                <form action="php/catalogo/editarCatalogo.php" method="POST">
+                                    <th scope="row" width="5% "><input type="text" class="form-control" name="id_catalogo" value="<?php print ($producto["id_catalogo"]);?>"readonly></th>
+                                    <td scope="row" width="17% "><input type="text" class="form-control" name="nombre_producto" value="<?php print ($producto["nombre_producto"]);?>"required reado></td>
                                     <td width="15%"> <input type="text" class="form-control" name="referencia" value="<?php print($producto["referencia"]); ?>" required></td>
                                     <td scope="row" width="17% "><input type="text" class="form-control" name="marca" value="<?php print ($producto["marca"]);?>"required></td> 
-                                    <td scope="row" width="10% "><input type="number" class="form-control" name="costo" value="<?php print ($producto["costo"]);?>"required></td>
-                                    <td scope="row" width="18% "><input type="file" class="form-control" name="imagen" required></td>
+                                    <td scope="row" width="13% "><input type="number" class="form-control" name="costo" value="<?php print ($producto["costo"]);?>"required></td>
+                                    <td scope="row" width="20% "><input type="file" class="form-control" name="imagen"></td>
                                     <td scope="row" width="20% "><input type="text" class="form-control" name="descripcion" value="<?php print ($producto["descripcion"]);?>"required></td>
+                                    <td> <input type="submit" class="btn btn-primary" value="Guardar"> </input> </td>
                                 </form>
                             </tr>
                         <?php } ?>

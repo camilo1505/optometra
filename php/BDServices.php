@@ -5,10 +5,10 @@ function getCatalogo(){
     $username = "root";
     $password = "";
 
-    $consulta = "SELECT producto.id_producto, producto.nombre_producto, catalogo.costo, catalogo.descripcion, catalogo.imagen, catalogo.marca, catalogo.referencia
+    $consulta = "SELECT catalogo.id_catalogo, producto.nombre_producto, catalogo.costo, catalogo.descripcion, catalogo.imagen, catalogo.marca, catalogo.referencia
                  FROM producto, catalogo 
                  WHERE producto.id_producto = catalogo.fk_producto
-                 ORDER BY producto.id_producto";
+                 ORDER BY catalogo.id_catalogo";
 
     $respuesta = getData($consulta, $username, $password);
 
@@ -62,6 +62,27 @@ function editarProducto($IdProducto, $producto){
     $username = "root";
     $password = "";
     $consulta = "UPDATE producto SET nombre_producto = '$producto' WHERE id_producto = '$IdProducto'";
+
+    if(setData($consulta, $username, $password)){
+        return TRUE;
+    }
+    if(! setData($consulta, $username, $password)){
+        return FALSE;
+    }
+}
+
+function editarCatalogo($catalogo){
+    $username = "root";
+    $password = "";
+    $consulta = "UPDATE catalogo
+                 SET catalogo.referencia = '$catalogo[2]', 
+                     catalogo.marca = '$catalogo[3]',
+                     catalogo.imagen = '$catalogo[4]',
+                     catalogo.costo = '$catalogo[5]',
+                     catalogo.descripcion = '$catalogo[6]'
+                 WHERE catalogo.id_catalogo = '$catalogo[0]'";
+
+    echo $consulta;
 
     if(setData($consulta, $username, $password)){
         return TRUE;
