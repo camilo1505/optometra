@@ -1,9 +1,9 @@
 <?php
-include("BDServices.php");
+include("../../BDServices.php");
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 } else {
-  redirect("../error.php");
+  redirect("../../error.php");
 exit;
 }
 
@@ -23,9 +23,7 @@ exit;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opticas Henao</title>
     <link href="../css/styles.css" rel="stylesheet">
-    <link href="../css/bootstrap-override.css" rel="stylesheet">
-    <link href="../css/font-awesome/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/flexslider.css" type="text/css" media="screen">
+    
 </head>
 <body>
     <header id="header">
@@ -33,70 +31,60 @@ exit;
             <div class="row t-container">
                 <div class="span3">
                   <div class="logo">
-                    <a href="index.html"><img src="../logo.png" alt="" ></a>
+                    <a href="../../../index.html"><img src="../../../logo.png" alt="" ></a>
                     </div>            
                 </div>
             
             <div class="span7">
                 <div class="row space10"></div>
-                <img src="../nombre.png" alt="">
-                    <nav id="nav" role="navigation">
-                        <a href="#nav" title="Show navigation">Show navigation</a>
-                        <a href="#" title="Hide navigation">Hide navigation</a>
-                        <ul class="clearfix">
-                            <li ><a href="../index.html" title="">Inicio</a></li>
-                            <li><a href="../productos.php" title="">Productos</a></li>
-                            <li><a href="../contactanos.html" title="">contactenos</a></li>
-                            <li class="active"><a href=logout.php>Cerrar Sesion</a></li>
-                        </ul>
-                    </nav>
+                    <img src="../../../nombre.png" alt="">
                 </div>            
         </div>
     </header>
-
-    <div id="content">
-            <div class="container">
-               <div class="f-center"> 
-                  <div class="list-group">   
-                <?php
-                  //echo "Tipo de usuario:".$_SESSION['usuario'];
-                if ($_SESSION['rol'] == "1"){
-                  ?>
-                      <a class="list-group-item list-group-item-action" href="usuarios.php">Usuarios</a>
-                      <?php
-                      if(in_array($_SESSION['rol'],array("1","3"))){
-                      ?>
-                      <a class="list-group-item list-group-item-action" href="">Catalogo</a>
-                      <?php
-                        }
-                        if(in_array($_SESSION['rol'],array("1","2","3"))){
-                      ?>
-                      <a class="list-group-item list-group-item-action" href="clientes.php">Clientes</a>
-                      <?php
-                        }
-                        if(in_array($_SESSION['rol'],array("1","2"))){
-                      ?>
-                      <a class="list-group-item list-group-item-action" href="historiaClinica.php">Historias Clinicas</a>
-                      <?php
-                        }
-                      ?>
-                  </div>
-</div>
-       
-            </div>
-          </div>
-          <!-- Content End -->
-          
-<?php	
-}
-
+<center>
+</html>
+<?php
+    $cliente = $_POST['fk_cliente'];
+    $sql = "SELECT * FROM cliente WHERE cedula = '$cliente'";
+    $result = getData($sql,'root','');
+    $idCliente = $result[0]['id_cliente'];
 ?>
+    <div id="container">
+        <div class="content">
+            <form action="consultaHistoriaClinica.php" method="post">
+                <table class="table" border="1">
+                    <thead>
+                        <th scope="col">Seleccione la historia clinica a consultar</th>
+                    </thead>
+                    <tbody>
+                            <td><?php echo $idCliente;?></td>
+                            <select name="id_historia_clinica">
+                                <?php
+                                    $sql = "SELECT * FROM historia_clinica WHERE fk_cliente = $idCliente";
+                                    echo $sql;
+                                    $result = getData($sql,'root','');
+                                    foreach($result as $resultado){
+                                ?>
+                                    <option value="<?php echo $resultado['id_historia_clinica'];?>"><?php echo $resultado['fecha'];?></option>
+                                <?php
+                                    }
+                                ?>
+                            </select>
+                            
+                    </tbody>
+                </table>
+                <button class="site-btn">Guardar</button>
+            </form>
+        </div>
+        <button class="btn btn-primary" > <a href="../../historiaClinica.php">Volver</a></button>
+    </div>
+</center>
 <html>
     <!-- Footer -->
     <footer id="footer">
             <div class="container">
               
-              <div class="row space50"></div>
+              <div class="row space40"></div>
               <div class="row">
                 <div class="span6">
                   <div class="logo-footer">
@@ -133,9 +121,9 @@ exit;
           </footer>
           <!-- Footer End -->
            <!-- JavaScripts -->
-    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script> 
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>  
-    <script type="text/javascript" src="js/functions.js"></script>
-    <script type="text/javascript" defer src="js/jquery.flexslider.js"></script>        
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script> 
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>  
+    <script type="text/javascript" src="../js/functions.js"></script>
+    <script type="text/javascript" defer src="../js/jquery.flexslider.js"></script>        
 </body>
 </html>
