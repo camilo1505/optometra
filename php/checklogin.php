@@ -3,7 +3,6 @@
 	session_start();
 ?>
 <?php
-
 	$username = $_POST['usuario'];
 	$password = $_POST['contrasena'];
 
@@ -24,7 +23,7 @@
 			$_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
 			redirect("panel-control.php");
 		}else { 
-			redirect("../error.php");
+			redirect("../login.html");
 		}
 
 	}

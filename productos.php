@@ -20,46 +20,72 @@
             <a href="index.html"><img src="logo.png" alt="" /></a>
           </div>
         </div>
-
         <div class="span7">
           <div class="row space10"></div>
-          <img src="nombre.png" alt="" />
-          <nav id="nav" role="navigation">
-            <a href="#nav" title="Show navigation">Show navigation</a>
-            <a href="#" title="Hide navigation">Hide navigation</a>
-            <ul class="clearfix">
-              <li><a href="index.html" title="">Inicio</a></li>
-              <li class="active"><a href="productos.php" title="">Productos</a></li>
-              <li><a href="login.html" title="">Iniciar Sesion</a></li>
-              <li><a href="contactanos.html" title="">contactenos</a></li>
-            </ul>
+          <img src="nombre.png" alt="">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Opticas Henao</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li>
+                  <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="productos.php">Productos<span class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                  <a class="nav-link" href="contactanos.html">Contactenos<span class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                  <a class="nav-link" href="php/panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                  <a class="nav-link" href="login.html">Iniciar Sesion<span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+            </div>
           </nav>
         </div>
-        <div class="row space40"></div>
       </div>
-    </div>
   </header>
 
   <div id="content">
     <div class="container">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="img/gafas.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-            card'scontent.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="jumbotron">
+        <h1>Catalogo de Productos.</h1>
+        <?php
+          include("php/BDServices.php");
+          $catalogo = getCatalogo();
+          $contador = 0;
+          foreach($catalogo as $producto) {
+            if($contador === 0) {
+              print('<div class="row">');
+            }
+        ?>
+        <div class="col-sm">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="img/gafas.png" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-title"> <?php print($producto["nombre_producto"]); ?> </p>
+              <p> $<?php print($producto["costo"]); ?> </p>
+              <p class="card-text"> <?php print($producto["descripcion"]); ?> </p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="row space40"></div>
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="img/gafas.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-            card'scontent.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+        <?php
+            if($contador >=  2){
+              print('</div>');
+              print('<br>');
+              $contador = 0;
+            } else{
+              $contador += 1;
+            }
+          } 
+        ?>
       </div>
     </div>
   </div>

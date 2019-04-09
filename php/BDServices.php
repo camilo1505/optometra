@@ -47,9 +47,11 @@ function getProductos() {
 function newCatalogo($producto) {
     $username = "root";
     $password = "";
-    $consulta = "INSERT INTO catalogo(fk_producto, fk_usuario, referencia, marca, tipo, imagen, costo, descripcion)
-                 VALUES('$producto[6]',1,'$producto[0]','$producto[1]','$producto[2]','$producto[3]','$producto[4]','$producto[5]')";
 
+    $consulta = "INSERT INTO catalogo(fk_producto, fk_usuario, referencia, marca, tipo, imagen, costo, descripcion)
+                 VALUES('$producto[6]',2,'$producto[0]','$producto[1]','$producto[2]','$producto[3]','$producto[4]','$producto[5]')";
+
+    print($consulta);
     if(setData($consulta, $username, $password)){
         return TRUE;
     }
