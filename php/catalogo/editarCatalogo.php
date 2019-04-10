@@ -15,7 +15,7 @@
     <header id="header">
         <div class="container">
             <div class="row t-container">
-                <div class="span3">
+                <div class="span7">
                     <div class="logo">
                         <a href="index.html"><img src="logo.png" alt="" /></a>
                     </div>
@@ -57,6 +57,7 @@
         </div>
     </header>
 
+    <br>
 
     <div id="content">
         <div class="container">

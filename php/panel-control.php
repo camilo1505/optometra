@@ -40,33 +40,33 @@ if ($now > $_SESSION['expire']) {
       <div class="row t-container">
         <div class="span3">
           <div class="logo">
-            <a href="index.html"><img src="../logo.png" alt="" /></a>
+            <a href="../index.html"><img src="../logo.png" alt="" /></a>
           </div>
         </div>
         <div class="span7">
           <div class="row space10"></div>
           <img src="../nombre.png" alt="">
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.html">Opticas Henao</a>
+            <a class="navbar-brand" href="../index.html">Opticas Henao</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../index.html">Inicio<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="productos.php">Productos<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../productos.php">Productos<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="contactanos.html">Contactenos<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../contactanos.html">Contactenos<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="php/panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="login.html">Iniciar Sesion<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../login.html">Iniciar Sesion<span class="sr-only">(current)</span></a>
                 </li>
               </ul>
             </div>

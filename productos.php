@@ -25,8 +25,7 @@
           <img src="nombre.png" alt="">
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="index.html">Opticas Henao</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -52,39 +51,39 @@
         </div>
       </div>
   </header>
-
+  <br>
   <div id="content">
     <div class="container">
       <div class="jumbotron">
         <h1>Catalogo de Productos.</h1>
         <?php
-          include("php/BDServices.php");
-          $catalogo = getCatalogo();
-          $contador = 0;
-          foreach($catalogo as $producto) {
-            if($contador === 0) {
-              print('<div class="row">');
-            }
-        ?>
-        <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="img/gafas.png" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-title"> <?php print($producto["nombre_producto"]); ?> </p>
-              <p> $<?php print($producto["costo"]); ?> </p>
-              <p class="card-text"> <?php print($producto["descripcion"]); ?> </p>
+        include("php/BDServices.php");
+        $catalogo = getCatalogo();
+        $contador = 0;
+        foreach ($catalogo as $producto) {
+          if ($contador === 0) {
+            print('<div class="row">');
+          }
+          ?>
+          <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="img/gafas.png" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-title"> <?php print($producto["nombre_producto"]); ?> </p>
+                <p> $<?php print($producto["costo"]); ?> </p>
+                <p class="card-text"> <?php print($producto["descripcion"]); ?> </p>
+              </div>
             </div>
           </div>
-        </div>
-        <?php
-            if($contador >=  2){
-              print('</div>');
-              print('<br>');
-              $contador = 0;
-            } else{
-              $contador += 1;
-            }
-          } 
+          <?php
+          if ($contador >=  2) {
+            print('</div>');
+            print('<br>');
+            $contador = 0;
+          } else {
+            $contador += 1;
+          }
+        }
         ?>
       </div>
     </div>
