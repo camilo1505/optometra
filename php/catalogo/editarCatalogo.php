@@ -1,61 +1,79 @@
+<?php
+include("../BDServices.php");
+session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { } else {
+  echo "<script>
+            alert('Inicie Sesion para Continuar');
+            window.location.href='../../login.html';
+        </script>";
+  exit;
+}
+
+$now = time();
+
+if ($now > $_SESSION['expire']) {
+  session_destroy();
+
+  echo "  <script>
+            alert('La Sesion ha expirado');
+            window.location.href='../../login.html';
+          </script>";
+  exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Opticas Henao</title>
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/bootstrap-override.css" rel="stylesheet" />
-    <link href="css/font-awesome/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opticas Henao</title>
+  <link href="../../css/styles.css" rel="stylesheet" />
+  <link href="../../css/bootstrap-override.css" rel="stylesheet" />
+  <link href="../../css/font-awesome/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/flexslider.css" type="../../text/css" media="../../screen" />
 </head>
 
 <body>
-    <header id="header">
-        <div class="container">
-            <div class="row t-container">
-                <div class="span7">
-                    <div class="logo">
-                        <a href="index.html"><img src="logo.png" alt="" /></a>
-                    </div>
-                </div>
-
-                <div class="span7">
-                    <div class="row space10"></div>
-                    <img src="nombre.png" alt="" />
-                    <nav id="nav" role="navigation">
-                        <a href="#nav" title="Show navigation">Show navigation</a>
-                        <a href="#" title="Hide navigation">Hide navigation</a>
-                        <ul class="clearfix">
-                            <li class="active"><a href="index.html" title="">Inicio</a></li>
-                            <li><a href="productos.php" title="">Productos</a></li>
-                            <li><a href="login.html" title="">Iniciar Sesion</a></li>
-                            <li><a href="contactanos.html" title="">contactenos</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="row space40"></div>
-                <div class="slider1 flexslider">
-                    <!-- Slider -->
-                    <ul class="slides">
-                        <li>
-                            <img src="ucorpora/img/slider/1.jpg" alt="" />
-                        </li>
-                        <li>
-                            <img src="ucorpora/img/slider/2.jpg" alt="" />
-                        </li>
-                        <li>
-                            <img src="ucorpora/img/slider/3.jpg" alt="" />
-                        </li>
-                        <li>
-                            <img src="ucorpora/img/slider/4.jpg" alt="" />
-                        </li>
-                    </ul>
-                </div>
-            </div>
+<header id="header">
+    <div class="container">
+      <div class="row t-container">
+        <div class="span3">
+          <div class="logo">
+            <a href="../../index.html"><img src="../../logo.png" alt="" /></a>
+          </div>
         </div>
-    </header>
+        <div class="span7">
+          <div class="row space10"></div>
+          <img src="../../nombre.png" alt="">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="../../index.html">Opticas Henao</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="../../index.html">Inicio<span class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                  <a class="nav-link" href="../../productos.php">Productos<span class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                  <a class="nav-link" href="../../contactanos.html">Contactenos<span class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                  <a class="nav-link" href="../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                  <a class="nav-link" href="../../login.html">Iniciar Sesion<span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+  </header>
 
     <br>
 
@@ -63,6 +81,7 @@
         <div class="container">
             <div class="jumbotron">
                 <h1>Edicion del Catalogo.</h1>
+                <br>
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
@@ -78,17 +97,16 @@
                     </thead>
                     <tbody>
                         <?php
-                            include("php/BDServices.php");
                             $catalogo = getCatalogo();
                             foreach($catalogo as $producto) {
                         ?>
                             <tr>
                                 <form action="php/catalogo/editarCatalogo.php" method="POST">
-                                    <th scope="row" width="5% "><input type="text" class="form-control" name="id_catalogo" value="<?php print ($producto["id_catalogo"]);?>"readonly></th>
-                                    <td scope="row" width="17% "><input type="text" class="form-control" name="nombre_producto" value="<?php print ($producto["nombre_producto"]);?>"required reado></td>
+                                    <th scope="row" width="6% "><input type="text" class="form-control" name="id_catalogo" value="<?php print ($producto["id_catalogo"]);?>"readonly></th>
+                                    <td scope="row" width="17% "><input type="text" class="form-control" name="nombre_producto" value="<?php print ($producto["nombre_producto"]);?>"required readonly></td>
                                     <td width="15%"> <input type="text" class="form-control" name="referencia" value="<?php print($producto["referencia"]); ?>" required></td>
-                                    <td scope="row" width="17% "><input type="text" class="form-control" name="marca" value="<?php print ($producto["marca"]);?>"required></td> 
-                                    <td scope="row" width="13% "><input type="number" class="form-control" name="costo" value="<?php print ($producto["costo"]);?>"required></td>
+                                    <td scope="row" width="15% "><input type="text" class="form-control" name="marca" value="<?php print ($producto["marca"]);?>"required></td> 
+                                    <td scope="row" width="14% "><input type="number" class="form-control" name="costo" value="<?php print ($producto["costo"]);?>"required></td>
                                     <td scope="row" width="20% "><input type="file" class="form-control" name="imagen"></td>
                                     <td scope="row" width="20% "><input type="text" class="form-control" name="descripcion" value="<?php print ($producto["descripcion"]);?>"required></td>
                                     <td> <input type="submit" class="btn btn-primary" value="Guardar"> </input> </td>

@@ -1,3 +1,26 @@
+<?php
+include("../BDServices.php");
+session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { } else {
+  echo "<script>
+            alert('Inicie Sesion para Continuar');
+            window.location.href='../../login.html';
+        </script>";
+  exit;
+}
+
+$now = time();
+
+if ($now > $_SESSION['expire']) {
+  session_destroy();
+
+  echo "  <script>
+            alert('La Sesion ha expirado');
+            window.location.href='../../login.html';
+          </script>";
+  exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 

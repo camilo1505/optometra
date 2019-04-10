@@ -83,23 +83,18 @@ if ($now > $_SESSION['expire']) {
         <div class="list-group">
           <?php
           //echo "Tipo de usuario:".$_SESSION['usuario'];
-          if ($_SESSION['rol'] == "1") {
+          if (in_array($_SESSION['rol'], array("1", "3"))) {
             ?>
-            <a class="list-group-item list-group-item-action" href="usuarios.php">Usuarios</a>
+            <a class="list-group-item list-group-item-action" href="catalogo/addCatalogo.php">Añadir Producto al Catalogo</a>
             <?php
             if (in_array($_SESSION['rol'], array("1", "3"))) {
               ?>
-              <a class="list-group-item list-group-item-action" href="">Catalogo</a>
+              <a class="list-group-item list-group-item-action" href="catalogo/editarCatalogo.php">Editar Productos del Catalogo</a>
             <?php
           }
           if (in_array($_SESSION['rol'], array("1", "2", "3"))) {
             ?>
-              <a class="list-group-item list-group-item-action" href="clientes.php">Clientes</a>
-            <?php
-          }
-          if (in_array($_SESSION['rol'], array("1", "2"))) {
-            ?>
-              <a class="list-group-item list-group-item-action" href="historiaClinica.php">Historias Clinicas</a>
+              <a class="list-group-item list-group-item-action" href="">Eliminar Producto del Catalogo</a>
             <?php
           }
           ?>
