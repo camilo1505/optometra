@@ -3,24 +3,50 @@
 	session_start();
 
     $cedula = $_POST['cedula'];
-    $primer_nombre = $_POST['primerNombre'];
-    $segundo_nombre = $_POST['segundoNombre'];
-    $primer_apellido = $_POST['primerApellido'];
-    $segundo_apellido = $_POST['segundoApellido'];
-    $fecha_nacimiento = $_POST['edad'];
-    $ciudad_vivienda = $_POST['ciudad'];
-    $direccion_vivienda = $_POST['direccion'];
+    $nombres = $_POST['nombres'];
+    $apellidos = $_POST['apellidos'];
+    $fecha = $_POST['fecha'];
+    $ciudad = $_POST['ciudad'];
+    $direccion = $_POST['direccion'];
     $telefono = $_POST['telefono'];
     $celular = $_POST['celular'];
     $correo = $_POST['email'];
-    $ocupacion = "sin detalles";
-    $empresa_laboral = $_POST['telefono'];
-    $telefono_empresa = "sin detalles";
-    $disponibilidad_llamadas = $_POST['disponibleLlamadas'];
-    $usa_gafas = $_POST['usaGafas'];
-    $sql = "INSERT INTO cliente (cedula, primer_nombre,segundo_nombre, primer_apellido, segundo_apellido, fecha_nacimiento, ciudad_vivienda, direccion_vivienda, telefono, celular, correo, ocupacion, empresa_laboral, telefono_empresa, disponibilidad_llamadas, usa_gafas) VALUES ('$cedula','$primer_nombre','$segundo_nombre','$primer_apellido','$segundo_apellido','$fecha_nacimiento','$ciudad_vivienda','$direccion_vivienda','$telefono','$celular','$correo','$ocupacion','$empresa_laboral','$telefono_empresa','$disponibilidad_llamadas','$usa_gafas')";
+    $disponible = $_POST['disponible'];
+    $gafas = $_POST['gafas'];
+
+    if($disponible == 'si'){
+        $disponible = True;
+    }
+    else {
+        $disponible = False;
+    }
+
+    if($gafas == 'si'){
+        $gafas = True;
+    } else {
+        $gafas = False;
+    }
+
+    $sql = "INSERT INTO cliente (cedula, nombres, apellidos, nacimiento, ciudad, direccion, telefono, celular, correo, disponibilidad_llamadas, usa_gafas)
+            VALUES ('$cedula','$nombres','$apellidos','$fecha','$ciudad','$direccion','$telefono','$celular','$correo','$disponible','$gafas')";
+    echo $sql;
     $result = setData($sql,'root','');
-    redirect("crearCliente.php");
+    echo $result;
+    if($result){
+        echo "
+            <script>
+                alert('Guardado Correctamente');
+                window.location.href='crearCliente.php';
+            </script>
+        ";
+    } else {
+        echo "
+        <script>
+            alert('Error Guardando al Cliente');
+            window.location.href='crearCliente.php';
+        </script>
+    ";
+    }
 ?>
 
 

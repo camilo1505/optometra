@@ -74,92 +74,93 @@ if ($now > $_SESSION['expire']) {
                 </div>
             </div>
     </header>
-<?php
-$sql = "SELECT * FROM usuario ";
-$usuarios = getData($sql, 'root', '');
+    <?php
+    $sql = "SELECT * FROM usuario ";
+    $usuarios = getData($sql, 'root', '');
 
-?>
+    ?>
 
-<div id="content">
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Editar los Usuarios.</h1>
-            <br>
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">Cedula</th>
-                        <th scope="col">Nombres</th>
-                        <th scope="col">Apellidos</th>
-                        <th scope="col">Contraseña</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    foreach ($usuarios as $usuario) {
-                        ?>
+    <div id="content">
+        <div class="container">
+            <div class="jumbotron">
+                <button class="btn btn-primary"> <a href="../usuarios.php">Volver</a></button>
+                <h1>Editar los Usuarios.</h1>
+                <br>
+                <table class="table">
+                    <thead class="thead-dark">
                         <tr>
-                            <form action="modificar.php" method="POST">
-                                <td scope="row" width="20% "><input type="text" class="form-control" name="cedula" value="<?php print($usuario["cedula"]); ?>" readonly></td>
-                                <td scope="row" width="20% "><input type="text" class="form-control" name="nombre" value="<?php print($usuario["nombres"]); ?>"></td>
-                                <td scope="row" width="20% "><input type="text" class="form-control" name="apellido" value="<?php print($usuario["apellidos"]); ?>"></td>
-                                <td scope="row" width="20% "><input type="password" class="form-control" name="password" value="<?php print($usuario["usuario_password"]); ?>"></td>
-                                <td scope="row"><input type="submit" class="btn btn-primary" value="Guardar"></td>
-                            </form>
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Nombres</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Contraseña</th>
+                            <th scope="col">Acciones</th>
                         </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($usuarios as $usuario) {
+                            ?>
+                            <tr>
+                                <form action="modificar.php" method="POST">
+                                    <td scope="row" width="20% "><input type="text" class="form-control" name="cedula" value="<?php print($usuario["cedula"]); ?>" readonly></td>
+                                    <td scope="row" width="20% "><input type="text" class="form-control" name="nombre" value="<?php print($usuario["nombres"]); ?>"></td>
+                                    <td scope="row" width="20% "><input type="text" class="form-control" name="apellido" value="<?php print($usuario["apellidos"]); ?>"></td>
+                                    <td scope="row" width="20% "><input type="password" class="form-control" name="password" value="<?php print($usuario["usuario_password"]); ?>"></td>
+                                    <td scope="row"><input type="submit" class="btn btn-primary" value="Guardar"></td>
+                                </form>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Footer -->
-<footer id="footer">
-    <div class="container">
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
 
-        <div class="row space40"></div>
-        <div class="row">
-            <div class="span6">
-                <div class="logo-footer">
-                    Design by <a href="https://www.freshdesignweb.com">freshDesignweb</a>
+            <div class="row space40"></div>
+            <div class="row">
+                <div class="span6">
+                    <div class="logo-footer">
+                        Design by <a href="https://www.freshdesignweb.com">freshDesignweb</a>
+                    </div>
+                </div>
+                <div class="span6 right">
+                    &copy; 2020. All rights reserved.
+                </div>
+                <div class="span3 offset3">
+                    <h3>Address</h3>
+                    81 Sunnyvale Street<br>
+                    Los Angeles, CA 90185<br>
+                    United States<br>
+                    <br>
+                    <i class="icon-phone"></i>+01 880 555 999<br>
+                    <i class="icon-envelope"></i><a href="mailto:support@example.com">support@example.com</a><br>
+                    <i class="icon-home"></i><a href="#">www.example.com</a>
+
+                    <div class="row space40"></div>
+
+                    <a href="#" class="social-network sn2 behance"></a>
+                    <a href="#" class="social-network sn2 facebook"></a>
+                    <a href="#" class="social-network sn2 pinterest"></a>
+                    <a href="#" class="social-network sn2 flickr"></a>
+                    <a href="#" class="social-network sn2 dribbble"></a>
+                    <a href="#" class="social-network sn2 lastfm"></a>
+                    <a href="#" class="social-network sn2 forrst"></a>
+                    <a href="#" class="social-network sn2 xing"></a>
                 </div>
             </div>
-            <div class="span6 right">
-                &copy; 2020. All rights reserved.
-            </div>
-            <div class="span3 offset3">
-                <h3>Address</h3>
-                81 Sunnyvale Street<br>
-                Los Angeles, CA 90185<br>
-                United States<br>
-                <br>
-                <i class="icon-phone"></i>+01 880 555 999<br>
-                <i class="icon-envelope"></i><a href="mailto:support@example.com">support@example.com</a><br>
-                <i class="icon-home"></i><a href="#">www.example.com</a>
 
-                <div class="row space40"></div>
-
-                <a href="#" class="social-network sn2 behance"></a>
-                <a href="#" class="social-network sn2 facebook"></a>
-                <a href="#" class="social-network sn2 pinterest"></a>
-                <a href="#" class="social-network sn2 flickr"></a>
-                <a href="#" class="social-network sn2 dribbble"></a>
-                <a href="#" class="social-network sn2 lastfm"></a>
-                <a href="#" class="social-network sn2 forrst"></a>
-                <a href="#" class="social-network sn2 xing"></a>
-            </div>
         </div>
-
-    </div>
-</footer>
-<!-- Footer End -->
-<!-- JavaScripts -->
-<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/functions.js"></script>
-<script type="text/javascript" defer src="../js/jquery.flexslider.js"></script>
+    </footer>
+    <!-- Footer End -->
+    <!-- JavaScripts -->
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/functions.js"></script>
+    <script type="text/javascript" defer src="../js/jquery.flexslider.js"></script>
 </body>
 
 </html>

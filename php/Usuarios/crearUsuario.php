@@ -77,6 +77,7 @@ $result = getData($sql, 'root', '');
     <div id="content">
         <div class="container">
             <div class="jumbotron">
+                <button class="btn btn-primary"> <a href="../usuarios.php">Volver</a></button>
                 <h1>Ingresar un Nuevo Usuario.</h1>
                 <form action="registrar.php" method="post">
                     <div class="row">
