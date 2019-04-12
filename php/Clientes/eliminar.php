@@ -1,34 +1,23 @@
 <?php
 	include("../BDServices.php");
 	session_start();
-    $cedula = $_POST['cedula'];
-    $sql = "DELETE FROM cliente WHERE cedula = '$cedula'";
+    $cedula = $_POST['id_cliente'];
+    $sql = "DELETE FROM cliente WHERE id_cliente = '$cedula'";
     echo $sql;
     $result = setData($sql,'root','');
     
-    redirect("eliminarCliente.php");
-?>
-
-
-
-
-
-
-
-
-
-
-
-
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-            
+    if($result){
+        echo "
+        <script>
+            alert('Eliminado Correctamente');
+            window.location.href='eliminarCliente.php';
+        </script>
+        ";
+    } else {
+        echo "
+        <script>
+            alert('Error Eliminando el Usuario');
+            window.location.href='eliminarCliente.php';
+        </script>
+    ";
+    }

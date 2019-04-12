@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-04-2019 a las 00:21:49
+-- Tiempo de generación: 13-04-2019 a las 00:53:09
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.1.27
 
@@ -40,6 +40,19 @@ CREATE TABLE `catalogo` (
   `descripcion` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `catalogo`
+--
+
+INSERT INTO `catalogo` (`id_catalogo`, `fk_producto`, `fk_usuario`, `referencia`, `marca`, `tipo`, `imagen`, `costo`, `descripcion`) VALUES
+(1, 11, 1, 'HXB1345', 'Gucchi', 'Gafas Sol', 'imagen', 200000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the '),
+(2, 16, 1, 'HXB1348', 'AQUA', 'Gafas Sol', 'pruebas', 300000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the '),
+(3, 16, 1, 'EREY1234', 'Borealis', 'Gafas Sol', 'asdasd', 80000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the '),
+(4, 2, 1, 'ASFD254185', 'Elbrown', 'Pruebas', 'asdasdasd', 8514841, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the '),
+(5, 1, 1, 'HXB5484', 'Gondor', 'aasdas', 'asdasd', 5451251, 'asdasdasdasdasdasd'),
+(6, 40, 1, 'ffsd5f4asdf4', 'asdasda44fd', 'asdas5d4as5', 'asdasd4a5s4dasd', 515154851, '5a4sd541as5d1a5s1dgvasndjkasd'),
+(40, 11, 1, '124254twerdfs', 'asdgtrwertrregrf', '34trfesrft65ersd', 'Lighthouse.jpg', 4556786786, '123546ytrhgfdfngj');
+
 -- --------------------------------------------------------
 
 --
@@ -49,22 +62,25 @@ CREATE TABLE `catalogo` (
 CREATE TABLE `cliente` (
   `id_cliente` bigint(20) UNSIGNED NOT NULL,
   `cedula` varchar(15) NOT NULL,
-  `primer_nombre` varchar(100) NOT NULL,
-  `segundo_nombre` varchar(100) DEFAULT NULL,
-  `primer_apellido` varchar(100) NOT NULL,
-  `segundo_apellido` varchar(100) DEFAULT NULL,
-  `fecha_nacimiento` date NOT NULL,
-  `ciudad_vivienda` varchar(100) NOT NULL,
-  `direccion_vivienda` varchar(100) DEFAULT NULL,
+  `nombres` varchar(100) NOT NULL,
+  `apellidos` varchar(100) NOT NULL,
+  `nacimiento` date NOT NULL,
+  `ciudad` varchar(100) NOT NULL,
+  `direccion` varchar(100) DEFAULT NULL,
   `telefono` varchar(15) DEFAULT NULL,
   `celular` varchar(15) DEFAULT NULL,
   `correo` varchar(100) DEFAULT NULL,
-  `ocupacion` varchar(100) DEFAULT NULL,
-  `empresa_laboral` varchar(100) DEFAULT NULL,
-  `telefono_empresa` varchar(100) DEFAULT NULL,
   `disponibilidad_llamadas` tinyint(1) NOT NULL,
   `usa_gafas` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`id_cliente`, `cedula`, `nombres`, `apellidos`, `nacimiento`, `ciudad`, `direccion`, `telefono`, `celular`, `correo`, `disponibilidad_llamadas`, `usa_gafas`) VALUES
+(1, 'asdqwdeqwedq', 'weqweqw', 'eqweqwedqwe', '2019-03-07', 'qweqwed', 'qwedqwedqwd', 'qwedqwdqwd', 'qwdqwdqwed', 'qwdqwdqwdeqa', 1, 1),
+(2, '4564867486', 'weqweqw', 'eqweqwedqwe', '2019-03-07', 'qweqwed', 'qwedqwedqwd', 'qwedqwdqwd', 'qwdqwdqwed', 'qwdqwdqwdeqa', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -171,7 +187,9 @@ CREATE TABLE `rol` (
 --
 
 INSERT INTO `rol` (`id_rol`, `rol`) VALUES
-(1, 'administrador');
+(1, 'administrador'),
+(3, 'Auxiliar'),
+(2, 'Optometra');
 
 -- --------------------------------------------------------
 
@@ -190,7 +208,8 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id_roles`, `fk_usuario`, `fk_rol`) VALUES
-(3, 2, 1);
+(3, 1, 1),
+(4, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -211,7 +230,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `cedula`, `nombres`, `apellidos`, `usuario_password`) VALUES
-(2, 'admin', 'administrador', 'administrador', '$2y$10$FCRhwIVKQ6kgWQQtG7wjEu1L8lTTgst0cwq3xWxKlg9fnsHlrIoG2');
+(1, 'admin', 'administrador', 'administrador', '$2y$10$FCRhwIVKQ6kgWQQtG7wjEu1L8lTTgst0cwq3xWxKlg9fnsHlrIoG2'),
+(2, '123456789', 'asdasdasd', 'asdasdasdasd', 'asdasdasdasdasd');
 
 --
 -- Índices para tablas volcadas
@@ -278,13 +298,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `catalogo`
 --
 ALTER TABLE `catalogo`
-  MODIFY `id_catalogo` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_catalogo` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cliente` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `historia_clinica`
@@ -296,19 +316,19 @@ ALTER TABLE `historia_clinica`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_producto` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
-  MODIFY `id_rol` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_rol` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id_roles` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_roles` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
