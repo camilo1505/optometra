@@ -40,7 +40,6 @@ function getProductos() {
     $consulta = "SELECT producto.id_producto, producto.nombre_producto FROM producto";
 
     $respuesta = getData($consulta, $username, $password);
-
     return $respuesta;
 }
 
@@ -84,7 +83,6 @@ function editarCatalogo($catalogo){
                      catalogo.descripcion = '$catalogo[6]'
                  WHERE catalogo.id_catalogo = '$catalogo[0]'";
 
-    echo $consulta;
 
     if(setData($consulta, $username, $password)){
         return TRUE;

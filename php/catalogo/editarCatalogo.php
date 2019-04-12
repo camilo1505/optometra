@@ -101,7 +101,7 @@ if ($now > $_SESSION['expire']) {
                             foreach($catalogo as $producto) {
                         ?>
                             <tr>
-                                <form action="php/catalogo/editarCatalogo.php" method="POST">
+                                <form action="editarCatalogoService.php" method="POST">
                                     <th scope="row" width="6% "><input type="text" class="form-control" name="id_catalogo" value="<?php print ($producto["id_catalogo"]);?>"readonly></th>
                                     <td scope="row" width="17% "><input type="text" class="form-control" name="nombre_producto" value="<?php print ($producto["nombre_producto"]);?>"required readonly></td>
                                     <td width="15%"> <input type="text" class="form-control" name="referencia" value="<?php print($producto["referencia"]); ?>" required></td>
@@ -115,6 +115,7 @@ if ($now > $_SESSION['expire']) {
                         <?php } ?>
                     </tbody>
                 </table>
+                <button class="btn btn-primary"> <a href="../catalogo.php">Volver</a></button>
             </div>
         </div>
     </div>

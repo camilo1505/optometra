@@ -12,7 +12,7 @@
         echo "
             <script>
                 alert('Guardado Correctamente');
-                window.location.href='../../editarProducto.php';
+                window.location.href='editarProducto.php';
             </script>
         ";
     }
@@ -20,7 +20,7 @@
         echo "
             <script>
                 alert('Error Guardando el Producto');
-                window.location.href='../../editarProducto.php';
+                window.location.href='editarProducto.php';
             </script>
         ";
     }

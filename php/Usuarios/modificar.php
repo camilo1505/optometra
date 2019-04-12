@@ -5,14 +5,26 @@
     $cedula = $_POST['cedula'];
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
+    $password = $_POST['password'];
 
-    $rol = $_POST['rol'];
-    $sql = "UPDATE usuario SET cedula='$cedula', nombres ='$nombre',apellidos = '$apellido'";
+    $hash = password_hash($password, PASSWORD_BCRYPT); 
+
+    $sql = "UPDATE usuario SET nombres ='$nombre',apellidos = '$apellido', usuario_password = '$hash' WHERE cedula = '$cedula'";
     $result = setData($sql,'root','');
-    $sql = "SELECT * FROM usuario WHERE cedula = '$cedula'";
-    $result = getData($sql,'root','');
-    $id_usuario = $result[0]['id_usuario'];
-    $sql = "UPDATE rol SET (fk_usuario='$id_usuario',fk_rol='$rol'";
-    $result = setData($sql,'root','');
-    redirect("editarUsuario.php");
+    if($result) {
+        echo "
+            <script>
+                alert('Guardado Correctamente');
+                window.location.href='editarUsuario.php';
+            </script>
+        ";
+    }
+    else {
+        echo "
+            <script>
+                alert('Error Almacenando los Cambios');
+                window.location.href='editarUsuario.php';
+            </script>
+        ";
+    }
 ?>

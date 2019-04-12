@@ -54,19 +54,19 @@ if ($now > $_SESSION['expire']) {
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../index.html">Inicio<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="productos.php">Productos<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../productos.php">Productos<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="contactanos.html">Contactenos<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../contactanos.html">Contactenos<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="php/panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="login.html">Iniciar Sesion<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../login.html">Iniciar Sesion<span class="sr-only">(current)</span></a>
                 </li>
               </ul>
             </div>
@@ -76,7 +76,7 @@ if ($now > $_SESSION['expire']) {
   </header>
 
   <br>
-  
+
   <div id="content">
     <div class="container">
       <div class="f-center">
@@ -85,6 +85,11 @@ if ($now > $_SESSION['expire']) {
           //echo "Tipo de usuario:".$_SESSION['usuario'];
           if (in_array($_SESSION['rol'], array("1", "3"))) {
             ?>
+            <a class="list-group-item list-group-item-action" href="productos.php">Productos</a>
+          <?php
+        }
+        if (in_array($_SESSION['rol'], array("1", "3"))) {
+          ?>
             <a class="list-group-item list-group-item-action" href="catalogo/addCatalogo.php">Añadir Producto al Catalogo</a>
             <?php
             if (in_array($_SESSION['rol'], array("1", "3"))) {
@@ -99,8 +104,9 @@ if ($now > $_SESSION['expire']) {
           }
           ?>
           </div>
+          <br>
+          <button class="btn btn-primary"> <a href="panel-control.php">Volver</a></button>
         </div>
-
       </div>
     </div>
     <!-- Content End -->
@@ -110,7 +116,7 @@ if ($now > $_SESSION['expire']) {
 
 ?>
   <html>
-    <br>
+  <br>
   <!-- Footer -->
   <footer id="footer">
     <div class="container">

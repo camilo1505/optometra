@@ -78,6 +78,7 @@ if ($now > $_SESSION['expire']) {
   <div id="content">
     <div class="container">
       <div class="jumbotron">
+      <button class="btn btn-primary"> <a href="../catalogo.php">Volver</a></button>
         <h1>Añada un nuevo Producto al Catalogo.</h1>
         <form action="enviarCatalogo.php" method="POST" enctype="multipart/form-data">
           <div class="row">
@@ -94,6 +95,7 @@ if ($now > $_SESSION['expire']) {
               <input type="text" class="form-control" name="tipo" required>
             </div>
           </div>
+          <br>
           <div class="row">
             <div class="col-sm">
               <label for="imagen">Imagen del Producto:</label>
@@ -108,22 +110,23 @@ if ($now > $_SESSION['expire']) {
               <input type="textarea" class="form-control" name="descripcion">
             </div>
           </div>
+          <br>
           <div class="row">
             <div class="col-sm">
               <br>
-              <select name="producto" class="selectpicker">
+              <label for="producto">Tipo de Producto: </label>
+              <select name="producto" class="selectpicker" required>
                 <?php
-                include("../BDServices.php");
                 $productos = getProductos();
+                print_r($productos);
                 for ($i = 0; $i < sizeof($productos); $i++) {
                   ?>
                   <option value="<?php print($productos[$i]["id_producto"]); ?>"> <?php print($productos[$i]["nombre_producto"]); ?></option>
                 <?php } ?>
               </select>
+              <input type="submit" class="btn btn-primary">
             </div>
           </div>
-          <br>
-          <input type="submit" class="btn btn-primary">
         </form>
       </div>
     </div>

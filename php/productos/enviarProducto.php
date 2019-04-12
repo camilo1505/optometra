@@ -8,7 +8,7 @@
         echo "
             <script>
                 alert('Guardado Correctamente');
-                window.location.href='../../addProducto.php';
+                window.location.href='addProducto.php';
             </script>
         ";
     }
@@ -16,7 +16,7 @@
         echo "
             <script>
                 alert('Error Guardando el Producto');
-                window.location.href='../../addProducto.php';
+                window.location.href='addProducto.php';
             </script>
         ";
     }

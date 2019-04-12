@@ -15,8 +15,22 @@
     $result = getData($sql,'root','');
     $id_usuario = $result[0]['id_usuario'];
     $sql = "INSERT INTO roles (fk_usuario,fk_rol) VALUES ('$id_usuario','$rol')";
-    $result = setData($sql,'root','');
-    redirect("crearUsuario.php");
+    if($result = setData($sql,'root','')){
+        echo "
+            <script>
+                alert('Guardado Correctamente');
+                window.location.href='../panel-control.php';
+            </script>
+        ";
+    }
+    else {
+        echo "
+            <script>
+                alert('Ha Ocurrido un Error Guardando al Usuario');
+                window.location.href='crearUsuario.php';
+            </script>
+        ";
+    }
 ?>
 
 

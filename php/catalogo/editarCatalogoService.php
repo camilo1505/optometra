@@ -18,12 +18,9 @@
     array_push($catalogo,$costo);
     array_push($catalogo,$descripcion);
 
-    print_r($catalogo);
-    echo "<br>";
-
     
     $done = editarCatalogo($catalogo);
-    /*
+    
     if($done) {
         echo "
             <script>
@@ -35,10 +32,9 @@
     if(! $done) {
         echo "
             <script>
-                alert('Error Guardando el Producto');
+                alert('Error Editando el Producto');
                 window.location.href='../../editarCatalogo.php';
             </script>
         ";
-    }*/
-
+    }
 ?>

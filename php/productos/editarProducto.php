@@ -1,68 +1,84 @@
+<?php
+include("../BDServices.php");
+session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { } else {
+  echo "<script>
+            alert('Inicie Sesion para Continuar');
+            window.location.href='../../login.html';
+        </script>";
+  exit;
+}
+
+$now = time();
+
+if ($now > $_SESSION['expire']) {
+  session_destroy();
+
+  echo "  <script>
+            alert('La Sesion ha expirado');
+            window.location.href='../../login.html';
+          </script>";
+  exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Opticas Henao</title>
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/bootstrap-override.css" rel="stylesheet" />
-    <link href="css/font-awesome/font-awesome.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="css/flexslider.css"
-      type="text/css"
-      media="screen"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opticas Henao</title>
+  <link href="../../css/styles.css" rel="stylesheet" />
+  <link href="../../css/bootstrap-override.css" rel="stylesheet" />
+  <link href="../../css/font-awesome/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/flexslider.css" type="../../text/css" media="../../screen" />
+</head>
   <body>
-    <header id="header">
-      <div class="container">
-        <div class="row t-container">
-          <div class="span3">
-            <div class="logo">
-              <a href="index.html"><img src="logo.png" alt=""/></a>
-            </div>
-          </div>
-
-          <div class="span7">
-            <div class="row space10"></div>
-            <img src="nombre.png" alt="" />
-            <nav id="nav" role="navigation">
-              <a href="#nav" title="Show navigation">Show navigation</a>
-              <a href="#" title="Hide navigation">Hide navigation</a>
-              <ul class="clearfix">
-                <li class="active"><a href="index.html" title="">Inicio</a></li>
-                <li><a href="productos.php" title="">Productos</a></li>
-                <li><a href="login.html" title="">Iniciar Sesion</a></li>
-                <li><a href="contactanos.html" title="">contactenos</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="row space40"></div>
-          <div class="slider1 flexslider">
-            <!-- Slider -->
-            <ul class="slides">
-              <li>
-                <img src="ucorpora/img/slider/1.jpg" alt="" />
-              </li>
-              <li>
-                <img src="ucorpora/img/slider/2.jpg" alt="" />
-              </li>
-              <li>
-                <img src="ucorpora/img/slider/3.jpg" alt="" />
-              </li>
-              <li>
-                <img src="ucorpora/img/slider/4.jpg" alt="" />
-              </li>
-            </ul>
+  <header id="header">
+    <div class="container">
+      <div class="row t-container">
+        <div class="span3">
+          <div class="logo">
+            <a href="../../index.html"><img src="../../logo.png" alt="" /></a>
           </div>
         </div>
+        <div class="span7">
+          <div class="row space10"></div>
+          <img src="../../nombre.png" alt="">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="../../index.html">Opticas Henao</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="../../index.html">Inicio<span class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                  <a class="nav-link" href="../../productos.php">Productos<span class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                  <a class="nav-link" href="../../contactanos.html">Contactenos<span class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                  <a class="nav-link" href="../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                  <a class="nav-link" href="../../login.html">Iniciar Sesion<span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
-    </header>
+  </header>
+  <br>
 
     <div id="content">
       <div class="container">
         <div class="jumbotron">
+        <button class="btn btn-primary"> <a href="../productos.php">Volver</a></button>
           <h1>Edicion de Produductos.</h1>
           <table class="table">
             <thead class="thead-dark">
@@ -74,12 +90,11 @@
             </thead>
             <tbody>
               <?php
-                include("php/BDServices.php");
                 $productos = getProductos();
                 foreach($productos as $producto) {
               ?>
                 <tr>
-                  <form action="php/productos/editarProducto.php" method="POST">
+                  <form action="editarProductoService.php" method="POST">
                     <th scope="row" width="5% "><input type="text" class="form-control" name="ID_producto" value="<?php print ($producto["id_producto"]);?>"readonly></th>
                     <td> <input type="text" class="form-control" name="nombre_producto" value="<?php print($producto["nombre_producto"]); ?>" required></td>
                     <td> <input type="submit" class="btn btn-primary" value="Guardar"> </input> </td>
