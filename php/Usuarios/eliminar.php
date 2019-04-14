@@ -2,7 +2,9 @@
 	include("../BDServices.php");
 	session_start();
     $id = $_POST['id_usuario'];
-    $sql = "DELETE FROM usuario WHERE id_usuario = '$id'";
+    $sql = "UPDATE usuario
+            SET usuario.desactivado = 1
+            WHERE usuario.id_usuario = '$id'";
     $result = setData($sql,'root','');
     
     if($result){

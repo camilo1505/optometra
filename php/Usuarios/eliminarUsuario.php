@@ -98,7 +98,8 @@ if ($now > $_SESSION['expire']) {
                              $sql = "SELECT usuario.id_usuario, usuario.cedula, usuario.nombres, usuario.apellidos, usuario.usuario_password, rol.rol
                                      FROM usuario, roles, rol 
                                      WHERE usuario.id_usuario = roles.fk_usuario
-                                     AND roles.fk_rol = rol.id_rol";
+                                     AND roles.fk_rol = rol.id_rol
+                                     AND usuario.desactivado = 0";
                             $usuarios = getData($sql,'root','');
 
                             foreach($usuarios as $usuario) {

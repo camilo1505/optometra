@@ -66,7 +66,7 @@ if ($now > $_SESSION['expire']) {
                                     <a class="nav-link" href="../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="../../login.html">Iniciar Sesion<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="../logout.php">Cerrar Sesion<span class="sr-only">(current)</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -86,73 +86,78 @@ if ($now > $_SESSION['expire']) {
                 <button class="btn btn-primary"> <a href="../clientes.php">Volver</a></button>
                 <h1>Editar los Clientes.</h1>
                 <br>
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Nombres y Apellidos</th>
-                            <th scope="col">Fecha Nacimiento e Identificacion</th>
-                            <th scope="col">Direccion</th>
-                            <th scope="col">Informacion de Contacto</th>
-                            <th scope="col">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        foreach ($usuarios as $usuario) {
-                            ?>
-                            <tr>
-                                <form action="modificar.php" method="POST">
-                                    <td scope="row" width="5% ">
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <input type="text" class="form-control" name="id" value="<?php print($usuario["id_cliente"]); ?>" readonly>
-                                    </td>
-                                    <td scope="row" width="20% ">
-                                        <div class="row-sm">
-                                            <div class="col-sm">
-                                                <br>
-                                                <input type="text" class="form-control" name="nombres" value="<?php print($usuario["nombres"]); ?>" required>
-                                                <br>
-                                                <input type="text" class="form-control" name="apellidos" value="<?php print($usuario["apellidos"]); ?>" required>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td scope="row" width="20% ">
-                                        <br>
+                <ul class="list-group">
+                    <?php
+                    foreach ($usuarios as $usuario) {
+                        ?>
+                        <form action="modificar.php" method="POST">
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <h3>Usuario: <?php print($usuario["cedula"]); ?> - <?php print($usuario["nombres"]); ?></h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <label for="cedula">Cedula: </label>
                                         <input type="text" class="form-control" name="cedula" value="<?php print($usuario["cedula"]); ?>" required>
-                                        <br>
+                                    </div>
+                                    <div class="col-sm">
+                                        <label for="nombres">Nombres del Usuario</label>
+                                        <input type="text" class="form-control" name="nombres" value="<?php print($usuario["nombres"]); ?>" required>
+                                    </div>
+                                    <div class="col-sm">
+                                        <label for="nombres">Apellidos</label>
+                                        <input type="text" class="form-control" name="apellidos" value="<?php print($usuario["apellidos"]); ?>" required>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <label for="fecha">Fecha Nacimiento: </label>
                                         <input type="date" class="form-control" name="fecha" value="<?php print($usuario["nacimiento"]); ?>" required>
-                                    </td>
-                                    <td scope="row" width="20% ">
-                                        <br>
+                                    </div>
+                                    <div class="col-sm">
+                                        <label for="ciudad">Ciudad del Cliente:</label>
                                         <input type="text" class="form-control" name="ciudad" value="<?php print($usuario["ciudad"]); ?>" required>
-                                        <br>
+                                    </div>
+                                    <div class="col-sm">
+                                        <label for="direccion">Direccion de Recidencia:</label>
                                         <input type="text" class="form-control" name="direccion" value="<?php print($usuario["direccion"]); ?>" required>
-                                    </td>
-                                    <td scope="row" width="20% ">
-                                        <div class="row-sm">
-                                            <div class="col-sm">
-                                                <input type="text" class="form-control" name="telefono" value="<?php print($usuario["telefono"]); ?>" required>
-                                                <br>
-                                                <input type="text" class="form-control" name="celular" value="<?php print($usuario["celular"]); ?>" required>
-                                                <br>
-                                                <input type="text" class="form-control" name="email" value="<?php print($usuario["correo"]); ?>" required>
-                                            </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <label for="telefono">Telefono:</label>
+                                        <input type="text" class="form-control" name="telefono" value="<?php print($usuario["telefono"]); ?>" required>
+                                    </div>
+                                    <div class="col-sm">
+                                        <label for="celular">Celular:</label>
+                                        <input type="text" class="form-control" name="celular" value="<?php print($usuario["celular"]); ?>" required>
+                                    </div>
+                                    <div class="col-sm">
+                                        <label for="email">Email:</label>
+                                        <input type="text" class="form-control" name="email" value="<?php print($usuario["correo"]); ?>" required>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <input type="text" class="form-control" name="id" value="<?php print($usuario["id_cliente"]); ?>" readonly hidden>
+                                    </div>
+                                    <div class="col-sm"></div>
+                                    <div class="col-sm">
+                                        <div class="d-flex justify-content-end">
+                                            <input type="submit" class="btn btn-primary" value="Guardar">
                                         </div>
-                                    </td>
-                                    <td scope="row">
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <input type="submit" class="btn btn-primary" value="Guardar">
-                                    </td>
-                                </form>
-                            </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
+                                    </div>
+                                </div>
+                            </li>
+                        </form>
+                        <br>
+                    <?php } ?>
+                </ul>
             </div>
         </div>
     </div>

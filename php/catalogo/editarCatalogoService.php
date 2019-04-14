@@ -25,7 +25,7 @@
         echo "
             <script>
                 alert('Guardado Correctamente');
-                window.location.href='../../editarCatalogo.php';
+                window.location.href='editarCatalogo.php';
             </script>
         ";
     }
@@ -33,7 +33,7 @@
         echo "
             <script>
                 alert('Error Editando el Producto');
-                window.location.href='../../editarCatalogo.php';
+                window.location.href='editarCatalogo.php';
             </script>
         ";
     }

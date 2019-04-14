@@ -98,7 +98,7 @@ if ($now > $_SESSION['expire']) {
                 </form>
                 <br>
                 <div class="d-flex justify-content-center">
-                    <button class="btn btn-primary"> <a href="../historiaClinica.php">Volver</a></button>
+                    <button class="btn btn-primary"> <a href="../../historiaClinica.php">Volver</a></button>
                 </div>
             </div>
 

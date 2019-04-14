@@ -2,14 +2,19 @@
 include("BDServices.php");
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { } else {
-  redirect("../error.php");
+  echo "<script>
+        alert('Vuelva a Iniciar Sesíon');
+        window.location.href='../login.html';
+        </script>";
   exit;
 }
 $now = time();
 if ($now > $_SESSION['expire']) {
-  session_destroy();
-  echo "<script>alert('su sesion ya termino');</script>";
-  exit;
+  echo "<script>
+        alert('Vuelva a Iniciar Sesíon');
+        window.location.href='../login.html';
+        </script>";
+        exit;
 }
 ?>
 <!DOCTYPE html>

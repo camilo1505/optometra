@@ -39,7 +39,7 @@ if ($now > $_SESSION['expire']) {
 $cliente = $_POST['fk_cliente'];
 $sql = "SELECT * FROM cliente WHERE id_cliente = '$cliente'";
 $datosClientes = getData($sql, 'root', '');
-$sql ="SELECT *
+$sql = "SELECT *
 			 FROM usuario, roles, rol
        WHERE roles.fk_usuario = 2
        AND roles.fk_usuario = usuario.id_usuario
@@ -230,9 +230,9 @@ $datosMedico = getData($sql, 'root', '');
 							<label for="vision_cerca_oi">vision cerca ojo izquierdo:</label>
 							<input type="text" class="form-control" name="vision_cerca_oi">
 						</div>
-						</div>
-						<br>
-						<div class="row">
+					</div>
+					<br>
+					<div class="row">
 						<div class="col-sm">
 							<label for="examen_externo_od">examen externo ojo derecho:</label>
 							<input type="text" class="form-control" name="vision_cerca_od">
@@ -261,6 +261,58 @@ $datosMedico = getData($sql, 'root', '');
 						<div class="col-sm">
 							<label for="reflejos_pupilares_acomodacio">reflejos pupilares acomodacion:</label>
 							<input type="text" class="form-control" name="reflejos_pupilares_acomodacion">
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm">
+							<label for="cover_test_vision_lejos">cover test vision lejos:</label>
+							<input type="text" class="form-control" name="cover_test_vision_lejos">
+						</div>
+						<div class="col-sm">
+							<label for="cover_test_vision_proxima">cover test vision proxima:</label>
+							<input type="text" class="form-control" name="cover_test_vision_proxima">
+						</div>
+						<div class="col-sm">
+							<label for="cover_test_ducciones">cover test ducciones:</label>
+							<input type="text" class="form-control" name="cover_test_ducciones">
+						</div>
+						<div class="col-sm">
+							<label for="cover_test_versiones">cover test versiones:</label>
+							<input type="text" class="form-control" name="cover_test_versiones">
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm">
+							<label for="oi_oftalmoloscopio">ojo izquierdo oftalmoloscopio:</label>
+							<input type="text" class="form-control" name="oi_oftalmoloscopio">
+						</div>
+						<div class="col-sm">
+							<label for="od_oftalmoloscopio">ojo derecho oftalmoloscopio:</label>
+							<input type="text" class="form-control" name="od_oftalmoloscopio">
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm">
+							<label for="oi_queratrometra">ojo izquierdo queratrometra:</label>
+							<input type="text" class="form-control" name="oi_queratrometra">
+						</div>
+						<div class="col-sm">
+							<label for="od_queratrometra">ojo derecho queratrometra:</label>
+							<input type="text" class="form-control" name="od_queratrometra">
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm">
+							<label for="oi_queratrometra">ojo izquierdo queratrometra:</label>
+							<input type="text" class="form-control" name="oi_queratrometra">
+						</div>
+						<div class="col-sm">
+							<label for="od_queratrometra">ojo derecho queratrometra:</label>
+							<input type="text" class="form-control" name="od_queratrometra">
 						</div>
 					</div>
 				</form>
