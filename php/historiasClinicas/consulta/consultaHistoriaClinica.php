@@ -78,7 +78,7 @@ if ($now > $_SESSION['expire']) {
 									<a class="nav-link" href="../../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
 								</li>
 								<li>
-									<a class="nav-link" href="../../../login.html">Iniciar Sesion<span class="sr-only">(current)</span></a>
+									<a class="nav-link" href="../../logout.php">Iniciar Sesion<span class="sr-only">(current)</span></a>
 								</li>
 							</ul>
 						</div>
@@ -90,7 +90,7 @@ if ($now > $_SESSION['expire']) {
 	<div id="content">
 		<div class="container">
 			<div class="jumbotron">
-				<h1>Consulta Historia Clinica de: <b style="color:red;"> <?php print($datosClientes[0]['primer_apellido'] . " " . $datosClientes[0]['segundo_apellido']. " " . $datosClientes[0]['primer_nombre']. " " . $datosClientes[0]['segundo_nombre']); ?></b>.</h1>
+				<h1>Consulta Historia Clinica de: <b style="color:red;"> <?php print($datosClientes[0]['apellidos'] ." " . $datosClientes[0]['nombres']); ?></b>.</h1>
 				<br>
 				<form action="registrar.php" method="post">
 					<div class="row">

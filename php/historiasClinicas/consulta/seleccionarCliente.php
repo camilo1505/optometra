@@ -66,7 +66,7 @@ if ($now > $_SESSION['expire']) {
                                     <a class="nav-link" href="../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="../../../login.html">Iniciar Sesion<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="../../logout.php">Iniciar Sesion<span class="sr-only">(current)</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -89,7 +89,7 @@ if ($now > $_SESSION['expire']) {
                             <?php
                             foreach ($result as $resultado) {
                                 ?>
-                                <option value="<?php echo $resultado['id_cliente']; ?>"><?php echo $resultado['cedula'] . " - " . $resultado['primer_apellido'] . " " . $resultado['segundo_apellido']. " " . $resultado['primer_nombre']. " " . $resultado['segundo_nombre']; ?></option>
+                                <option value="<?php echo $resultado['id_cliente']; ?>"><?php echo $resultado['cedula'] . " - " . $resultado['apellidos'] . " " . $resultado['nombres']; ?></option>
                             <?php }
                         ?>
                         </select>

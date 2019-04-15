@@ -66,7 +66,7 @@ if ($now > $_SESSION['expire']) {
                                     <a class="nav-link" href="../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="../../../login.html">Iniciar Sesion<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="../../logout.php">Iniciar Sesion<span class="sr-only">(current)</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -78,7 +78,6 @@ if ($now > $_SESSION['expire']) {
     <?php
         $cliente = $_POST['fk_cliente'];
         $sql = "SELECT * FROM cliente WHERE id_cliente = '$cliente'";
-        echo $sql;
         $result = getData($sql,'root','');
         $idCliente = $result[0]['id_cliente'];
     ?>
