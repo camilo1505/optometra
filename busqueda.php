@@ -1,3 +1,20 @@
+<?php
+include("php/BDServices.php");
+$busqueda = $_POST['busqueda'];
+$sql = "SELECT * FROM catalogo, producto
+          WHERE catalogo.referencia = '$busqueda'
+          OR catalogo.marca = '$busqueda'
+          OR catalogo.tipo = '$busqueda'
+          OR catalogo.costo = '$busqueda'
+          OR catalogo.descripcion = '$busqueda'
+          OR producto.nombre_producto = '$busqueda'
+          GROUP BY catalogo.id_catalogo
+          ORDER BY catalogo.id_catalogo";
+$catalogo = getData($sql, 'root', '');
+$sql = "SELECT * FROM producto";
+$productoAux = getData($sql, 'root', '');
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -76,8 +93,6 @@
         <br>
         <br>
         <?php
-        include("php/BDServices.php");
-        $catalogo = getCatalogo();
         $contador = 0;
         foreach ($catalogo as $producto) {
           if ($contador === 0) {
@@ -88,7 +103,13 @@
             <div class="card" style="width: 18rem;">
               <img class="card-img-top" src="img/gafas.png" alt="Card image cap">
               <div class="card-body">
-                <p class="card-title"> <?php print($producto["nombre_producto"]); ?> </p>
+                <p class="card-title"> <?php
+                                        foreach ($productoAux as $aux) {
+                                          if ($producto["fk_producto"] == $aux["id_producto"]) {
+                                            print($aux["nombre_producto"]);
+                                          }
+                                        }
+                                        ?> </p>
                 <p> $<?php print($producto["costo"]); ?> </p>
                 <p class="card-text"> <?php print($producto["descripcion"]); ?> </p>
               </div>

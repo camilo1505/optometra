@@ -35,7 +35,7 @@ if ($now > $_SESSION['expire']) {
 </head>
 
 <body>
-<header id="header">
+  <header id="header">
     <div class="container">
       <div class="row t-container">
         <div class="span3">
@@ -66,7 +66,7 @@ if ($now > $_SESSION['expire']) {
                   <a class="nav-link" href="../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="../../login.html">Iniciar Sesion<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../../logout.php">Cerrar Sesion<span class="sr-only">(current)</span></a>
                 </li>
               </ul>
             </div>
@@ -75,96 +75,107 @@ if ($now > $_SESSION['expire']) {
       </div>
   </header>
 
-    <br>
+  <br>
 
-    <div id="content">
-        <div class="container">
-            <div class="jumbotron">
-                <h1>Edicion del Catalogo.</h1>
-                <br>
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Producto</th>
-                            <th scope="col">Referencia</th>
-                            <th scope="col">Marca</th>
-                            <th scope="col">Costo</th>
-                            <th scope="col">Imagen</th>
-                            <th scope="col">Descripcion</th>
-                            <th scope="col">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                            $catalogo = getCatalogo();
-                            foreach($catalogo as $producto) {
-                        ?>
-                            <tr>
-                                <form action="editarCatalogoService.php" method="POST">
-                                    <th scope="row" width="6% "><input type="text" class="form-control" name="id_catalogo" value="<?php print ($producto["id_catalogo"]);?>"readonly></th>
-                                    <td scope="row" width="17% "><input type="text" class="form-control" name="nombre_producto" value="<?php print ($producto["nombre_producto"]);?>"required readonly></td>
-                                    <td width="15%"> <input type="text" class="form-control" name="referencia" value="<?php print($producto["referencia"]); ?>" required></td>
-                                    <td scope="row" width="15% "><input type="text" class="form-control" name="marca" value="<?php print ($producto["marca"]);?>"required></td> 
-                                    <td scope="row" width="14% "><input type="number" class="form-control" name="costo" value="<?php print ($producto["costo"]);?>"required></td>
-                                    <td scope="row" width="20% "><input type="file" class="form-control" name="imagen"></td>
-                                    <td scope="row" width="20% "><input type="text" class="form-control" name="descripcion" value="<?php print ($producto["descripcion"]);?>"required></td>
-                                    <td> <input type="submit" class="btn btn-primary" value="Guardar"> </input> </td>
-                                </form>
-                            </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
-                <button class="btn btn-primary"> <a href="../catalogo.php">Volver</a></button>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Footer -->
-    <footer id="footer">
-        <div class="container">
-            <div class="row space50"></div>
-            <div class="row">
-                <div class="span6">
-                    <div class="logo-footer">
-                        Design by
-                        <a href="https://www.freshdesignweb.com">freshDesignweb</a>
+  <div id="content">
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Edicion del Catalogo.</h1>
+        <br>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Producto</th>
+              <th scope="col">Referencia</th>
+              <th scope="col">Marca</th>
+              <th scope="col">Costo</th>
+              <th scope="col">Imagen</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Promocion</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            $catalogo = getCatalogo();
+            foreach ($catalogo as $producto) {
+              ?>
+              <tr>
+                <form action="editarCatalogoService.php" method="POST">
+                  <th scope="row" width="4%"><input type="text" class="form-control" name="id_catalogo" value="<?php print($producto["id_catalogo"]); ?>" readonly></th>
+                  <td scope="row" width="11%"><input type="text" class="form-control" name="nombre_producto" value="<?php print($producto["nombre_producto"]); ?>" required readonly></td>
+                  <td scope="row" width="8%"> <input type="text" class="form-control" name="referencia" value="<?php print($producto["referencia"]); ?>" required></td>
+                  <td scope="row" width="11%"><input type="text" class="form-control" name="marca" value="<?php print($producto["marca"]); ?>" required></td>
+                  <td scope="row" width="9%"><input type="number" class="form-control" name="costo" value="<?php print($producto["costo"]); ?>" required></td>
+                  <td scope="row" width="11%"><input type="file" class="form-control" name="imagen"></td>
+                  <td scope="row" width="11%"><input type="text" class="form-control" name="descripcion" value="<?php print($producto["descripcion"]); ?>" required></td>
+                  <td scope="row" width="5%">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="promocion" id="promocion1" value="1">
+                      <label class="form-check-label" for="promocion1"> Si. </label>
                     </div>
-                </div>
-                <div class="span6 right">
-                    &copy; 2020. All rights reserved.
-                </div>
-                <div class="span3 offset3">
-                    <h3>Address</h3>
-                    81 Sunnyvale Street<br />
-                    Los Angeles, CA 90185<br />
-                    United States<br />
-                    <br />
-                    <i class="icon-phone"></i>+01 880 555 999<br />
-                    <i class="icon-envelope"></i><a href="mailto:support@example.com">support@example.com</a><br />
-                    <i class="icon-home"></i><a href="#">www.example.com</a>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="promocion" id="promocion2" value="0">
+                      <label class="form-check-label" for="promocion2">No.</label>
+                    </div>
+                  </td>
+                  <td scope="row" width="5%"> <input type="submit" class="btn btn-primary" value="Guardar"> </input> </td>
+                </form>
+              </tr>
+            <?php } ?>
+          </tbody>
+        </table>
+        <button class="btn btn-primary"> <a href="../catalogo.php">Volver</a></button>
+      </div>
+    </div>
+  </div>
 
-                    <div class="row space40"></div>
 
-                    <a href="#" class="social-network sn2 behance"></a>
-                    <a href="#" class="social-network sn2 facebook"></a>
-                    <a href="#" class="social-network sn2 pinterest"></a>
-                    <a href="#" class="social-network sn2 flickr"></a>
-                    <a href="#" class="social-network sn2 dribbble"></a>
-                    <a href="#" class="social-network sn2 lastfm"></a>
-                    <a href="#" class="social-network sn2 forrst"></a>
-                    <a href="#" class="social-network sn2 xing"></a>
-                </div>
-            </div>
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row space50"></div>
+      <div class="row">
+        <div class="span6">
+          <div class="logo-footer">
+            Design by
+            <a href="https://www.freshdesignweb.com">freshDesignweb</a>
+          </div>
         </div>
-    </footer>
-    <!-- Footer End -->
-    <!-- JavaScripts -->
-    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/functions.js"></script>
-    <script type="text/javascript" defer src="js/jquery.flexslider.js"></script>
+        <div class="span6 right">
+          &copy; 2020. All rights reserved.
+        </div>
+        <div class="span3 offset3">
+          <h3>Address</h3>
+          81 Sunnyvale Street<br />
+          Los Angeles, CA 90185<br />
+          United States<br />
+          <br />
+          <i class="icon-phone"></i>+01 880 555 999<br />
+          <i class="icon-envelope"></i><a href="mailto:support@example.com">support@example.com</a><br />
+          <i class="icon-home"></i><a href="#">www.example.com</a>
+
+          <div class="row space40"></div>
+
+          <a href="#" class="social-network sn2 behance"></a>
+          <a href="#" class="social-network sn2 facebook"></a>
+          <a href="#" class="social-network sn2 pinterest"></a>
+          <a href="#" class="social-network sn2 flickr"></a>
+          <a href="#" class="social-network sn2 dribbble"></a>
+          <a href="#" class="social-network sn2 lastfm"></a>
+          <a href="#" class="social-network sn2 forrst"></a>
+          <a href="#" class="social-network sn2 xing"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+  <!-- JavaScripts -->
+  <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/functions.js"></script>
+  <script type="text/javascript" defer src="js/jquery.flexslider.js"></script>
 </body>
 
 </html>

@@ -66,8 +66,7 @@ if ($now > $_SESSION['expire']) {
                   <a class="nav-link" href="../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="../../login.html">Iniciar Sesion<span class="sr-only">(current)</span></a>
-                </li>
+                <a class="nav-link" href="../logout.php">Cerrar Sesion<span class="sr-only">(current)</span></a>                </li>
               </ul>
             </div>
           </nav>
@@ -80,7 +79,7 @@ if ($now > $_SESSION['expire']) {
     <div id="content">
         <div class="container">
             <div class="jumbotron">
-                <h1>Edicion del Catalogo.</h1>
+                <h1>Eliminar Clientes.</h1>
                 <br>
                 <table class="table">
                     <thead class="thead-dark">

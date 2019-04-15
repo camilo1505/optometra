@@ -7,8 +7,10 @@
     $imagen = $_POST["imagen"];
     $costo = $_POST["costo"];
     $descripcion = $_POST["descripcion"];
+    $promocion = $_POST["promocion"];
 
     $catalogo = array();
+
 
     array_push($catalogo,$idCatalogo);
     array_push($catalogo,$nombreProducto);
@@ -17,6 +19,7 @@
     array_push($catalogo,$imagen);
     array_push($catalogo,$costo);
     array_push($catalogo,$descripcion);
+    array_push($catalogo,$promocion);
 
     
     $done = editarCatalogo($catalogo);

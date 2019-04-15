@@ -5,7 +5,7 @@ function getCatalogo(){
     $username = "root";
     $password = "";
 
-    $consulta = "SELECT catalogo.id_catalogo, producto.nombre_producto, catalogo.costo, catalogo.descripcion, catalogo.imagen, catalogo.marca, catalogo.referencia
+    $consulta = "SELECT catalogo.id_catalogo, producto.nombre_producto, catalogo.costo, catalogo.descripcion, catalogo.imagen, catalogo.marca, catalogo.referencia, catalogo.promocion
                  FROM producto, catalogo 
                  WHERE producto.id_producto = catalogo.fk_producto
                  ORDER BY catalogo.id_catalogo";
@@ -80,7 +80,8 @@ function editarCatalogo($catalogo){
                      catalogo.marca = '$catalogo[3]',
                      catalogo.imagen = '$catalogo[4]',
                      catalogo.costo = '$catalogo[5]',
-                     catalogo.descripcion = '$catalogo[6]'
+                     catalogo.descripcion = '$catalogo[6]',
+                     catalogo.promocion = $catalogo[7]
                  WHERE catalogo.id_catalogo = '$catalogo[0]'";
 
 
