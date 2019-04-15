@@ -238,7 +238,7 @@ if ($now > $_SESSION['expire']) {
 						</div>
 						<div class="col-sm">
 							<label for=" examen_externo_oi">examen externo ojo izquierdo:</label>
-							<input type="text" class="form-control" value=" <?php echo $resultado[0]['examen_externo_oi'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" nvalue" <?php echo $resultado[0]['examen_externo_oi'] ?>" readonly="readonly"">
 						</div>
 					</div>
 					<br>
@@ -337,49 +337,51 @@ if ($now > $_SESSION['expire']) {
 					<div class="row">
 						<div class="col-sm">
 							<label for="rx_final_oi_esfera">rx final ojo izquierdo esfera:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_esfera'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_esfera'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_oi_cilindro">rx final ojo izquierdo cilindro:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_cilindro'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_cilindro'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_oi_eje">rx final ojo izquierdo eje:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_eje'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_eje'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_oi_adicion">rx final ojo izquierdo adicion:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_adicion'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_adicion'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="rx_final_od_agudes_visual">rx final ojo derecho agudes visual:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_agudes_visual'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_agudes_visual'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_oi_agudes_visual">rx final ojo izquierdo agudes visual:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_agudes_visual'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_agudes_visual'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="diagnostico">diagnostico:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['diagnostico'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['diagnostico'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="control">control:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['fecha'] ?>" readonly="readonly"">
+							<input type="date" class="form-control" value="<?php echo $resultado[0]['control'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="observacion">observacion:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['observacion'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['observacion'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
-
+					<div class="d-flex justify-content-end">
+						<input type="submit" class="btn btn-primary" vvalue="<?php echo $resultado[0]['Guardar'] ?> readonly="readonly"">
+					</div>
 				</form>
 			</div>
 		</div>

@@ -76,31 +76,24 @@ if ($now > $_SESSION['expire']) {
     </header>
     <br>
     <?php
-        $cliente = $_POST['fk_cliente'];
-        $sql = "SELECT * FROM cliente WHERE id_cliente = '$cliente'";
-        echo $sql;
-        $result = getData($sql,'root','');
-        $idCliente = $result[0]['id_cliente'];
+    $sql = "SELECT * FROM cliente ";
+    $result = getData($sql, 'root', '');
     ?>
     <div id="content">
         <div class="container">
             <div class="jumbotron">
-                <form action="consultaHistoriaClinica.php" method="post">
+                <form action="seleccionarHistoriaCliente.php" method="post">
                     <div class="d-flex justify-content-center">
                         <label for="fk_cliente"> </label>
-                        <select name="id_historia_clinica">
+                        <select name="fk_cliente">
                             <?php
-                            $sql = "SELECT * FROM historia_clinica WHERE fk_cliente = $idCliente";
-                            echo $sql;
-                            $result = getData($sql,'root','');
                             foreach ($result as $resultado) {
                                 ?>
-                                <option value="<?php echo $resultado['id_historia_clinica'];?>"><?php echo $resultado['fecha'];?></option>
-                            <?php 
-                            }
+                                <option value="<?php echo $resultado['id_cliente']; ?>"><?php echo $resultado['cedula'] . " - " . $resultado['primer_apellido'] . " " . $resultado['segundo_apellido']. " " . $resultado['primer_nombre']. " " . $resultado['segundo_nombre']; ?></option>
+                            <?php }
                         ?>
                         </select>
-                        <button class="site-btn">Consultar Historia</button>
+                        <button class="site-btn">Crear Historia</button>
                     </div>
                 </form>
                 <br>

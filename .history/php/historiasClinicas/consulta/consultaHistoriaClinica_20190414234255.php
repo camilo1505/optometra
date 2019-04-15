@@ -100,286 +100,288 @@ if ($now > $_SESSION['expire']) {
 						</div>
 						<div class="col-sm">
 							<label for="fk_usuario">Cedula Optometra: </label>
-							<input type="text" class="form-control" name="fk_usuario" value="<?php echo $_SESSION['cedula']?>" readonly="readonly">
+							<input type="text" class="form-control" name="fk_usuario" value="<?php echo $_SESSION['cedula']value" ?> readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="patologia1">Patologia 1:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['patologia1'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['patologia1'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="patologia2">Patologia 2:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['patologia2'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['patologia2'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="patologia3">Patologia 3:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['patologia3'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['patologia3'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="tratamiento1">Tratamiento 1:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['tratamiento1'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['tratamiento1'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="tratamiento2">Tratamiento 2:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['tratamiento2'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['tratamiento2'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="tratamiento3">Tratamiento 3:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['tratamiento3'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['tratamiento3'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="cronicidad1">Cronicidad 1:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['cronicidad1'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['cronicidad1'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="cronicidad2">Cronicidad 2:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['cronicidad2'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['cronicidad2'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="cronicidad3">Cronicidad 3:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['cronicidad3'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['cronicidad3'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="observacion1">Observacion 1:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['observacion1'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['observacion1'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="observacion2">Observacion 2:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['observacion2'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['observacion2'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="observacion3">Observacion 3:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['observacion3'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['observacion3'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="anamnesis">Anamnesis:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['anamnesis'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['anamnesis'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="rx_uso_od_esfera">rx uso ojo derecho esfera:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_od_esfera'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_od_esfera'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_od_cilindro">rx uso ojo derecho cilindro:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_od_cilindro'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_od_cilindro'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_od_eje">rx uso ojo derecho eje:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_od_eje'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_od_eje'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_od_adicion">rx uso ojo derecho adicion:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_od_adicion'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_od_adicion'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="rx_uso_oi_esfera">rx uso ojo izquierdo esfera:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_oi_esfera'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_oi_esfera'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_oi_cilindro">rx uso ojo izquierdo cilindro:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_oi_cilindro'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_oi_cilindro'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_oi_eje">rx uso ojo izquierdo eje:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_oi_eje'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_oi_eje'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_oi_adicion">rx uso ojo izquierdo adicion:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_oi_adicion'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_oi_adicion'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="vision_lejos_od">vision lejos ojo derecho:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['vision_lejos_od'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['vision_lejos_od'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="vision_lejos_oi">vision lejos ojo izquierdo:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['vision_lejos_oi'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['vision_lejos_oi'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="vision_cerca_od">vision cerca ojo derecho:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['vision_cerca_od'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['vision_cerca_od'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="vision_cerca_oi">vision cerca ojo izquierdo:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['vision_cerca_oi'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['vision_cerca_oi'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="examen_externo_od">examen externo ojo derecho:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['examen_externo_od'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['examen_externo_od'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for=" examen_externo_oi">examen externo ojo izquierdo:</label>
-							<input type="text" class="form-control" value=" <?php echo $resultado[0]['examen_externo_oi'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" nvalue" <?php echo $resultado[0]['examen_externo_oi'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="reflejos_pupilares_fotomotor">reflejos pupilares fotomotor:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['reflejos_pupilares_fotomotor'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['reflejos_pupilares_fotomotor'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="reflejos_pupilares_consensual">reflejos pupilares consensual:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['reflejos_pupilares_consensual'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['reflejos_pupilares_consensual'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="reflejos_pupilares_acomodacio">reflejos pupilares acomodacion:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['reflejos_pupilares_acomodacion'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['reflejos_pupilares_acomodacion'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="cover_test_vision_lejos">cover test vision lejos:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['cover_test_vision_lejos'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['cover_test_vision_lejos'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="cover_test_vision_proxima">cover test vision proxima:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['cover_test_vision_proxima'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['cover_test_vision_proxima'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="cover_test_ducciones">cover test ducciones:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['cover_test_ducciones'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['cover_test_ducciones'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="cover_test_versiones">cover test versiones:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['cover_test_versiones'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['cover_test_versiones'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="oi_oftalmoloscopio">ojo izquierdo oftalmoloscopio:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['oi_oftalmoloscopio'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['oi_oftalmoloscopio'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="od_oftalmoloscopio">ojo derecho oftalmoloscopio:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['od_oftalmoloscopio'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['od_oftalmoloscopio'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="oi_queratrometra">ojo izquierdo queratrometra:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['oi_queratrometra'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['oi_queratrometra'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="od_queratrometra">ojo derecho queratrometra:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['od_queratrometra'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['od_queratrometra'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="od_retinoscopia">ojo derecho retinoscopia:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['od_retinoscopia'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['od_retinoscopia'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="oi_retinoscopia">ojo izquierdo retinoscopia:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['oi_retinoscopia'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['oi_retinoscopia'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="rx_final_od_esfera">rx final ojo derecho esfera:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_esfera'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_esfera'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_od_cilindro">rx final ojo derecho cilindro:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_cilindro'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_cilindro'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_od_eje">rx final ojo derecho eje:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_eje'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_eje'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_od_adicion">rx final ojo derecho adicion:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_adicion'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_adicion'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="rx_final_oi_esfera">rx final ojo izquierdo esfera:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_esfera'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_esfera'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_oi_cilindro">rx final ojo izquierdo cilindro:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_cilindro'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_cilindro'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_oi_eje">rx final ojo izquierdo eje:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_eje'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_eje'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_oi_adicion">rx final ojo izquierdo adicion:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_adicion'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_adicion'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="rx_final_od_agudes_visual">rx final ojo derecho agudes visual:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_agudes_visual'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_agudes_visual'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_oi_agudes_visual">rx final ojo izquierdo agudes visual:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_agudes_visual'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_agudes_visual'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="diagnostico">diagnostico:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['diagnostico'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['diagnostico'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="control">control:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['fecha'] ?>" readonly="readonly"">
+							<input type="date" class="form-control" value="<?php echo $resultado[0]['control'] ?> readonly="readonly"">
 						</div>
 						<div class="col-sm">
 							<label for="observacion">observacion:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['observacion'] ?>" readonly="readonly"">
+							<input type="text" class="form-control" value="<?php echo $resultado[0]['observacion'] ?> readonly="readonly"">
 						</div>
 					</div>
 					<br>
-
+					<div class="d-flex justify-content-end">
+						<input type="submit" class="btn btn-primary" vvalue="<?php echo $resultado[0]['Guardar'] ?> readonly="readonly"">
+					</div>
 				</form>
 			</div>
 		</div>
