@@ -89,7 +89,7 @@ if ($now > $_SESSION['expire']) {
                             <?php
                             foreach ($result as $resultado) {
                                 ?>
-                                <option value="<?php echo $resultado['id_cliente']; ?>"><?php echo $resultado['cedula'] . " - " . $resultado['nombres'] . " " . $resultado['apellidos']; ?></option>
+                                <option value="<?php echo $resultado['id_cliente']; ?>"><?php echo $resultado['cedula'] . " - " . $resultado['primer_apellido'] . " " . $resultado['segundo_apellido']. " " . $resultado['primer_nombre']. " " . $resultado['segundo_nombre']; ?></option>
                             <?php }
                         ?>
                         </select>

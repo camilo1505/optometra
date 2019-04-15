@@ -91,7 +91,7 @@ $datosMedico = getData($sql, 'root', '');
 	<div id="content">
 		<div class="container">
 			<div class="jumbotron">
-				<h1>Crear Historia Clinica de <?php print($datosClientes[0]['nombres'] . " " . $datosClientes[0]['apellidos']); ?>.</h1>
+				<h1>Crear Historia Clinica de: <b style="color:red;"> <?php print($datosClientes[0]['primer_apellido'] . " " . $datosClientes[0]['segundo_apellido']. " " . $datosClientes[0]['primer_nombre']. " " . $datosClientes[0]['segundo_nombre']); ?></b>.</h1>
 				<br>
 				<form action="registrar.php" method="post">
 					<div class="row">

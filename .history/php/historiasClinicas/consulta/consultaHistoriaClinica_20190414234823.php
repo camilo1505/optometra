@@ -371,7 +371,7 @@ if ($now > $_SESSION['expire']) {
 						</div>
 						<div class="col-sm">
 							<label for="control">control:</label>
-							<input type="text" class="form-control" value="<?php echo $resultado[0]['fecha'] ?>" readonly="readonly"">
+							<?php echo $resultado[0]['fecha'] ?>
 						</div>
 						<div class="col-sm">
 							<label for="observacion">observacion:</label>

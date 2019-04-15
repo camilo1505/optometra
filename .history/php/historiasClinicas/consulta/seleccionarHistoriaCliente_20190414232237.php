@@ -85,10 +85,10 @@ if ($now > $_SESSION['expire']) {
     <div id="content">
         <div class="container">
             <div class="jumbotron">
-                <form action="consultaHistoriaClinica.php" method="post">
+                <form action="seleccionarHistoriaCliente.php" method="post">
                     <div class="d-flex justify-content-center">
                         <label for="fk_cliente"> </label>
-                        <select name="id_historia_clinica">
+                        <select name="fk_cliente">
                             <?php
                             $sql = "SELECT * FROM historia_clinica WHERE fk_cliente = $idCliente";
                             echo $sql;
@@ -100,7 +100,7 @@ if ($now > $_SESSION['expire']) {
                             }
                         ?>
                         </select>
-                        <button class="site-btn">Consultar Historia</button>
+                        <button class="site-btn">Crear Historia</button>
                     </div>
                 </form>
                 <br>
