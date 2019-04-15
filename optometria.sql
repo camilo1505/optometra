@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-04-2019 a las 04:37:48
+-- Tiempo de generación: 15-04-2019 a las 08:38:43
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.3
 
@@ -37,22 +37,23 @@ CREATE TABLE `catalogo` (
   `tipo` varchar(16) NOT NULL,
   `imagen` varchar(100) NOT NULL,
   `costo` bigint(20) NOT NULL,
-  `descripcion` varchar(100) DEFAULT NULL
+  `descripcion` varchar(100) DEFAULT NULL,
+  `promocion` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `catalogo`
 --
 
-INSERT INTO `catalogo` (`id_catalogo`, `fk_producto`, `fk_usuario`, `referencia`, `marca`, `tipo`, `imagen`, `costo`, `descripcion`) VALUES
-(1, 11, 1, 'HXB1345', 'Gucchi', 'Gafas Sol', 'imagen', 200000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the '),
-(2, 16, 1, 'HXB1348', 'AQUA', 'Gafas Sol', 'pruebas', 300000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the '),
-(3, 16, 1, 'EREY1234', 'Borealis', 'Gafas Sol', 'asdasd', 80000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the '),
-(4, 2, 1, 'ASFD254185', 'Elbrown', 'Pruebas', 'asdasdasd', 8514841, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the '),
-(5, 1, 1, 'HXB5484', 'Gondor', 'aasdas', 'asdasd', 5451251, 'asdasdasdasdasdasd'),
-(6, 40, 1, 'ffsd5f4asdf4', 'asdasda44fd', 'asdas5d4as5', 'asdasd4a5s4dasd', 515154851, '5a4sd541as5d1a5s1dgvasndjkasd'),
-(40, 11, 1, '124254twerdfs', 'asdgtrwertrregrf', '34trfesrft65ersd', 'Lighthouse.jpg', 4556786786, '123546ytrhgfdfngj'),
-(41, 37, 1, 'akpsmodais1123', 'kqmwdmoasmn', 'apskmdonao', '279654.jpg', 515151541, 'jasnidaisbdihabsidhbaihsbdihasijdnaoscnoasncasnicnaisjncias ciha sci asi ciansiniasihnca');
+INSERT INTO `catalogo` (`id_catalogo`, `fk_producto`, `fk_usuario`, `referencia`, `marca`, `tipo`, `imagen`, `costo`, `descripcion`, `promocion`) VALUES
+(1, 11, 1, 'HXB1345', 'Gucchi', 'Gafas Sol', '', 200000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ', 1),
+(2, 16, 1, 'HXB1348', 'AQUA', 'Gafas Sol', 'pruebas', 300000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ', 0),
+(3, 16, 1, 'EREY1234', 'Borealis', 'Gafas Sol', 'asdasd', 80000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ', 0),
+(4, 2, 1, 'ASFD254185', 'Elbrown', 'Pruebas', 'asdasdasd', 8514841, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ', 0),
+(5, 1, 1, 'HXB5484', 'Gondor', 'aasdas', 'asdasd', 5451251, 'asdasdasdasdasdasd', 0),
+(6, 40, 1, 'ffsd5f4asdf4', 'asdasda44fd', 'asdas5d4as5', 'asdasd4a5s4dasd', 515154851, '5a4sd541as5d1a5s1dgvasndjkasd', 0),
+(40, 11, 1, '124254twerdfs', 'asdgtrwertrregrf', '34trfesrft65ersd', 'Lighthouse.jpg', 4556786786, '123546ytrhgfdfngj', 0),
+(41, 37, 1, 'akpsmodais1123', 'kqmwdmoasmn', 'apskmdonao', '279654.jpg', 515151541, 'jasnidaisbdihabsidhbaihsbdihasijdnaoscnoasncasnicnaisjncias ciha sci asi ciansiniasihnca', 0);
 
 -- --------------------------------------------------------
 
@@ -154,7 +155,8 @@ CREATE TABLE `historia_clinica` (
 --
 
 INSERT INTO `historia_clinica` (`id_historia_clinica`, `fk_usuario`, `fk_cliente`, `patologia1`, `patologia2`, `patologia3`, `tratamiento1`, `tratamiento2`, `tratamiento3`, `cronicidad1`, `cronicidad2`, `cronicidad3`, `observacion1`, `observacion2`, `observacion3`, `anamnesis`, `rx_uso_od_esfera`, `rx_uso_od_cilindro`, `rx_uso_od_eje`, `rx_uso_od_adicion`, `rx_uso_oi_esfera`, `rx_uso_oi_cilindro`, `rx_uso_oi_eje`, `rx_uso_oi_adicion`, `vision_lejos_od`, `vision_lejos_oi`, `vision_cerca_od`, `vision_cerca_oi`, `examen_externo_od`, `examen_externo_oi`, `reflejos_pupilares_fotomotor`, `reflejos_pupilares_consensual`, `reflejos_pupilares_acomodacion`, `cover_test_vision_lejos`, `cover_test_vision_proxima`, `cover_test_ducciones`, `cover_test_versiones`, `od_oftalmoloscopio`, `oi_oftalmoloscopio`, `od_queratrometra`, `oi_queratrometra`, `od_retinoscopia`, `oi_retinoscopia`, `rx_final_od_esfera`, `rx_final_od_cilindro`, `rx_final_od_eje`, `rx_final_od_adicion`, `rx_final_oi_esfera`, `rx_final_oi_cilindro`, `rx_final_oi_eje`, `rx_final_oi_adicion`, `rx_final_od_agudes_visual`, `rx_final_oi_agudes_visual`, `diagnostico`, `control`, `observacion`, `fecha`) VALUES
-(1, 1, 1, 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'aa', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '', 'a', 'aa', '', 'a', 'a', 'a', 'a', 'a', '0000-00-00', 'a', '2019-04-15-04-35-09');
+(1, 1, 1, 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'aa', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '', 'a', 'aa', '', 'a', 'a', 'a', 'a', 'a', '0000-00-00', 'a', '2019-04-15-04-35-09'),
+(2, 1, 1, 'ed', 'd', 'd', 'rd', 'd', 'r', 'fr', 'f', 'v', 'v', 'tv', 'yf', 'vvf', 'vfv', 'yfv', 'yfv', 'yfv', 'yfv', 'yfv', 'yfv', 'yfv', 'yf', 'vyf', 'vfy', 'vyf', 'v', 'yfv', 'yv', 'yv', 'yv', 'yv', 'yfv', 'yfv', 'yfv', 'yf', 'yfv', 'vyf', 'vy', 'vy', 'v', 'yv', 'yv', 'yv', 'yv', 'yv', 'yv', 'yf', 'yfgv', 'yfv', 'yfv', 'yfv', '0000-00-00', 'y', '2019-04-15-08-33-45');
 
 -- --------------------------------------------------------
 
@@ -231,16 +233,17 @@ CREATE TABLE `usuario` (
   `cedula` varchar(15) NOT NULL,
   `nombres` varchar(60) NOT NULL,
   `apellidos` varchar(60) NOT NULL,
-  `usuario_password` varchar(300) NOT NULL
+  `usuario_password` varchar(300) NOT NULL,
+  `desactivado` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `cedula`, `nombres`, `apellidos`, `usuario_password`) VALUES
-(1, 'admin', 'administrador', 'administrador', '$2y$10$FCRhwIVKQ6kgWQQtG7wjEu1L8lTTgst0cwq3xWxKlg9fnsHlrIoG2'),
-(2, '123456789', 'asdasdasd', 'asdasdasdasd', '$2y$10$XU8cKwkrsFVjGSalviQXWeANRgc46xcRNbihXLSMYwIUgzBtLXEAm');
+INSERT INTO `usuario` (`id_usuario`, `cedula`, `nombres`, `apellidos`, `usuario_password`, `desactivado`) VALUES
+(1, 'admin', 'administrador', 'administrador', '$2y$10$FCRhwIVKQ6kgWQQtG7wjEu1L8lTTgst0cwq3xWxKlg9fnsHlrIoG2', 0),
+(2, '123456789', 'asdasdasd', 'asdasdasdasd', '$2y$10$HVfP4OwpNhzUovhPR/v6hOKvoOQBfrjl.ya3WrjRYgswLuZVp5BRW', 0);
 
 --
 -- Índices para tablas volcadas
@@ -319,7 +322,7 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `historia_clinica`
 --
 ALTER TABLE `historia_clinica`
-  MODIFY `id_historia_clinica` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_historia_clinica` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
