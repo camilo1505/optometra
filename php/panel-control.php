@@ -76,46 +76,45 @@ if ($now > $_SESSION['expire']) {
   </header>
 
   <br>
-  
+
   <div id="content">
     <div class="container">
       <div class="f-center">
         <div class="list-group">
           <?php
-          //echo "Tipo de usuario:".$_SESSION['usuario'];
           if ($_SESSION['rol'] == "1") {
             ?>
             <a class="list-group-item list-group-item-action" href="usuarios.php">Usuarios</a>
-            <?php
-            if (in_array($_SESSION['rol'], array("1", "3"))) {
-              ?>
-              <a class="list-group-item list-group-item-action" href="catalogo.php">Catalogo</a>
-            <?php
-          }
-          if (in_array($_SESSION['rol'], array("1", "2", "3"))) {
-            ?>
-              <a class="list-group-item list-group-item-action" href="clientes.php">Clientes</a>
-            <?php
-          }
-          if (in_array($_SESSION['rol'], array("1", "2"))) {
-            ?>
-              <a class="list-group-item list-group-item-action" href="historiaClinica.php">Historias Clinicas</a>
-            <?php
-          }
+          <?php
+        }
+        if ($_SESSION['rol'] == "1" || $_SESSION['rol'] == "3") {
           ?>
-          </div>
+            <a class="list-group-item list-group-item-action" href="catalogo.php">Catalogo</a>
+          <?php
+        }
+        if ($_SESSION['rol'] == "1" || $_SESSION['rol'] == "2" || $_SESSION['rol'] == "3") {
+          ?>
+            <a class="list-group-item list-group-item-action" href="clientes.php">Clientes</a>
+          <?php
+        }
+        if ($_SESSION['rol'] == "1" || $_SESSION['rol'] == "2") {
+          ?>
+            <a class="list-group-item list-group-item-action" href="historiaClinica.php">Historias Clinicas</a>
+          <?php
+        }
+        ?>
         </div>
-
       </div>
+
     </div>
-    <!-- Content End -->
+  </div>
+  <!-- Content End -->
 
   <?php
-}
 
-?>
+  ?>
   <html>
-    <br>
+  <br>
   <!-- Footer -->
   <footer id="footer">
     <div class="container">
