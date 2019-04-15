@@ -96,12 +96,12 @@ $datosMedico = getData($sql, 'root', '');
 				<form action="registrar.php" method="post">
 					<div class="row">
 						<div class="col-sm">
-							<label for="cedulaCliente">Cedula Cliente:</label>
-							<input type="text" class="form-control" name="cedulaCliente" value="<?php print($datosClientes[0]["cedula"]); ?>" readonly>
+							<label for="fk_cliente">Cedula Cliente:</label>
+							<input type="text" class="form-control" name="fk_cliente" value="<?php print($datosClientes[0]["cedula"]); ?>" readonly>
 						</div>
 						<div class="col-sm">
-							<label for="cedulaMedico">Cedula Optometra: </label>
-							<input type="text" class="form-control" name="cedulaMedico" value="<?php print($datosMedico[0]["cedula"]); ?>" readonly>
+							<label for="fk_usuario">Cedula Optometra: </label>
+							<input type="text" class="form-control" name="fk_usuario" value="<?php echo $_SESSION['cedula']; ?>" readonly>
 						</div>
 					</div>
 					<br>
@@ -235,11 +235,11 @@ $datosMedico = getData($sql, 'root', '');
 					<div class="row">
 						<div class="col-sm">
 							<label for="examen_externo_od">examen externo ojo derecho:</label>
-							<input type="text" class="form-control" name="vision_cerca_od">
+							<input type="text" class="form-control" name="examen_externo_od">
 						</div>
 						<div class="col-sm">
-							<label for="examen_externo_oi">examen externo ojo izquierdo:</label>
-							<input type="text" class="form-control" name="vision_cerca_oi">
+							<label for=" examen_externo_oi">examen externo ojo izquierdo:</label>
+							<input type="text" class="form-control" name=" examen_externo_oi">
 						</div>
 					</div>
 					<br>
@@ -307,135 +307,82 @@ $datosMedico = getData($sql, 'root', '');
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="oi_queratrometra">ojo izquierdo queratrometra:</label>
-							<input type="text" class="form-control" name="oi_queratrometra">
+							<label for="od_retinoscopia">ojo derecho retinoscopia:</label>
+							<input type="text" class="form-control" name="od_retinoscopia">
 						</div>
 						<div class="col-sm">
-							<label for="od_queratrometra">ojo derecho queratrometra:</label>
-							<input type="text" class="form-control" name="od_queratrometra">
+							<label for="oi_retinoscopia">ojo izquierdo retinoscopia:</label>
+							<input type="text" class="form-control" name="oi_retinoscopia">
 						</div>
 					</div>
-				</form>
-				<form action="registrar.php" method="post">
-					<table class="table" border="1">
-						<thead>
-							<th>Cliente</th>
-							<th>Medico</th>
-							<th>patologia1</th>
-							<th>patologia2</th>
-							<th>patologia3</th>
-							<th>tratamiento1</th>
-							<th>tratamiento2</th>
-							<th>tratamiento3</th>
-							<th>cronicidad1</th>
-							<th>cronicidad2</th>
-							<th>cronicidad3</th>
-							<th>observacion1</th>
-							<th>observacion2</th>
-							<th>observacion3</th>
-							<th>anamnesis</th>
-							<th>rx uso ojo derecho esfera</th>
-							<th>rx uso ojo derecho cilindro</th>
-							<th>rx uso ojo derecho eje</th>
-							<th>rx uso ojo derecho adicion</th>
-							<th>rx uso ojo izquierdo esfera</th>
-							<th>rx uso ojo izquierdo cilindro</th>
-							<th>rx uso ojo izquierdo eje</th>
-							<th>rx uso ojo izquierdo adicion</th>
-							<th>vision lejos ojo derecho</th>
-							<th>vision lejos ojo izquierdo</th>
-							<th>vision cerca ojo derecho</th>
-							<th>vision cerca ojo izquierdo</th>
-							<th>examen externo ojo derecho</th>
-							<th>examen externo ojo izquierdo</th>
-							<th>reflejos pupilares fotomotor</th>
-							<th>reflejos pupilares consensual</th>
-							<th>reflejos pupilares acomodacion</th>
-							<th>cover test vision lejos</th>
-							<th>cover test vision proxima</th>
-							<th>cover test ducciones</th>
-							<th>cover test versiones</th>
-							<th>ojo derecho oftalmoloscopio</th>
-							<th>ojo izquierdo oftalmoloscopio</th>
-							<th>ojo derecho queratrometra</th>
-							<th>ojo izquierdo queratrometra</th>
-							<th>ojo derecho retinoscopia</th>
-							<th>ojo izquierdo retinoscopia</th>
-							<th>rx final ojo derecho esfera</th>
-							<th>rx final ojo derecho cilindro</th>
-							<th>rx final ojo derecho eje</th>
-							<th>rx final ojo derecho adicion</th>
-							<th>rx final ojo izquierdo esfera</th>
-							<th>rx final ojo izquierdo cilindro</th>
-							<th>rx final ojo izquierdo eje</th>
-							<th>rx final ojo izquierdo adicion</th>
-							<th>rx final ojo derecho agudes visual</th>
-							<th>rx final ojo izquierdo agudes visual</th>
-							<th>diagnostico</th>
-							<th>control</th>
-							<th>observacion</th>
-						</thead>
-						<tbody>
-							<tr>
-								<td><input name="fk_cliente" value="<?php echo $cliente; ?>" placeholder="<?php echo $cliente; ?>" readonly="readonly"></td>
-								<td><input name="fk_usuario" value="<?php echo $_SESSION['cedula']; ?>" placeholder="<?php echo $_SESSION['cedula']; ?>" readonly="readonly"></td>
-								<td><input name="patologia1" type="text" /></td>
-								<td><input name="patologia2" type="text" /></td>
-								<td><input name="patologia3" type="text" /></td>
-								<td><input name="tratamiento1" type="text" /></td>
-								<td><input name="tratamiento2" type="text" /></td>
-								<td><input name="tratamiento3" type="text" /></td>
-								<td><input name="cronicidad1" type="text" /></td>
-								<td><input name="cronicidad2" type="text" /></td>
-								<td><input name="cronicidad3" type="text" /></td>
-								<td><input name="observacion1" type="text" /></td>
-								<td><input name="observacion2" type="text" /></td>
-								<td><input name="observacion3" type="text" /></td>
-								<td><input name="anamnesis" type="text" /></td>
-								<td><input name="rx_uso_od_esfera" type="text" /></td>
-								<td><input name="rx_uso_od_cilindro" type="text" /></td>
-								<td><input name="rx_uso_od_eje" type="text" /></td>
-								<td><input name="rx_uso_od_adicion" type="text" /></td>
-								<td><input name="rx_uso_oi_esfera" type="text" /></td>
-								<td><input name="rx_uso_oi_cilindro" type="text" /></td>
-								<td><input name="rx_uso_oi_eje" type="text" /></td>
-								<td><input name="rx_uso_oi_adicion" type="text" /></td>
-								<td><input name="vision_lejos_od" type="text" /></td>
-								<td><input name="vision_lejos_oi" type="text" /></td>
-								<td><input name="vision_cerca_od" type="text" /></td>
-								<td><input name="vision_cerca_oi" type="text" /></td>
-								<td><input name="examen_externo_od" type="text" /></td>
-								<td><input name="examen_externo_oi" type="text" /></td>
-								<td><input name="reflejos_pupilares_fotomotor" type="text" /></td>
-								<td><input name="reflejos_pupilares_consensual" type="text" /></td>
-								<td><input name="reflejos_pupilares_acomodacion" type="text" /></td>
-								<td><input name="cover_test_vision_lejos" type="text" /></td>
-								<td><input name="cover_test_vision_proxima" type="text" /></td>
-								<td><input name="cover_test_ducciones" type="text" /></td>
-								<td><input name="cover_test_versiones" type="text" /></td>
-								<td><input name="od_oftalmoloscopio" type="text" /></td>
-								<td><input name="oi_oftalmoloscopio" type="text" /></td>
-								<td><input name="od_queratrometra" type="text" /></td>
-								<td><input name="oi_queratrometra" type="text" /></td>
-								<td><input name="od_retinoscopia" type="text" /></td>
-								<td><input name="oi_retinoscopia" type="text" /></td>
-								<td><input name="rx_final_od_esfera" type="text" /></td>
-								<td><input name="rx_final_od_cilindro" type="text" /></td>
-								<td><input name="rx_final_od_eje" type="text" /></td>
-								<td><input name="rx_final_od_adicion" type="text" /></td>
-								<td><input name="rx_final_oi_esfera" type="text" /></td>
-								<td><input name="rx_final_oi_cilindro" type="text" /></td>
-								<td><input name="rx_final_oi_eje" type="text" /></td>
-								<td><input name="rx_final_oi_adicion" type="text" /></td>
-								<td><input name="rx_final_od_agudes_visual" type="text" /></td>
-								<td><input name="rx_final_oi_agudes_visual" type="text" /></td>
-								<td><input name="diagnostico" type="text" /></td>
-								<td><input name="control" type="text" /></td>
-								<td><input name="observacion" type="text" /></td>
-							</tr>
-						</tbody>
-					</table>
-					<button class="site-btn">Guardar</button>
+					<br>
+					<div class="row">
+						<div class="col-sm">
+							<label for="rx_final_od_esfera">rx final ojo derecho esfera:</label>
+							<input type="text" class="form-control" name="rx_final_od_esfera">
+						</div>
+						<div class="col-sm">
+							<label for="rx_final_od_cilindro">rx final ojo derecho cilindro:</label>
+							<input type="text" class="form-control" name="rx_final_od_cilindro">
+						</div>
+						<div class="col-sm">
+							<label for="rx_final_od_eje">rx final ojo derecho eje:</label>
+							<input type="text" class="form-control" name="rx_final_od_eje">
+						</div>
+						<div class="col-sm">
+							<label for="rx_final_od_adicion">rx final ojo derecho adicion:</label>
+							<input type="text" class="form-control" name="rx_final_od_adicion">
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm">
+							<label for="rx_final_oi_esfera">rx final ojo izquierdo esfera:</label>
+							<input type="text" class="form-control" name="rx_final_oi_esfera">
+						</div>
+						<div class="col-sm">
+							<label for="rx_final_oi_cilindro">rx final ojo izquierdo cilindro:</label>
+							<input type="text" class="form-control" name="rx_final_oi_cilindro">
+						</div>
+						<div class="col-sm">
+							<label for="rx_final_oi_eje">rx final ojo izquierdo eje:</label>
+							<input type="text" class="form-control" name="rx_final_oi_eje">
+						</div>
+						<div class="col-sm">
+							<label for="rx_final_oi_adicion">rx final ojo izquierdo adicion:</label>
+							<input type="text" class="form-control" name="rx_final_oi_adicion">
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm">
+							<label for="rx_final_od_agudes_visual">rx final ojo derecho agudes visual:</label>
+							<input type="text" class="form-control" name="rx_final_od_agudes_visual">
+						</div>
+						<div class="col-sm">
+							<label for="rx_final_oi_agudes_visual">rx final ojo izquierdo agudes visual:</label>
+							<input type="text" class="form-control" name="rx_final_oi_agudes_visual">
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm">
+							<label for="diagnostico">diagnostico:</label>
+							<input type="text" class="form-control" name="diagnostico">
+						</div>
+						<div class="col-sm">
+							<label for="control">control:</label>
+							<input type="date" class="form-control" name="control">
+						</div>
+						<div class="col-sm">
+							<label for="observacion">observacion:</label>
+							<input type="text" class="form-control" name="observacion">
+						</div>
+					</div>
+					<br>
+					<div class="d-flex justify-content-end">
+						<input type="submit" class="btn btn-primary" value="Guardar">
+					</div>
 				</form>
 			</div>
 		</div>
