@@ -99,7 +99,7 @@ if ($now > $_SESSION['expire']) {
           }
           if (in_array($_SESSION['rol'], array("1", "2", "3"))) {
             ?>
-              <a class="list-group-item list-group-item-action" href="">Eliminar Producto del Catalogo</a>
+              <a class="list-group-item list-group-item-action" href="catalogo/eliminarCatalogo.php">Eliminar Producto del Catalogo</a>
             <?php
           }
           ?>

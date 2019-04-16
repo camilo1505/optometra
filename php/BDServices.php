@@ -7,7 +7,7 @@ function getCatalogo(){
 
     $consulta = "SELECT catalogo.id_catalogo, producto.nombre_producto, catalogo.costo, catalogo.descripcion, catalogo.imagen, catalogo.marca, catalogo.referencia, catalogo.promocion
                  FROM producto, catalogo 
-                 WHERE producto.id_producto = catalogo.fk_producto
+                 WHERE producto.id_producto = catalogo.fk_producto and producto.activado = '0'
                  ORDER BY catalogo.id_catalogo";
 
     $respuesta = getData($consulta, $username, $password);
@@ -37,7 +37,7 @@ function redirect($url, $statusCode = 303)
 function getProductos() {
     $username = "root";
     $password = "";
-    $consulta = "SELECT producto.id_producto, producto.nombre_producto FROM producto";
+    $consulta = "SELECT producto.id_producto, producto.nombre_producto, producto.activado FROM producto";
 
     $respuesta = getData($consulta, $username, $password);
     return $respuesta;
@@ -47,8 +47,8 @@ function newCatalogo($producto) {
     $username = "root";
     $password = "";
 
-    $consulta = "INSERT INTO catalogo(fk_producto, fk_usuario, referencia, marca, tipo, imagen, costo, descripcion)
-                 VALUES('$producto[6]',1,'$producto[0]','$producto[1]','$producto[2]','$producto[3]','$producto[4]','$producto[5]')";
+    $consulta = "INSERT INTO catalogo(fk_producto, fk_usuario, referencia, marca, imagen, costo, descripcion)
+                 VALUES('$producto[0]',$producto[1],'$producto[2]','$producto[3]','$producto[4]','$producto[5]','$producto[6]')";
 
     print($consulta);
     if(setData($consulta, $username, $password)){

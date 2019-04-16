@@ -90,7 +90,6 @@ if ($now > $_SESSION['expire']) {
                         <select name="id_historia_clinica">
                             <?php
                             $sql = "SELECT * FROM historia_clinica WHERE fk_cliente = $idCliente";
-                            echo $sql;
                             $result = getData($sql,'root','');
                             foreach ($result as $resultado) {
                                 ?>
@@ -99,7 +98,13 @@ if ($now > $_SESSION['expire']) {
                             }
                         ?>
                         </select>
-                        <button class="site-btn">Consultar Historia</button>
+                        <?php 
+                            if($result != null){
+                                ?>
+                                <button class="site-btn">Consultar Historia</button>
+                                <?php
+                            } 
+                        ?>
                     </div>
                 </form>
                 <br>

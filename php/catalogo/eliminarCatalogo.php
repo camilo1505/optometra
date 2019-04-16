@@ -66,8 +66,7 @@ if ($now > $_SESSION['expire']) {
                   <a class="nav-link" href="../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                <a class="nav-link" href="../logout.php">Cerrar Sesion<span class="sr-only">(current)</span></a>
-                </li>
+                <a class="nav-link" href="../logout.php">Cerrar Sesion<span class="sr-only">(current)</span></a>                </li>
               </ul>
             </div>
           </nav>
@@ -80,43 +79,47 @@ if ($now > $_SESSION['expire']) {
     <div id="content">
         <div class="container">
             <div class="jumbotron">
-                <h1>Eliminar Usuarios.</h1>
+                <h1>Eliminar producto del catalogo.</h1>
                 <br>
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Id</th>
-                            <th scope="col">Cedula</th>
-                            <th scope="col">Nombres</th>
-                            <th scope="col">Apellidos</th>
-                            <th scope="col">Rol</th>
+                            <th scope="col">Numero producto</th>
+                            <th scope="col">usuario</th>
+                            <th scope="col">referencia</th>
+                            <th scope="col">marca</th>
+                            <th scope="col">imagen</th>
+                            <th scope="col">costo</th>
+                            <th scope="col">descripcion</th>
                             <th scope="col">Acciones</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                             $sql = "SELECT *
-                                     FROM usuario, roles, rol 
-                                     WHERE usuario.id_usuario = roles.fk_usuario
-                                     AND roles.fk_rol = rol.id_rol";
+                             $sql = "SELECT * FROM catalogo";
                             $usuarios = getData($sql,'root','');
 
                             foreach($usuarios as $usuario) {
                         ?>
                             <tr>
                                 <form action="eliminar.php" method="POST">
-                                    <th scope="row" width="6% "><input type="text" class="form-control" name="id_usuario" value="<?php print ($usuario["id_usuario"]);?>"readonly></th>
-                                    <td scope="row" width="17% "><input type="text" class="form-control" name="cedula" value="<?php print ($usuario["cedula"]);?>"required readonly></td>
-                                    <td width="15%"> <input type="text" class="form-control" name="nombres" value="<?php print($usuario["nombres"]); ?>" required readonly></td>
-                                    <td scope="row" width="15% "><input type="text" class="form-control" name="apellidos" value="<?php print ($usuario["apellidos"]);?>"required readonly></td> 
-                                    <td scope="row" width="14% "><input type="text" class="form-control" name="Rol" value="<?php print ($usuario["rol"]);?>"required readonly></td>
-                                    <td> <?php if($usuario["activado"] == '0') { ?><input type="submit" class="btn btn-primary" value="Inactivar"> </input> <?php } else { ?><input type="submit" class="btn btn-primary" value="activar"> </input><?php } ?> </td>
+                                    <th scope="row" width="5% "><input type="text" class="form-control" name="id_catalogo" value="<?php print ($usuario["id_catalogo"]);?>"readonly></th>
+                                    <td scope="row" width="11% "><input type="text" class="form-control" name="fk_producto" value="<?php print ($usuario["fk_producto"]);?>"readonly></td>
+                                    <td width="15%"> <input type="text" class="form-control" name="fk_usuario" value="<?php print($usuario["fk_usuario"]); ?>" readonly></td>
+                                    <td scope="row" width="11% "><input type="text" class="form-control" name="referencia" value="<?php print ($usuario["referencia"]);?>"readonly></td>
+                                    <td scope="row" width="11% "><input type="text" class="form-control" name="marca" value="<?php print ($usuario["marca"]);?>"readonly></td>
+                                    <td scope="row" width="11% "><input type="text" class="form-control" name="imagen" value="<?php print ($usuario["imagen"]);?>"readonly></td>
+                                    <td scope="row" width="11% "><input type="text" class="form-control" name="costo" value="<?php print ($usuario["costo"]);?>"readonly></td>
+                                    <td scope="row" width="11% "><input type="text" class="form-control" name="descripcion" value="<?php print ($usuario["descripcion"]);?>"readonly></td>
+                                    <td> <input type="submit" class="btn btn-primary" value="Eliminar"> </input> </td>
                                 </form>
                             </tr>
                         <?php } ?>
                     </tbody>
                 </table>
-                <button class="btn btn-primary"> <a href="../usuarios.php">Volver</a></button>
+                <button class="btn btn-primary"> <a href="../catalogo.php">Volver</a></button>
             </div>
         </div>
     </div>

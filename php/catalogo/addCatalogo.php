@@ -90,10 +90,6 @@ if ($now > $_SESSION['expire']) {
               <label for="marca">Marca del Producto:</label>
               <input type="text" class="form-control" name="marca" required>
             </div>
-            <div class="col-sm">
-              <label for="tipo">Tipo del Producto:</label>
-              <input type="text" class="form-control" name="tipo" required>
-            </div>
           </div>
           <br>
           <div class="row">

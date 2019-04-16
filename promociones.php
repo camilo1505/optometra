@@ -68,16 +68,24 @@ $catalogo = getData($sql, 'root', '');
             <div class="jumbotron">
                 <h1>Catalogo de Productos.</h1>
                 <div class="d-flex flex-row">
-                    <form action="busqueda.php" method="POST">
-                        <div class="d-flex flex-row">
-                            <div class="p-2">
-                                <input type="text" class="form-control" name="busqueda" required>
-                            </div>
-                            <div class="p-2">
-                                <input type="submit" class="btn btn-primary" value="Buscar">
-                            </div>
-                        </div>
-                    </form>
+                <form action="busqueda.php" method="GET">
+                    <div class="d-flex flex-row">
+                    <div class="p-2">
+                    <label for="busqueda">Tipo de Producto: </label>
+                    <select name="busqueda" class="selectpicker" required>
+                        <?php
+                        $productos = getProductos();
+                        for ($i = 0; $i < sizeof($productos); $i++) {
+                        ?>
+                        <option  value="<?php print($productos[$i]["id_producto"]); ?>"> <?php print($productos[$i]["nombre_producto"]); ?></option>
+                        <?php } ?>
+                    </select>
+                    </div>
+                    <div class="p-2">
+                        <input type="submit" class="btn btn-primary" value="Buscar">
+                    </div>
+                    </div>
+                </form>
                     <form action="promociones.php">
                         <div class="p-2">
                             <input type="submit" class="btn btn-primary" value="Promociones">

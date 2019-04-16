@@ -21,9 +21,9 @@
     array_push($catalogo,$descripcion);
     array_push($catalogo,$promocion);
 
-    
+    print_r($catalogo);
     $done = editarCatalogo($catalogo);
-    
+
     if($done) {
         echo "
             <script>
@@ -35,7 +35,7 @@
     if(! $done) {
         echo "
             <script>
-                alert('Error Editando el Producto');
+                alert('Error Editando el Producto, no se eligio un tipo de promocion');
                 window.location.href='editarCatalogo.php';
             </script>
         ";
