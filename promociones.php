@@ -103,7 +103,7 @@ $catalogo = getData($sql, 'root', '');
                     ?>
                     <div class="col-sm">
                         <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="img/gafas.png" alt="Card image cap">
+                            <img class="card-img-top" src="<?php print($producto["imagen"]); ?>" alt="Card image cap">
                             <div class="card-body">
                                 <p class="card-title"> <?php print($producto["nombre_producto"]); ?> </p>
                                 <p> $<?php print($producto["costo"]); ?> </p>
