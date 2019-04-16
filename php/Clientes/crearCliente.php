@@ -113,15 +113,15 @@ if ($now > $_SESSION['expire']) {
                     <div class="row">
                         <div class="col-sm">
                             <label for="telefono">Telefono:</label>
-                            <input type="text" class="form-control" name="telefono">
+                            <input type="number"  class="form-control" name="telefono">
                         </div>
                         <div class="col-sm">
                             <label for="celular">Celular:</label>
-                            <input type="text" class="form-control" name="celular">
+                            <input type="number" class="form-control" name="celular">
                         </div>
                         <div class="col-sm">
                             <label for="email">Email: </label>
-                            <input type="text" class="form-control" name="email">
+                            <input type="email" class="form-control" name="email">
                         </div>
                     </div>
                     <br>

@@ -103,6 +103,7 @@ if ($now > $_SESSION['expire']) {
           <?php
         }
         ?>
+        <a class="list-group-item list-group-item-action" href="reporte.php">Reporte de clientes</a>
         </div>
       </div>
 
