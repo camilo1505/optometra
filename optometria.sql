@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-04-2019 a las 08:38:43
--- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.3
+-- Tiempo de generación: 16-04-2019 a las 02:34:48
+-- Versión del servidor: 10.1.13-MariaDB
+-- Versión de PHP: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -34,7 +32,6 @@ CREATE TABLE `catalogo` (
   `fk_usuario` bigint(20) UNSIGNED DEFAULT NULL,
   `referencia` varchar(16) NOT NULL,
   `marca` varchar(16) NOT NULL,
-  `tipo` varchar(16) NOT NULL,
   `imagen` varchar(100) NOT NULL,
   `costo` bigint(20) NOT NULL,
   `descripcion` varchar(100) DEFAULT NULL,
@@ -45,15 +42,10 @@ CREATE TABLE `catalogo` (
 -- Volcado de datos para la tabla `catalogo`
 --
 
-INSERT INTO `catalogo` (`id_catalogo`, `fk_producto`, `fk_usuario`, `referencia`, `marca`, `tipo`, `imagen`, `costo`, `descripcion`, `promocion`) VALUES
-(1, 11, 1, 'HXB1345', 'Gucchi', 'Gafas Sol', '', 200000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ', 1),
-(2, 16, 1, 'HXB1348', 'AQUA', 'Gafas Sol', 'pruebas', 300000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ', 0),
-(3, 16, 1, 'EREY1234', 'Borealis', 'Gafas Sol', 'asdasd', 80000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ', 0),
-(4, 2, 1, 'ASFD254185', 'Elbrown', 'Pruebas', 'asdasdasd', 8514841, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ', 0),
-(5, 1, 1, 'HXB5484', 'Gondor', 'aasdas', 'asdasd', 5451251, 'asdasdasdasdasdasd', 0),
-(6, 40, 1, 'ffsd5f4asdf4', 'asdasda44fd', 'asdas5d4as5', 'asdasd4a5s4dasd', 515154851, '5a4sd541as5d1a5s1dgvasndjkasd', 0),
-(40, 11, 1, '124254twerdfs', 'asdgtrwertrregrf', '34trfesrft65ersd', 'Lighthouse.jpg', 4556786786, '123546ytrhgfdfngj', 0),
-(41, 37, 1, 'akpsmodais1123', 'kqmwdmoasmn', 'apskmdonao', '279654.jpg', 515151541, 'jasnidaisbdihabsidhbaihsbdihasijdnaoscnoasncasnicnaisjncias ciha sci asi ciansiniasihnca', 0);
+INSERT INTO `catalogo` (`id_catalogo`, `fk_producto`, `fk_usuario`, `referencia`, `marca`, `imagen`, `costo`, `descripcion`, `promocion`) VALUES
+(55, 2, 3, '3', '2', '', 3, '4', 0),
+(56, 37, 3, '22344', 'extraterrestre', '', 5000, 'hola soy una prueba', 1),
+(57, 37, 3, '1', '2', 'Desert.jpg', 3, '4', 0);
 
 -- --------------------------------------------------------
 
@@ -106,7 +98,7 @@ CREATE TABLE `historia_clinica` (
   `observacion1` varchar(100) DEFAULT NULL,
   `observacion2` varchar(100) DEFAULT NULL,
   `observacion3` varchar(100) DEFAULT NULL,
-  `anamnesis` varchar(100) NOT NULL,
+  `anamnesis` varchar(500) NOT NULL,
   `rx_uso_od_esfera` varchar(100) DEFAULT NULL,
   `rx_uso_od_cilindro` varchar(100) DEFAULT NULL,
   `rx_uso_od_eje` varchar(100) DEFAULT NULL,
@@ -155,8 +147,8 @@ CREATE TABLE `historia_clinica` (
 --
 
 INSERT INTO `historia_clinica` (`id_historia_clinica`, `fk_usuario`, `fk_cliente`, `patologia1`, `patologia2`, `patologia3`, `tratamiento1`, `tratamiento2`, `tratamiento3`, `cronicidad1`, `cronicidad2`, `cronicidad3`, `observacion1`, `observacion2`, `observacion3`, `anamnesis`, `rx_uso_od_esfera`, `rx_uso_od_cilindro`, `rx_uso_od_eje`, `rx_uso_od_adicion`, `rx_uso_oi_esfera`, `rx_uso_oi_cilindro`, `rx_uso_oi_eje`, `rx_uso_oi_adicion`, `vision_lejos_od`, `vision_lejos_oi`, `vision_cerca_od`, `vision_cerca_oi`, `examen_externo_od`, `examen_externo_oi`, `reflejos_pupilares_fotomotor`, `reflejos_pupilares_consensual`, `reflejos_pupilares_acomodacion`, `cover_test_vision_lejos`, `cover_test_vision_proxima`, `cover_test_ducciones`, `cover_test_versiones`, `od_oftalmoloscopio`, `oi_oftalmoloscopio`, `od_queratrometra`, `oi_queratrometra`, `od_retinoscopia`, `oi_retinoscopia`, `rx_final_od_esfera`, `rx_final_od_cilindro`, `rx_final_od_eje`, `rx_final_od_adicion`, `rx_final_oi_esfera`, `rx_final_oi_cilindro`, `rx_final_oi_eje`, `rx_final_oi_adicion`, `rx_final_od_agudes_visual`, `rx_final_oi_agudes_visual`, `diagnostico`, `control`, `observacion`, `fecha`) VALUES
-(1, 1, 1, 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'aa', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '', 'a', 'aa', '', 'a', 'a', 'a', 'a', 'a', '0000-00-00', 'a', '2019-04-15-04-35-09'),
-(2, 1, 1, 'ed', 'd', 'd', 'rd', 'd', 'r', 'fr', 'f', 'v', 'v', 'tv', 'yf', 'vvf', 'vfv', 'yfv', 'yfv', 'yfv', 'yfv', 'yfv', 'yfv', 'yfv', 'yf', 'vyf', 'vfy', 'vyf', 'v', 'yfv', 'yv', 'yv', 'yv', 'yv', 'yfv', 'yfv', 'yfv', 'yf', 'yfv', 'vyf', 'vy', 'vy', 'v', 'yv', 'yv', 'yv', 'yv', 'yv', 'yv', 'yf', 'yfgv', 'yfv', 'yfv', 'yfv', '0000-00-00', 'y', '2019-04-15-08-33-45');
+(1, 2, 1, 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'aa', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '', 'a', 'aa', '', 'a', 'a', 'a', 'a', 'a', '2018-03-08', 'a', '2019-04-15-04-35-09'),
+(2, 2, 1, 'ed', 'd', 'd', 'rd', 'd', 'r', 'fr', 'f', 'v', 'v', 'tv', 'yf', 'vvf', 'vfv', 'yfv', 'yfv', 'yfv', 'yfv', 'yfv', 'yfv', 'yfv', 'yf', 'vyf', 'vfy', 'vyf', 'v', 'yfv', 'yv', 'yv', 'yv', 'yv', 'yfv', 'yfv', 'yfv', 'yf', 'yfv', 'vyf', 'vy', 'vy', 'v', 'yv', 'yv', 'yv', 'yv', 'yv', 'yv', 'yf', 'yfgv', 'yfv', 'yfv', 'yfv', '0000-00-00', 'y', '2019-04-15-08-33-45');
 
 -- --------------------------------------------------------
 
@@ -166,21 +158,23 @@ INSERT INTO `historia_clinica` (`id_historia_clinica`, `fk_usuario`, `fk_cliente
 
 CREATE TABLE `producto` (
   `id_producto` bigint(20) UNSIGNED NOT NULL,
-  `nombre_producto` varchar(100) NOT NULL
+  `nombre_producto` varchar(100) NOT NULL,
+  `activado` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`id_producto`, `nombre_producto`) VALUES
-(11, 'Estuche Gafas'),
-(40, 'Gafas bien Gays'),
-(1, 'Gafas de Sol Solaris'),
-(2, 'Gafas Gucchi'),
-(16, 'lentes de Contacto'),
-(3, 'Liquido Aqua'),
-(37, 'Pañuelo');
+INSERT INTO `producto` (`id_producto`, `nombre_producto`, `activado`) VALUES
+(1, 'Gafas de Sol Solaris', 0),
+(2, 'Gafas Gucchi', 0),
+(3, 'Liquido Aqua', 0),
+(11, 'Estuche Gafas 1', 0),
+(16, 'lentes de Contacto', 0),
+(37, 'Pañuelo', 0),
+(40, 'Gafas bien Gays', 0),
+(41, 'camisas grandes', 1);
 
 -- --------------------------------------------------------
 
@@ -219,8 +213,9 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id_roles`, `fk_usuario`, `fk_rol`) VALUES
-(3, 1, 1),
-(4, 2, 2);
+(4, 2, 2),
+(5, 3, 1),
+(6, 4, 2);
 
 -- --------------------------------------------------------
 
@@ -234,16 +229,17 @@ CREATE TABLE `usuario` (
   `nombres` varchar(60) NOT NULL,
   `apellidos` varchar(60) NOT NULL,
   `usuario_password` varchar(300) NOT NULL,
-  `desactivado` tinyint(1) NOT NULL DEFAULT '0'
+  `activado` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `cedula`, `nombres`, `apellidos`, `usuario_password`, `desactivado`) VALUES
-(1, 'admin', 'administrador', 'administrador', '$2y$10$FCRhwIVKQ6kgWQQtG7wjEu1L8lTTgst0cwq3xWxKlg9fnsHlrIoG2', 0),
-(2, '123456789', 'asdasdasd', 'asdasdasdasd', '$2y$10$HVfP4OwpNhzUovhPR/v6hOKvoOQBfrjl.ya3WrjRYgswLuZVp5BRW', 0);
+INSERT INTO `usuario` (`id_usuario`, `cedula`, `nombres`, `apellidos`, `usuario_password`, `activado`) VALUES
+(2, '123456789', 'asdasdasd', 'asdasdasdasd', '$2y$10$HVfP4OwpNhzUovhPR/v6hOKvoOQBfrjl.ya3WrjRYgswLuZVp5BRW', 1),
+(3, 'admin', 'administrador', 'administrador', '$2y$10$7R8OLQJJ7ma6bfwEcr7z0e6nomtFJaLO6axn0FEpKaX3hFnbLKvve', 0),
+(4, '42100855', 'Marisol', 'Agudelo', '$2y$10$Rcr7ROp7bjj6cUEvOVRoauZTmseHh29SfvSjkgbdn4PSsUILx6aKy', 1);
 
 --
 -- Índices para tablas volcadas
@@ -310,44 +306,37 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `catalogo`
 --
 ALTER TABLE `catalogo`
-  MODIFY `id_catalogo` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
-
+  MODIFY `id_catalogo` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
   MODIFY `id_cliente` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT de la tabla `historia_clinica`
 --
 ALTER TABLE `historia_clinica`
   MODIFY `id_historia_clinica` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
-
+  MODIFY `id_producto` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
   MODIFY `id_rol` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id_roles` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `id_roles` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id_usuario` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Restricciones para tablas volcadas
 --
@@ -372,7 +361,6 @@ ALTER TABLE `historia_clinica`
 ALTER TABLE `roles`
   ADD CONSTRAINT `roles_ibfk_1` FOREIGN KEY (`fk_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `roles_ibfk_2` FOREIGN KEY (`fk_rol`) REFERENCES `rol` (`id_rol`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
