@@ -95,7 +95,7 @@ if ($now > $_SESSION['expire']) {
               ?>
                 <tr>
                   <form action="editarProductoService.php" method="POST">
-                    <th scope="row" width="5% "><input type="text" class="form-control" name="ID_producto" value="<?php print ($producto["id_producto"]);?>"readonly></th>
+                    <th scope="row" width="7% "><input type="text" class="form-control" name="ID_producto" value="<?php print ($producto["id_producto"]);?>"readonly></th>
                     <td> <input type="text" class="form-control" name="nombre_producto" value="<?php print($producto["nombre_producto"]); ?>" required></td>
                     <td> <input type="submit" class="btn btn-primary" value="Guardar"> </input> </td>
                   </form>
