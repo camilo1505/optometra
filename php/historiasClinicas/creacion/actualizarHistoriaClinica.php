@@ -44,9 +44,9 @@ $sql = "SELECT MAX(id_historia_clinica) as numero , rx_final_od_esfera ,  rx_fin
             WHERE fk_cliente = '$cliente' and fk_cliente = id_cliente;";
 $historiaClinicaAnterior = getData($sql,'root','');
 $sql = "SELECT *
-			 FROM usuario, roles, rol
-       WHERE roles.fk_usuario = 2
-       AND roles.fk_usuario = usuario.id_usuario
+		FROM usuario, roles, rol
+       	WHERE roles.fk_usuario = 2
+       	AND roles.fk_usuario = usuario.id_usuario
 			 AND roles.fk_rol = rol.id_rol";
 $datosMedico = getData($sql, 'root', '');
 ?>

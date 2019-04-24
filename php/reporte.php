@@ -103,7 +103,8 @@ if ($now > $_SESSION['expire']) {
                                 $id_cliente = $usuario['id_cliente'];
                                 $sql = "SELECT MAX(id_historia_clinica) as numero , cliente.nombres , cliente.apellidos, cliente.correo, cliente.telefono, cliente.celular , historia_clinica.control
                                 FROM historia_clinica, cliente
-                                WHERE fk_cliente = '$id_cliente' and fk_cliente = id_cliente AND historia_clinica.control <=  '$fecha'";
+                                WHERE fk_cliente = '$id_cliente' and fk_cliente = id_cliente AND historia_clinica.control <=  '$fecha'
+                                ORDER BY historia_clinica.control DESC";
                                 $usuarios = getData($sql,'root','');
                                 if($usuarios[0]['numero']<>''){
                                     ?>
