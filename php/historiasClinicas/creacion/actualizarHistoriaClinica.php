@@ -49,6 +49,11 @@ $sql = "SELECT *
        	AND roles.fk_usuario = usuario.id_usuario
 			 AND roles.fk_rol = rol.id_rol";
 $datosMedico = getData($sql, 'root', '');
+
+$nacimiento = $datosClientes[0]['nacimiento'];
+$ano = date("Y", strtotime($nacimiento)); 
+$fecha_actual = date("Y");
+$edad = $fecha_actual - $ano;
 ?>
 
 <body>
@@ -102,6 +107,10 @@ $datosMedico = getData($sql, 'root', '');
 						<div class="col-sm">
 							<label for="fk_cliente">Cedula Cliente:</label>
 							<input type="text" class="form-control" name="fk_cliente" value="<?php print($datosClientes[0]["cedula"]); ?>" readonly>
+						</div>
+						<div class="col-sm">
+							<label for="fk_cliente">Edad Cliente:</label>
+							<input type="text" class="form-control" name="edad_cliente" value="<?php print($edad); ?>" readonly>
 						</div>
 						<div class="col-sm">
 							<label for="fk_usuario">Cedula Optometra: </label>
