@@ -39,6 +39,10 @@ if ($now > $_SESSION['expire']) {
 $cliente = $_GET['fk_cliente'];
 $sql = "SELECT * FROM cliente WHERE id_cliente = '$cliente'";
 $datosClientes = getData($sql, 'root', '');
+$sql = "SELECT MAX(id_historia_clinica) as numero , rx_final_od_esfera ,  rx_final_od_cilindro ,  rx_final_od_eje ,  rx_final_od_adicion ,  rx_final_oi_esfera ,  rx_final_oi_cilindro ,  rx_final_oi_eje ,  rx_final_oi_adicion ,  rx_final_od_agudes_visual ,  rx_final_oi_agudes_visual
+            FROM historia_clinica, cliente
+            WHERE fk_cliente = '$cliente' and fk_cliente = id_cliente;";
+$historiaClinicaAnterior = getData($sql,'root','');
 $sql = "SELECT *
 			 FROM usuario, roles, rol
        WHERE roles.fk_usuario = 2
@@ -175,38 +179,38 @@ $datosMedico = getData($sql, 'root', '');
 					<div class="row">
 						<div class="col-sm">
 							<label for="rx_uso_od_esfera">rx uso ojo derecho esfera:</label>
-							<input type="text" class="form-control" name="rx_uso_od_esfera">
+							<input type="text" class="form-control" name="rx_uso_od_esfera" value="<?php echo $historiaClinicaAnterior[0]['rx_final_od_esfera'] ?>" readonly> 
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_od_cilindro">rx uso ojo derecho cilindro:</label>
-							<input type="text" class="form-control" name="rx_uso_od_cilindro">
+							<input type="text" class="form-control" name="rx_uso_od_cilindro" value="<?php echo $historiaClinicaAnterior[0]['rx_final_od_cilindro'] ?>" readonly> 
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_od_eje">rx uso ojo derecho eje:</label>
-							<input type="text" class="form-control" name="rx_uso_od_eje">
+							<input type="text" class="form-control" name="rx_uso_od_eje" value="<?php echo $historiaClinicaAnterior[0]['rx_final_od_eje'] ?>" readonly> 
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_od_adicion">rx uso ojo derecho adicion:</label>
-							<input type="text" class="form-control" name="rx_uso_od_adicion">
+							<input type="text" class="form-control" name="rx_uso_od_adicion" value="<?php echo $historiaClinicaAnterior[0]['rx_final_od_adicion'] ?>" readonly> 
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="rx_uso_oi_esfera">rx uso ojo izquierdo esfera:</label>
-							<input type="text" class="form-control" name="rx_uso_oi_esfera">
+							<input type="text" class="form-control" name="rx_uso_oi_esfera" value="<?php echo $historiaClinicaAnterior[0]['rx_final_oi_esfera'] ?>" readonly> 
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_oi_cilindro">rx uso ojo izquierdo cilindro:</label>
-							<input type="text" class="form-control" name="rx_uso_oi_cilindro">
+							<input type="text" class="form-control" name="rx_uso_oi_cilindro" value="<?php echo $historiaClinicaAnterior[0]['rx_final_oi_cilindro'] ?>" readonly> 
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_oi_eje">rx uso ojo izquierdo eje:</label>
-							<input type="text" class="form-control" name="rx_uso_oi_eje">
+							<input type="text" class="form-control" name="rx_uso_oi_eje" value="<?php echo $historiaClinicaAnterior[0]['rx_final_oi_eje'] ?>" readonly> 
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_oi_adicion">rx uso ojo izquierdo adicion:</label>
-							<input type="text" class="form-control" name="rx_uso_oi_adicion">
+							<input type="text" class="form-control" name="rx_uso_oi_adicion" value="<?php echo $historiaClinicaAnterior[0]['rx_final_oi_adicion'] ?>" readonly> 
 						</div>
 					</div>
 					<br>
