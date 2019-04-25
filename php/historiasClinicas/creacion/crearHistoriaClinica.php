@@ -96,13 +96,6 @@ $edad = $fecha_actual - $ano;
 	<div id="content">
 		<div class="container">
 			<div class="jumbotron">
-
-				 <button class="btn btn-primary"> <a href="../panelcontrol.php">Volver</a></button>
-				 
-
-
-
-
 				<h1>Crear Historia Clinica de: <b style="color:red;"> <?php print($datosClientes[0]['apellidos'] . " " . $datosClientes[0]['nombres']); ?></b>.</h1>
 				<br>
 				<form action="registrar.php" method="post">

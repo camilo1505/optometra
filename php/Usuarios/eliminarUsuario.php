@@ -27,7 +27,7 @@ if ($now > $_SESSION['expire']) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ópticas Henao</title>
+  <title>Opticas Henao</title>
   <link href="../../css/styles.css" rel="stylesheet" />
   <link href="../../css/bootstrap-override.css" rel="stylesheet" />
   <link href="../../css/font-awesome/font-awesome.css" rel="stylesheet" />
@@ -47,7 +47,7 @@ if ($now > $_SESSION['expire']) {
           <div class="row space10"></div>
           <img src="../../nombre.png" alt="">
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="../../index.html">Ópticas Henao</a>
+            <a class="navbar-brand" href="../../index.html">Opticas Henao</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -60,13 +60,13 @@ if ($now > $_SESSION['expire']) {
                   <a class="nav-link" href="../../productos.php">Productos<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="../../contactanos.html">Contáctenos<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../../contactanos.html">Contactenos<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
                   <a class="nav-link" href="../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                <a class="nav-link" href="../logout.php">Cerrar Sesión<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../logout.php">Cerrar Sesion<span class="sr-only">(current)</span></a>
                 </li>
               </ul>
             </div>
@@ -86,7 +86,7 @@ if ($now > $_SESSION['expire']) {
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Id</th>
-                            <th scope="col">Cédula</th>
+                            <th scope="col">Cedula</th>
                             <th scope="col">Nombres</th>
                             <th scope="col">Apellidos</th>
                             <th scope="col">Rol</th>
@@ -137,12 +137,12 @@ if ($now > $_SESSION['expire']) {
                     &copy; 2020. All rights reserved.
                 </div>
                 <div class="span3 offset3">
-                <h3>Dirección</h3>
-                    Calle 69 Bis número 25B-16<br />
-                    Cuba - Pereira<br />
-                    Colombia <br />
-                    <h3>Contacto</h3>
-                    <i class="icon-phone"></i>+6 3374294<br />
+                    <h3>Address</h3>
+                    81 Sunnyvale Street<br />
+                    Los Angeles, CA 90185<br />
+                    United States<br />
+                    <br />
+                    <i class="icon-phone"></i>+01 880 555 999<br />
                     <i class="icon-envelope"></i><a href="mailto:support@example.com">support@example.com</a><br />
                     <i class="icon-home"></i><a href="#">www.example.com</a>
 

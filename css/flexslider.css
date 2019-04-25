@@ -90,7 +90,6 @@ html[xmlns] .slides {display: block;}
 .slider1 .flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover {opacity: 1;}
 .slider1 .flex-direction-nav .flex-disabled {opacity: .6!important; filter:alpha(opacity=60); cursor: default;}
 
-
 /* Direction Nav Slider2 */
 .slider2  {background:transparent;}
 .slider2 .flex-direction-nav {*height: 0;}
