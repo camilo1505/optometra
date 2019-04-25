@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opticas Henao</title>
+    <title>Ópticas Henao</title>
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/bootstrap-override.css" rel="stylesheet">
     <link href="css/font-awesome/font-awesome.css" rel="stylesheet">
@@ -28,8 +28,8 @@
                         <ul class="clearfix">
                             <li ><a href="index.html" title="">Inicio</a></li>
                             <li><a href="productos.php" title="">Productos</a></li>
-                            <li class="active"><a href="login.html" title="">Iniciar Sesion</a></li>
-                            <li><a href="contactanos.html" title="">contactenos</a></li>
+                            <li class="active"><a href="login.html" title="">Iniciar Sesión</a></li>
+                            <li><a href="contactanos.html" title="">contáctenos</a></li>
                         </ul>
                     </nav>
                 </div>            

@@ -16,6 +16,18 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { } else {
     $descripcion = $_POST["descripcion"];
     $producto = $_POST["producto"];
 
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($imagen["name"]);
+
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+    echo $target_file;
+    echo "<br>";
+    print($imageFileType);
+    echo "<br>";
+
+    move_uploaded_file($imagen["tmp_name"], "../../".$target_file);
+
     $catalogo = array();
 
     $cedula = $_SESSION['cedula'];
@@ -28,7 +40,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { } else {
     array_push($catalogo,$id_usuario[0]['id_usuario']);
     array_push($catalogo,$referencia);
     array_push($catalogo,$marca);
-    array_push($catalogo,$imagen["name"]);
+    array_push($catalogo,$target_file);
     array_push($catalogo,$costo);
     array_push($catalogo,$descripcion);
 

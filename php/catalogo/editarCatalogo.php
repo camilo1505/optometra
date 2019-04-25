@@ -102,7 +102,7 @@ if ($now > $_SESSION['expire']) {
             foreach ($catalogo as $producto) {
               ?>
               <tr>
-                <form action="editarCatalogoService.php" method="POST">
+                <form action="editarCatalogoService.php" method="POST" enctype="multipart/form-data">
                   <th scope="row" width="4%"><input type="text" class="form-control" name="id_catalogo" value="<?php print($producto["id_catalogo"]); ?>" readonly></th>
                   <td scope="row" width="11%"><input type="text" class="form-control" name="nombre_producto" value="<?php print($producto["nombre_producto"]); ?>" required readonly></td>
                   <td scope="row" width="8%"> <input type="text" class="form-control" name="referencia" value="<?php print($producto["referencia"]); ?>" required></td>

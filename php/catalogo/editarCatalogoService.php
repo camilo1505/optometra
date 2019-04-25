@@ -4,10 +4,17 @@
     $nombreProducto = $_POST["nombre_producto"];
     $referencia = $_POST["referencia"];
     $marca = $_POST["marca"];
-    $imagen = $_POST["imagen"];
+    $imagen = $_FILES["imagen"];
     $costo = $_POST["costo"];
     $descripcion = $_POST["descripcion"];
     $promocion = $_POST["promocion"];
+
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($imagen["name"]);
+
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+    move_uploaded_file($imagen["tmp_name"], "../../".$target_file);
 
     $catalogo = array();
 
@@ -16,12 +23,14 @@
     array_push($catalogo,$nombreProducto);
     array_push($catalogo,$referencia);
     array_push($catalogo,$marca);
-    array_push($catalogo,$imagen);
+    array_push($catalogo,$target_file);
     array_push($catalogo,$costo);
     array_push($catalogo,$descripcion);
     array_push($catalogo,$promocion);
 
+
     print_r($catalogo);
+
     $done = editarCatalogo($catalogo);
 
     if($done) {
