@@ -40,12 +40,13 @@
                 window.location.href='editarCatalogo.php';
             </script>
         ";
-}
-if (!$done) {
-    echo "
+    }
+    if(! $done) {
+        echo "
             <script>
                 alert('Error Editando el Producto, no se eligio un tipo de promocion');
                 window.location.href='editarCatalogo.php';
             </script>
         ";
-}
+    }
+?>

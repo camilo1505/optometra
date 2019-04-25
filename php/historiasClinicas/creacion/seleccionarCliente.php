@@ -82,7 +82,7 @@ if ($now > $_SESSION['expire']) {
     <div id="content">
         <div class="container">
             <div class="jumbotron">
-                <form action="preparacion.php" method="post">
+                <form action="crearHistoriaClinica.php" method="post">
                     <div class="d-flex justify-content-center">
                         <label for="fk_cliente"> </label>
                         <select name="fk_cliente">

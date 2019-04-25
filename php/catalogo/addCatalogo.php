@@ -103,7 +103,7 @@ if ($now > $_SESSION['expire']) {
             </div>
             <div class="col-sm">
               <label for="descripcion">Descripcion del Producto:</label>
-              <input type="textarea" class="form-control" name="descripcion" maxlength="100" minlength="50">
+              <input type="textarea" class="form-control" name="descripcion">
             </div>
           </div>
           <br>

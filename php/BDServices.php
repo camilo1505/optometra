@@ -75,25 +75,14 @@ function editarProducto($IdProducto, $producto){
 function editarCatalogo($catalogo){
     $username = "root";
     $password = "";
-    if($catalogo[4] != ""){
-        $consulta = "UPDATE catalogo
-                    SET catalogo.referencia = '$catalogo[2]', 
-                        catalogo.marca = '$catalogo[3]',
-                        catalogo.imagen = '$catalogo[4]',
-                        catalogo.costo = '$catalogo[5]',
-                        catalogo.descripcion = '$catalogo[6]',
-                        catalogo.promocion = $catalogo[7]
-                    WHERE catalogo.id_catalogo = '$catalogo[0]'";
-    }
-    else {
-        $consulta = "UPDATE catalogo
+    $consulta = "UPDATE catalogo
                  SET catalogo.referencia = '$catalogo[2]', 
                      catalogo.marca = '$catalogo[3]',
+                     catalogo.imagen = '$catalogo[4]',
                      catalogo.costo = '$catalogo[5]',
                      catalogo.descripcion = '$catalogo[6]',
                      catalogo.promocion = $catalogo[7]
                  WHERE catalogo.id_catalogo = '$catalogo[0]'";
-    }
 
 
     if(setData($consulta, $username, $password)){

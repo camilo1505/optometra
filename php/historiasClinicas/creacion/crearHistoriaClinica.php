@@ -36,7 +36,7 @@ if ($now > $_SESSION['expire']) {
 	<link rel="stylesheet" href="../../../css/flexslider.css" type="../../../text/css" media="../../../screen" />
 </head>
 <?php
-$cliente = $_GET['fk_cliente'];
+$cliente = $_POST['fk_cliente'];
 $sql = "SELECT * FROM cliente WHERE id_cliente = '$cliente'";
 $datosClientes = getData($sql, 'root', '');
 $sql = "SELECT *
@@ -45,11 +45,6 @@ $sql = "SELECT *
        AND roles.fk_usuario = usuario.id_usuario
 			 AND roles.fk_rol = rol.id_rol";
 $datosMedico = getData($sql, 'root', '');
-$nacimiento = $datosClientes[0]['nacimiento'];
-$ano = date("Y", strtotime($nacimiento)); 
-$fecha_actual = date("Y");
-$edad = $fecha_actual - $ano;
-
 ?>
 
 <body>
@@ -110,10 +105,6 @@ $edad = $fecha_actual - $ano;
 						<div class="col-sm">
 							<label for="fk_cliente">Cedula Cliente:</label>
 							<input type="text" class="form-control" name="fk_cliente" value="<?php print($datosClientes[0]["cedula"]); ?>" readonly>
-						</div>
-						<div class="col-sm">
-							<label for="fk_cliente">Edad Cliente:</label>
-							<input type="text" class="form-control" name="edad_cliente" value="<?php print($edad); ?>" readonly>
 						</div>
 						<div class="col-sm">
 							<label for="fk_usuario">Cedula Optometra: </label>
@@ -184,7 +175,7 @@ $edad = $fecha_actual - $ano;
 					<div class="row">
 						<div class="col-sm">
 							<label for="anamnesis">Anamnesis:</label>
-							<input type="text" class="form-control" name="anamnesis" required>
+							<input type="text" class="form-control" name="anamnesis">
 						</div>
 					</div>
 					<br>
@@ -251,32 +242,32 @@ $edad = $fecha_actual - $ano;
 					<div class="row">
 						<div class="col-sm">
 							<label for="examen_externo_od">examen externo ojo derecho:</label>
-							<input type="text" class="form-control" name="examen_externo_od" required>
+							<input type="text" class="form-control" name="examen_externo_od">
 						</div>
 						<div class="col-sm">
 							<label for=" examen_externo_oi">examen externo ojo izquierdo:</label>
-							<input type="text" class="form-control" name=" examen_externo_oi" required>
+							<input type="text" class="form-control" name=" examen_externo_oi">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="reflejos_pupilares_fotomotor">reflejos pupilares fotomotor:</label>
-							<input type="text" class="form-control" name="reflejos_pupilares_fotomotor" required>
+							<input type="text" class="form-control" name="reflejos_pupilares_fotomotor">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="reflejos_pupilares_consensual">reflejos pupilares consensual:</label>
-							<input type="text" class="form-control" name="reflejos_pupilares_consensual" required>
+							<input type="text" class="form-control" name="reflejos_pupilares_consensual">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="reflejos_pupilares_acomodacio">reflejos pupilares acomodacion:</label>
-							<input type="text" class="form-control" name="reflejos_pupilares_acomodacion" required>
+							<input type="text" class="form-control" name="reflejos_pupilares_acomodacion">
 						</div>
 					</div>
 					<br>
@@ -335,49 +326,49 @@ $edad = $fecha_actual - $ano;
 					<div class="row">
 						<div class="col-sm">
 							<label for="rx_final_od_esfera">rx final ojo derecho esfera:</label>
-							<input type="text" class="form-control" name="rx_final_od_esfera" required>
+							<input type="text" class="form-control" name="rx_final_od_esfera">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_od_cilindro">rx final ojo derecho cilindro:</label>
-							<input type="text" class="form-control" name="rx_final_od_cilindro" required>
+							<input type="text" class="form-control" name="rx_final_od_cilindro">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_od_eje">rx final ojo derecho eje:</label>
-							<input type="text" class="form-control" name="rx_final_od_eje" required>
+							<input type="text" class="form-control" name="rx_final_od_eje">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_od_adicion">rx final ojo derecho adicion:</label>
-							<input type="text" class="form-control" name="rx_final_od_adicion" required>
+							<input type="text" class="form-control" name="rx_final_od_adicion">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="rx_final_oi_esfera">rx final ojo izquierdo esfera:</label>
-							<input type="text" class="form-control" name="rx_final_oi_esfera" required>
+							<input type="text" class="form-control" name="rx_final_oi_esfera">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_oi_cilindro">rx final ojo izquierdo cilindro:</label>
-							<input type="text" class="form-control" name="rx_final_oi_cilindro" required>
+							<input type="text" class="form-control" name="rx_final_oi_cilindro">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_oi_eje">rx final ojo izquierdo eje:</label>
-							<input type="text" class="form-control" name="rx_final_oi_eje" required> 
+							<input type="text" class="form-control" name="rx_final_oi_eje">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_oi_adicion">rx final ojo izquierdo adicion:</label>
-							<input type="text" class="form-control" name="rx_final_oi_adicion" required>
+							<input type="text" class="form-control" name="rx_final_oi_adicion">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="rx_final_od_agudes_visual">rx final ojo derecho agudes visual:</label>
-							<input type="text" class="form-control" name="rx_final_od_agudes_visual" required>
+							<input type="text" class="form-control" name="rx_final_od_agudes_visual">
 						</div>
 						<div class="col-sm">
 							<label for="rx_final_oi_agudes_visual">rx final ojo izquierdo agudes visual:</label>
-							<input type="text" class="form-control" name="rx_final_oi_agudes_visual" required>
+							<input type="text" class="form-control" name="rx_final_oi_agudes_visual">
 						</div>
 					</div>
 					<br>
@@ -400,9 +391,6 @@ $edad = $fecha_actual - $ano;
 						<input type="submit" class="btn btn-primary" value="Guardar">
 					</div>
 				</form>
-				<div class="d-flex justify-content-center">
-                    <button class="btn btn-primary"> <a href="../../historiaClinica.php">Volver</a></button>
-                </div>
 			</div>
 		</div>
 	</div>

@@ -4,7 +4,7 @@ session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { } else {
   echo "<script>
             alert('Inicie Sesion para Continuar');
-            window.location.href='../login.html';
+            window.location.href='../../login.html';
         </script>";
   exit;
 }
@@ -16,7 +16,7 @@ if ($now > $_SESSION['expire']) {
 
   echo "  <script>
             alert('La Sesion ha expirado');
-            window.location.href='../login.html';
+            window.location.href='../../login.html';
           </script>";
   exit;
 }
@@ -54,13 +54,13 @@ if ($now > $_SESSION['expire']) {
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a class="nav-link" href="../index.html">Inicio<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../../index.html">Inicio<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="../productos.php">Productos<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../../productos.php">Productos<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="../contactanos.html">Contáctenos<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../../contactanos.html">Contáctenos<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
                   <a class="nav-link" href="../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
@@ -103,8 +103,7 @@ if ($now > $_SESSION['expire']) {
                                 $id_cliente = $usuario['id_cliente'];
                                 $sql = "SELECT MAX(id_historia_clinica) as numero , cliente.nombres , cliente.apellidos, cliente.correo, cliente.telefono, cliente.celular , historia_clinica.control
                                 FROM historia_clinica, cliente
-                                WHERE fk_cliente = '$id_cliente' and fk_cliente = id_cliente AND historia_clinica.control <=  '$fecha'
-                                ORDER BY historia_clinica.control DESC";
+                                WHERE fk_cliente = '$id_cliente' and fk_cliente = id_cliente AND historia_clinica.control <=  '$fecha'";
                                 $usuarios = getData($sql,'root','');
                                 if($usuarios[0]['numero']<>''){
                                     ?>
@@ -123,7 +122,7 @@ if ($now > $_SESSION['expire']) {
                             }?>
                     </tbody>
                 </table>
-                <button class="btn btn-primary"> <a href="panel-control.php">Volver</a></button>
+                <button class="btn btn-primary"> <a href="../usuarios.php">Volver</a></button>
             </div>
         </div>
     </div>
