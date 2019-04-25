@@ -61,15 +61,15 @@
           <form action="busqueda.php" method="GET">
             <div class="d-flex flex-row">
               <div class="p-2">
-              <label for="busqueda">Tipo de Producto: </label>
-              <select name="busqueda" class="selectpicker" required>
-                <?php
-                $productos = getProductos();
-                for ($i = 0; $i < sizeof($productos); $i++) {
-                  ?>
-                  <option  value="<?php print($productos[$i]["id_producto"]); ?>"> <?php print($productos[$i]["nombre_producto"]); ?></option>
-                <?php } ?>
-              </select>
+                <label for="busqueda">Tipo de Producto: </label>
+                <select name="busqueda" class="selectpicker" required>
+                  <?php
+                  $productos = getProductos();
+                  for ($i = 0; $i < sizeof($productos); $i++) {
+                    ?>
+                    <option value="<?php print($productos[$i]["id_producto"]); ?>"> <?php print($productos[$i]["nombre_producto"]); ?></option>
+                  <?php } ?>
+                </select>
               </div>
               <div class="p-2">
                 <input type="submit" class="btn btn-primary" value="Buscar">
@@ -89,15 +89,16 @@
         $contador = 0;
         foreach ($catalogo as $producto) {
           if ($contador === 0) {
-            print('<div class="row">');
+            print('<div class="d-flex flex-row">');
           }
           ?>
-          <div class="col-sm">
+          <div class="p-2">
             <div class="card" style="width: 18rem;">
               <img class="card-img-top" src="<?php print($producto["imagen"]); ?>" alt="Card image cap" height="200" width="400">
               <div class="card-body">
-                <p class="card-title"> <?php print($producto["nombre_producto"]); ?> </p>
-                <p> $<?php print($producto["costo"]); ?> </p>
+                <h5 class="card-title"> <?php print($producto["nombre_producto"]); ?> </h5>
+                <p class="card-text">Referencia: <?php print($producto["referencia"]); ?> </p>
+                <p class="card-text"> $<?php print( number_format($producto["costo"], $decimals = 0, $dec_point = ",", $thousands_sep = "." )); ?> </p>
                 <p class="card-text"> <?php print($producto["descripcion"]); ?> </p>
               </div>
             </div>

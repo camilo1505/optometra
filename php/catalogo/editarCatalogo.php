@@ -103,13 +103,13 @@ if ($now > $_SESSION['expire']) {
               ?>
               <tr>
                 <form action="editarCatalogoService.php" method="POST" enctype="multipart/form-data">
-                  <th scope="row" width="4%"><input type="text" class="form-control" name="id_catalogo" value="<?php print($producto["id_catalogo"]); ?>" readonly></th>
+                  <th scope="row" width="4.5%"><input type="text" class="form-control" name="id_catalogo" value="<?php print($producto["id_catalogo"]); ?>" readonly></th>
                   <td scope="row" width="11%"><input type="text" class="form-control" name="nombre_producto" value="<?php print($producto["nombre_producto"]); ?>" required readonly></td>
                   <td scope="row" width="8%"> <input type="text" class="form-control" name="referencia" value="<?php print($producto["referencia"]); ?>" required></td>
                   <td scope="row" width="11%"><input type="text" class="form-control" name="marca" value="<?php print($producto["marca"]); ?>" required></td>
                   <td scope="row" width="9%"><input type="number" class="form-control" name="costo" value="<?php print($producto["costo"]); ?>" required></td>
                   <td scope="row" width="11%"><input type="file" class="form-control" name="imagen"></td>
-                  <td scope="row" width="11%"><input type="text" class="form-control" name="descripcion" value="<?php print($producto["descripcion"]); ?>" required></td>
+                  <td scope="row" width="11%"><input type="text" class="form-control" name="descripcion" maxlength="100" minlength="50" value="<?php print($producto["descripcion"]); ?>" required></td>
                   <td scope="row" width="5%">
                     <div class="form-check">
                       <input class="form-check-input" type="radio" name="promocion" id="promocion1" value="1">
