@@ -145,7 +145,7 @@ if ($now > $_SESSION['expire']) {
           &copy; 2020. All rights reserved.
         </div>
         <div class="span3 offset3">
-          <h3>Address</h3>
+        <h3>Address</h3>
           81 Sunnyvale Street<br />
           Los Angeles, CA 90185<br />
           United States<br />

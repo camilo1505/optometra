@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Opticas Henao</title>
+    <title>Ópticas Henao</title>
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/bootstrap-override.css" rel="stylesheet" />
     <link href="css/font-awesome/font-awesome.css" rel="stylesheet" />
@@ -33,8 +33,8 @@
               <ul class="clearfix">
                 <li class="active"><a href="index.html" title="">Inicio</a></li>
                 <li><a href="productos.php" title="">Productos</a></li>
-                <li><a href="login.html" title="">Iniciar Sesion</a></li>
-                <li><a href="contactanos.html" title="">contactenos</a></li>
+                <li><a href="login.html" title="">Iniciar Sesión</a></li>
+                <li><a href="contactanos.html" title="">contáctenos</a></li>
               </ul>
             </nav>
           </div>
@@ -63,7 +63,7 @@
     <div id="content">
       <div class="container">
         <div class="jumbotron">
-          <h1>Añada un nuevo Producto.</h1>
+          <h1>Añada un Nuevo Producto.</h1>
             <form action="php/enviarProducto.php" method="POST">
                     <div class="form-group">
                         <label for="nombre_producto">Nombre del Producto:</label>
@@ -91,14 +91,13 @@
             &copy; 2020. All rights reserved.
           </div>
           <div class="span3 offset3">
-            <h3>Address</h3>
-            81 Sunnyvale Street<br />
-            Los Angeles, CA 90185<br />
-            United States<br />
-            <br />
-            <i class="icon-phone"></i>+01 880 555 999<br />
-            <i class="icon-envelope"></i
-            ><a href="mailto:support@example.com">support@example.com</a><br />
+            <h3>Dirección</h3>
+            Calle 69 Bis número 25B-16<br />
+            Cuba - Pereira<br />
+            Colombia <br />
+            <h3>Contacto</h3>
+            <i class="icon-phone"></i>+6 3374294<br />
+            <i class="icon-envelope"></i><a href="mailto:support@example.com">support@example.com</a><br />
             <i class="icon-home"></i><a href="#">www.example.com</a>
 
             <div class="row space40"></div>

@@ -399,13 +399,13 @@ if ($now > $_SESSION['expire']) {
 					&copy; 2020. All rights reserved.
 				</div>
 				<div class="span3 offset3">
-					<h3>Address</h3>
-					81 Sunnyvale Street<br>
-					Los Angeles, CA 90185<br>
-					United States<br>
-					<br>
-					<i class="icon-phone"></i>+01 880 555 999<br>
-					<i class="icon-envelope"></i><a href="mailto:support@example.com">support@example.com</a><br>
+				<h3>Dirección</h3>
+					Calle 69 Bis número 25B-16<br />
+					Cuba - Pereira<br />
+					Colombia <br />
+					<h3>Contacto</h3>
+					<i class="icon-phone"></i>+6 3374294<br />
+					<i class="icon-envelope"></i><a href="mailto:support@example.com">support@example.com</a><br />
 					<i class="icon-home"></i><a href="#">www.example.com</a>
 
 					<div class="row space40"></div>
