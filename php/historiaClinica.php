@@ -71,7 +71,7 @@ if ($now > $_SESSION['expire']) {
       <div class="f-center">
         <div class="list-group">
           <a class="list-group-item list-group-item-action" href="historiasClinicas/creacion/seleccionarCliente.php">Crear Historia Clinica</a>
-          <a class="list-group-item list-group-item-action" href="historiasClinicas/consulta/seleccionarCliente.php">consultar Historia Clinica</a>
+          <a class="list-group-item list-group-item-action" href="historiasClinicas/consulta/seleccionarCliente.php">Consultar Historia Clinica</a>
         </div>
         <br>
         <button class="btn btn-primary"> <a href="panel-control.php">Volver</a></button>

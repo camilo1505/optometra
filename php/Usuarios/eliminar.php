@@ -16,7 +16,7 @@
     if($result){
         echo "
         <script>
-            alert('Eliminado Correctamente');
+            alert('Operacion Exitosa');
             window.location.href='eliminarUsuario.php';
         </script>
         ";
@@ -24,7 +24,7 @@
     else {
         echo "
         <script>
-            alert('Error Eliminando el Usuario');
+            alert('Error: Imposible Realizar la Operacion');
             window.location.href='eliminarUsuario.php';
         </script>
     ";

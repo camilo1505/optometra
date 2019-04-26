@@ -29,9 +29,8 @@
 
     $sql = "INSERT INTO cliente (cedula, nombres, apellidos, nacimiento, ciudad, direccion, telefono, celular, correo, disponibilidad_llamadas, usa_gafas)
             VALUES ('$cedula','$nombres','$apellidos','$fecha','$ciudad','$direccion','$telefono','$celular','$correo','$disponible','$gafas')";
-    echo $sql;
     $result = setData($sql,'root','');
-    echo $result;
+
     if($result){
         echo "
             <script>

@@ -35,7 +35,7 @@ if ($now > $_SESSION['expire']) {
 </head>
 
 <body>
-    <header id="header">
+<header id="header">
         <div class="container">
             <div class="row t-container">
                 <div class="span3">
@@ -66,7 +66,7 @@ if ($now > $_SESSION['expire']) {
                                     <a class="nav-link" href="../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="../../logout.php">Iniciar Sesion<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="../../logout.php">Cerrar Sesion<span class="sr-only">(current)</span></a>
                                 </li>
                             </ul>
                         </div>

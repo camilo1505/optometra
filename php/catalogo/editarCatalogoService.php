@@ -17,7 +17,7 @@ array_push($catalogo, $marca);
 
 if ($imagen["name"] != "") {
     $target_dir = "uploads/";
-    $target_file = $target_dir . basename($imagen["name"]);
+    $target_file = $target_dir.$referencia.basename($imagen["name"]);
 
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
@@ -33,9 +33,6 @@ else {
 array_push($catalogo, $costo);
 array_push($catalogo, $descripcion);
 array_push($catalogo, $promocion);
-
-
-print_r($catalogo);
 
 
 $done = editarCatalogo($catalogo);
@@ -56,3 +53,4 @@ if (!$done) {
             </script>
         ";
 }
+?>

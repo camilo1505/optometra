@@ -15,8 +15,9 @@
 		die("La conexion falló: " . $conexion->connect_error);
 	}
 	
-	$crearUsuario = "INSERT INTO usuario ( cedula, nombres, apellidos, usuario_password )
-				   VALUES ('admin','administrador','administrador', '$hash')";
+	$crearUsuario = "UPDATE usuario
+                     SET cedula = 'admin', nombres = 'Administrador', apellidos = 'Administrador', usuario_password = '$hash'
+                     WHERE id_usuario = 1";
 	
 	echo($crearUsuario);
 

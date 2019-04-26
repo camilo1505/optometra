@@ -19,13 +19,13 @@
 			$_SESSION['cedula'] = $username;
 			$_SESSION['usuario'] = $result[0]['nombres'];
 			$_SESSION['start'] = time();
-			$_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
+			$_SESSION['expire'] = $_SESSION['start'] + (30 * 60);
 			redirect("panel-control.php");
 		}
 	}
 	if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { } else {
 		echo "<script>
-				  alert('Inicie Sesion para Continuar');
+				  alert('Error: Los Datos de Login son Incorrectos');
 				  window.location.href='../login.html';
 			  </script>";
 		exit;

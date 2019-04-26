@@ -7,7 +7,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { } else {
             window.location.href='../../../login.html';
         </script>";
 	exit;
-	exit;
 }
 
 $now = time();
@@ -19,7 +18,6 @@ if ($now > $_SESSION['expire']) {
             alert('Inicie Sesion para Continuar');
             window.location.href='../../../login.html';
         </script>";
-	exit;
 	exit;
 }
 ?>
@@ -57,45 +55,45 @@ $edad = $fecha_actual - $ano;
 ?>
 
 <body>
-	<header id="header">
-		<div class="container">
-			<div class="row t-container">
-				<div class="span3">
-					<div class="logo">
-						<a href="../../../index.html"><img src="../../../logo.png" alt="" /></a>
-					</div>
-				</div>
-				<div class="span7">
-					<div class="row space10"></div>
-					<img src="../../../nombre.png" alt="">
-					<nav class="navbar navbar-expand-lg navbar-light bg-light">
-						<a class="navbar-brand" href="../../../index.html">Opticas Henao</a>
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="collapse navbar-collapse" id="navbarNav">
-							<ul class="navbar-nav">
-								<li class="nav-item active">
-									<a class="nav-link" href="../../../index.html">Inicio<span class="sr-only">(current)</span></a>
-								</li>
-								<li>
-									<a class="nav-link" href="../../../productos.php">Productos<span class="sr-only">(current)</span></a>
-								</li>
-								<li>
-									<a class="nav-link" href="../../../contactanos.html">Contactenos<span class="sr-only">(current)</span></a>
-								</li>
-								<li>
-									<a class="nav-link" href="../../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
-								</li>
-								<li>
-									<a class="nav-link" href="../../logout.php">Cerrar Sesion<span class="sr-only">(current)</span></a>
-								</li>
-							</ul>
-						</div>
-					</nav>
-				</div>
-			</div>
-	</header>
+<header id="header">
+        <div class="container">
+            <div class="row t-container">
+                <div class="span3">
+                    <div class="logo">
+                        <a href="../../../index.html"><img src="../../../logo.png" alt="" /></a>
+                    </div>
+                </div>
+                <div class="span7">
+                    <div class="row space10"></div>
+                    <img src="../../../nombre.png" alt="">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="../../../index.html">Opticas Henao</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="../../../index.html">Inicio<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="../../../productos.php">Productos<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="../../../contactanos.html">Contactenos<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="../../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="../../logout.php">Cerrar Sesion<span class="sr-only">(current)</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+    </header>
 	<br>
 	<div id="content">
 		<div class="container">
@@ -188,38 +186,38 @@ $edad = $fecha_actual - $ano;
 					<div class="row">
 						<div class="col-sm">
 							<label for="rx_uso_od_esfera">rx uso ojo derecho esfera:</label>
-							<input type="text" class="form-control" name="rx_uso_od_esfera" value="<?php echo $historiaClinicaAnterior[0]['rx_final_od_esfera'] ?>" readonly> 
+							<input type="text" class="form-control" name="rx_uso_od_esfera" value="<?php echo $historiaClinicaAnterior[0]['rx_final_od_esfera'] ?>" disabled readonly> 
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_od_cilindro">rx uso ojo derecho cilindro:</label>
-							<input type="text" class="form-control" name="rx_uso_od_cilindro" value="<?php echo $historiaClinicaAnterior[0]['rx_final_od_cilindro'] ?>" readonly> 
+							<input type="text" class="form-control" name="rx_uso_od_cilindro" value="<?php echo $historiaClinicaAnterior[0]['rx_final_od_cilindro'] ?>" readonly disabled> 
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_od_eje">rx uso ojo derecho eje:</label>
-							<input type="text" class="form-control" name="rx_uso_od_eje" value="<?php echo $historiaClinicaAnterior[0]['rx_final_od_eje'] ?>" readonly> 
+							<input type="text" class="form-control" name="rx_uso_od_eje" value="<?php echo $historiaClinicaAnterior[0]['rx_final_od_eje'] ?>" readonly disabled> 
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_od_adicion">rx uso ojo derecho adicion:</label>
-							<input type="text" class="form-control" name="rx_uso_od_adicion" value="<?php echo $historiaClinicaAnterior[0]['rx_final_od_adicion'] ?>" readonly> 
+							<input type="text" class="form-control" name="rx_uso_od_adicion" value="<?php echo $historiaClinicaAnterior[0]['rx_final_od_adicion'] ?>" readonly disabled> 
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
 							<label for="rx_uso_oi_esfera">rx uso ojo izquierdo esfera:</label>
-							<input type="text" class="form-control" name="rx_uso_oi_esfera" value="<?php echo $historiaClinicaAnterior[0]['rx_final_oi_esfera'] ?>" readonly> 
+							<input type="text" class="form-control" name="rx_uso_oi_esfera" value="<?php echo $historiaClinicaAnterior[0]['rx_final_oi_esfera'] ?>" readonly disabled> 
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_oi_cilindro">rx uso ojo izquierdo cilindro:</label>
-							<input type="text" class="form-control" name="rx_uso_oi_cilindro" value="<?php echo $historiaClinicaAnterior[0]['rx_final_oi_cilindro'] ?>" readonly> 
+							<input type="text" class="form-control" name="rx_uso_oi_cilindro" value="<?php echo $historiaClinicaAnterior[0]['rx_final_oi_cilindro'] ?>" readonly disabled> 
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_oi_eje">rx uso ojo izquierdo eje:</label>
-							<input type="text" class="form-control" name="rx_uso_oi_eje" value="<?php echo $historiaClinicaAnterior[0]['rx_final_oi_eje'] ?>" readonly> 
+							<input type="text" class="form-control" name="rx_uso_oi_eje" value="<?php echo $historiaClinicaAnterior[0]['rx_final_oi_eje'] ?>" readonly disabled> 
 						</div>
 						<div class="col-sm">
 							<label for="rx_uso_oi_adicion">rx uso ojo izquierdo adicion:</label>
-							<input type="text" class="form-control" name="rx_uso_oi_adicion" value="<?php echo $historiaClinicaAnterior[0]['rx_final_oi_adicion'] ?>" readonly> 
+							<input type="text" class="form-control" name="rx_uso_oi_adicion" value="<?php echo $historiaClinicaAnterior[0]['rx_final_oi_adicion'] ?>" readonly disabled> 
 						</div>
 					</div>
 					<br>

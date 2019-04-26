@@ -109,7 +109,7 @@ if ($now > $_SESSION['expire']) {
                   <td scope="row" width="11%"><input type="text" class="form-control" name="marca" value="<?php print($producto["marca"]); ?>" required></td>
                   <td scope="row" width="9%"><input type="number" class="form-control" name="costo" value="<?php print($producto["costo"]); ?>" required></td>
                   <td scope="row" width="11%"><input type="file" class="form-control" name="imagen"></td>
-                  <td scope="row" width="11%"><input type="text" class="form-control" name="descripcion" maxlength="100" minlength="50" value="<?php print($producto["descripcion"]); ?>" required></td>
+                  <td scope="row" width="11%"><input type="text" class="form-control" name="descripcion" maxlength="100" minlength="60" value="<?php print($producto["descripcion"]); ?>" required></td>
                   <td scope="row" width="5%">
                     <div class="form-check">
                       <input class="form-check-input" type="radio" name="promocion" id="promocion1" value="1">

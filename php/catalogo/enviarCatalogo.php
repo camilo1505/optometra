@@ -6,7 +6,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { } else {
             window.location.href='../../../login.html';
         </script>";
 	exit;
-	exit;
 }
     include("../BDservices.php");
     $referencia = $_POST["referencia"];
@@ -17,16 +16,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { } else {
     $producto = $_POST["producto"];
 
     $target_dir = "uploads/";
-    $target_file = $target_dir . basename($imagen["name"]);
+    $target_file = $target_dir.$referencia.basename($imagen["name"]);
 
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-    echo $target_file;
-    echo "<br>";
-    print($imageFileType);
-    echo "<br>";
-
-    move_uploaded_file($imagen["tmp_name"], "../../".$target_file);
 
     $catalogo = array();
 
@@ -44,11 +36,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { } else {
     array_push($catalogo,$costo);
     array_push($catalogo,$descripcion);
 
-    print_r($catalogo);
-
     $done = newCatalogo($catalogo);
  
     if($done) {
+        move_uploaded_file($imagen["tmp_name"], "../../".$target_file);
         echo "
             <script>
                 alert('Guardado Correctamente');

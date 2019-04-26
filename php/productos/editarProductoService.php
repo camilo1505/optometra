@@ -3,9 +3,6 @@
     $IdProducto = $_POST["ID_producto"];
     $producto = $_POST["nombre_producto"];
 
-    print($IdProducto);
-    print($producto);
-
     $done = editarProducto($IdProducto, $producto);
 
     if($done) {

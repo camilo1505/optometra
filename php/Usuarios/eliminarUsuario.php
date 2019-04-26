@@ -80,7 +80,7 @@ if ($now > $_SESSION['expire']) {
     <div id="content">
         <div class="container">
             <div class="jumbotron">
-                <h1>Eliminar Usuarios.</h1>
+                <h1>Desactivar Usuarios.</h1>
                 <br>
                 <table class="table">
                     <thead class="thead-dark">

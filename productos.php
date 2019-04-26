@@ -98,7 +98,8 @@
               <div class="card-body">
                 <h5 class="card-title"> <?php print($producto["nombre_producto"]); ?> </h5>
                 <p class="card-text">Referencia: <?php print($producto["referencia"]); ?> </p>
-                <p class="card-text"> $<?php print( number_format($producto["costo"], $decimals = 0, $dec_point = ",", $thousands_sep = "." )); ?> </p>
+                <p class="card-text">Marca: <?php print($producto["marca"]); ?> </p>
+                <p class="card-text">Costo: $<?php print(number_format($producto["costo"], $decimals = 0, $dec_point = ",", $thousands_sep = ".")); ?> </p>
                 <p class="card-text"> <?php print($producto["descripcion"]); ?> </p>
               </div>
             </div>
