@@ -101,12 +101,13 @@ if ($now > $_SESSION['expire']) {
                                 $result = getData($sql,'root','');
                             foreach($result as $usuario){
                                 $id_cliente = $usuario['id_cliente'];
-                                $sql = "SELECT MAX(id_historia_clinica) as numero , cliente.nombres , cliente.apellidos, cliente.correo, cliente.telefono, cliente.celular , historia_clinica.control
+                                $sql = "SELECT MAX(control) as control , cliente.nombres , cliente.apellidos, cliente.correo, cliente.telefono, cliente.celular 
                                 FROM historia_clinica, cliente
-                                WHERE fk_cliente = '$id_cliente' and fk_cliente = id_cliente AND historia_clinica.control <=  '$fecha'
-                                ORDER BY historia_clinica.control DESC";
+                                WHERE fk_cliente = '$id_cliente' and fk_cliente = id_cliente";
                                 $usuarios = getData($sql,'root','');
-                                if($usuarios[0]['numero']<>''){
+                                $control_usuario = $usuarios[0]['control'];
+
+                                if($control_usuario<$fecha){
                                     ?>
                                     <tr>
                                         <form action="eliminar.php" method="POST">
