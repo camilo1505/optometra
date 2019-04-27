@@ -80,7 +80,7 @@ if ($now > $_SESSION['expire']) {
     <div id="content">
         <div class="container">
             <div class="jumbotron">
-                <h1>Reporte de clientes con fechas de control expiradas un año.</h1>
+                <h1>Reporte Usuarios con fechas de control expiradas un año.</h1>
                 <br>
                 <table class="table">
                     <thead class="thead-dark">
