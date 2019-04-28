@@ -86,19 +86,22 @@ if ($now > $_SESSION['expire']) {
                         <tr>
                             <th scope="col">Id</th>
                             <th scope="col">Numero producto</th>
-                            <th scope="col">usuario</th>
-                            <th scope="col">referencia</th>
-                            <th scope="col">marca</th>
-                            <th scope="col">imagen</th>
-                            <th scope="col">costo</th>
-                            <th scope="col">descripcion</th>
+                            <th scope="col">Nombre del Producto</th>
+                            <th scope="col">Referencia</th>
+                            <th scope="col">Marca</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Costo</th>
+                            <th scope="col">Descripcion</th>
                             <th scope="col">Acciones</th>
                             
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                             $sql = "SELECT * FROM catalogo";
+                             $sql = "SELECT catalogo.id_catalogo, catalogo.referencia, catalogo.marca, catalogo.imagen, catalogo.fk_producto, catalogo.costo, catalogo.descripcion, producto.nombre_producto
+                                     FROM catalogo, producto
+                                     WHERE producto.id_producto = catalogo.fk_producto AND producto.activado = '0'
+                                     ORDER BY catalogo.id_catalogo";
                             $usuarios = getData($sql,'root','');
 
                             foreach($usuarios as $usuario) {
@@ -107,7 +110,7 @@ if ($now > $_SESSION['expire']) {
                                 <form action="eliminar.php" method="POST">
                                     <th scope="row" width="5% "><input type="text" class="form-control" name="id_catalogo" value="<?php print ($usuario["id_catalogo"]);?>"readonly></th>
                                     <td scope="row" width="11% "><input type="text" class="form-control" name="fk_producto" value="<?php print ($usuario["fk_producto"]);?>"readonly></td>
-                                    <td width="15%"> <input type="text" class="form-control" name="fk_usuario" value="<?php print($usuario["fk_usuario"]); ?>" readonly></td>
+                                    <td width="15%"> <input type="text" class="form-control" name="fk_usuario" value="<?php print($usuario["nombre_producto"]); ?>" readonly></td>
                                     <td scope="row" width="11% "><input type="text" class="form-control" name="referencia" value="<?php print ($usuario["referencia"]);?>"readonly></td>
                                     <td scope="row" width="11% "><input type="text" class="form-control" name="marca" value="<?php print ($usuario["marca"]);?>"readonly></td>
                                     <td scope="row" width="11% "><input type="text" class="form-control" name="imagen" value="<?php print ($usuario["imagen"]);?>"readonly></td>
