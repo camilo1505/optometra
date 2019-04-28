@@ -104,8 +104,4 @@ function editarCatalogo($catalogo){
     }
 }
 
-function ordenar( $a, $b ) {
-    return strtotime($a['control']) - strtotime($b['control']);
-}
-
 ?>

@@ -108,26 +108,7 @@ if ($now > $_SESSION['expire']) {
                                 $usuarios = getData($sql,'root','');
                                 array_push($array1,$usuarios[0]);
                             }
-                            usort($array1, 'ordenar');
-                              foreach($array1 as $elemento){
-                                $control_usuario = $elemento['control'];
-                                print_r($elemento);
-                                if($control_usuario<$fecha){
-                                  ?>
-                                  <tr>
-                                      <form action="eliminar.php" method="POST">
-                                          <th scope="row" width="6% "><input type="text" class="form-control" name="nombres" value="<?php print ($elemento["nombres"]);?>"readonly></th>
-                                          <td scope="row" width="17% "><input type="text" class="form-control" name="apellidos" value="<?php print ($elemento["apellidos"]);?>"required readonly></td>
-                                          <td width="15%"> <input type="text" class="form-control" name="telefono" value="<?php print($elemento["telefono"]); ?>" required readonly></td>
-                                          <td scope="row" width="15% "><input type="text" class="form-control" name="celular" value="<?php print ($elemento["celular"]);?>"required readonly></td> 
-                                          <td scope="row" width="14% "><input type="text" class="form-control" name="correo" value="<?php print ($elemento["correo"]);?>"required readonly></td>
-                                          <td scope="row" width="14% "><input type="text" class="form-control" name="control" value="<?php print ($control_usuario);?>"required readonly></td>
-                                      </form>
-                                  </tr>
-                                  <?php
-                              }
-                                }
-                              
+                            echo $array1;
                             ?>
                     </tbody>
                 </table>

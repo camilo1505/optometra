@@ -121,7 +121,7 @@ if ($now > $_SESSION['expire']) {
                                           <td width="15%"> <input type="text" class="form-control" name="telefono" value="<?php print($elemento["telefono"]); ?>" required readonly></td>
                                           <td scope="row" width="15% "><input type="text" class="form-control" name="celular" value="<?php print ($elemento["celular"]);?>"required readonly></td> 
                                           <td scope="row" width="14% "><input type="text" class="form-control" name="correo" value="<?php print ($elemento["correo"]);?>"required readonly></td>
-                                          <td scope="row" width="14% "><input type="text" class="form-control" name="control" value="<?php print ($control_usuario);?>"required readonly></td>
+                                          <td scope="row" width="14% "><input type="text" class="form-control" name="control" value="<?php print ($control_usuario[0]["control"]);?>"required readonly></td>
                                       </form>
                                   </tr>
                                   <?php

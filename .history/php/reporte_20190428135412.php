@@ -106,28 +106,30 @@ if ($now > $_SESSION['expire']) {
                                 FROM historia_clinica, cliente
                                 WHERE fk_cliente = '$id_cliente' and fk_cliente = id_cliente";
                                 $usuarios = getData($sql,'root','');
-                                array_push($array1,$usuarios[0]);
-                            }
-                            usort($array1, 'ordenar');
-                              foreach($array1 as $elemento){
-                                $control_usuario = $elemento['control'];
-                                print_r($elemento);
+                                
+                                array_push($array1,$usuario);
                                 if($control_usuario<$fecha){
-                                  ?>
-                                  <tr>
-                                      <form action="eliminar.php" method="POST">
-                                          <th scope="row" width="6% "><input type="text" class="form-control" name="nombres" value="<?php print ($elemento["nombres"]);?>"readonly></th>
-                                          <td scope="row" width="17% "><input type="text" class="form-control" name="apellidos" value="<?php print ($elemento["apellidos"]);?>"required readonly></td>
-                                          <td width="15%"> <input type="text" class="form-control" name="telefono" value="<?php print($elemento["telefono"]); ?>" required readonly></td>
-                                          <td scope="row" width="15% "><input type="text" class="form-control" name="celular" value="<?php print ($elemento["celular"]);?>"required readonly></td> 
-                                          <td scope="row" width="14% "><input type="text" class="form-control" name="correo" value="<?php print ($elemento["correo"]);?>"required readonly></td>
-                                          <td scope="row" width="14% "><input type="text" class="form-control" name="control" value="<?php print ($control_usuario);?>"required readonly></td>
-                                      </form>
-                                  </tr>
-                                  <?php
-                              }
+                                    ?>
+                                    <tr>
+                                        <form action="eliminar.php" method="POST">
+                                            <th scope="row" width="6% "><input type="text" class="form-control" name="nombres" value="<?php print ($usuario["nombres"]);?>"readonly></th>
+                                            <td scope="row" width="17% "><input type="text" class="form-control" name="apellidos" value="<?php print ($usuario["apellidos"]);?>"required readonly></td>
+                                            <td width="15%"> <input type="text" class="form-control" name="telefono" value="<?php print($usuario["telefono"]); ?>" required readonly></td>
+                                            <td scope="row" width="15% "><input type="text" class="form-control" name="celular" value="<?php print ($usuario["celular"]);?>"required readonly></td> 
+                                            <td scope="row" width="14% "><input type="text" class="form-control" name="correo" value="<?php print ($usuario["correo"]);?>"required readonly></td>
+                                            <td scope="row" width="14% "><input type="text" class="form-control" name="control" value="<?php print ($usuarios[0]["control"]);?>"required readonly></td>
+                                        </form>
+                                    </tr>
+                                    <?php
+                                }
+                            }
+                            foreach($array1 as $cosa){
+                              foreach($cosa as $elemento){
+                                $control_usuario = $elemento['control'];
+                                echo $elemento;
                                 }
                               
+                            }
                             ?>
                     </tbody>
                 </table>

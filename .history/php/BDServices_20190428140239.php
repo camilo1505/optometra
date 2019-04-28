@@ -105,7 +105,10 @@ function editarCatalogo($catalogo){
 }
 
 function ordenar( $a, $b ) {
-    return strtotime($a['control']) - strtotime($b['control']);
+    foreach ($a as $usuario) {
+        return strtotime($usuario['control']) - strtotime($b['control']);    
+    }
+    
 }
 
 ?>
