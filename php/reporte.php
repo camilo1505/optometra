@@ -111,7 +111,6 @@ if ($now > $_SESSION['expire']) {
                             usort($array1, 'ordenar');
                               foreach($array1 as $elemento){
                                 $control_usuario = $elemento['control'];
-                                print_r($elemento);
                                 if($control_usuario<$fecha){
                                   ?>
                                   <tr>
