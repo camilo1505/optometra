@@ -27,7 +27,7 @@ if ($now > $_SESSION['expire']) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ópticas Henao</title>
+  <title>Opticas Henao</title>
   <link href="../css/styles.css" rel="stylesheet" />
   <link href="../css/bootstrap-override.css" rel="stylesheet" />
   <link href="../css/font-awesome/font-awesome.css" rel="stylesheet" />
@@ -47,7 +47,7 @@ if ($now > $_SESSION['expire']) {
           <div class="row space10"></div>
           <img src="../nombre.png" alt="">
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="../../index.html">Ópticas Henao</a>
+            <a class="navbar-brand" href="../../index.html">Opticas Henao</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -60,13 +60,13 @@ if ($now > $_SESSION['expire']) {
                   <a class="nav-link" href="../productos.php">Productos<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="../contactanos.html">Contáctenos<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../contactanos.html">Contactenos<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                <a class="nav-link" href="../logout.php">Cerrar Sesión<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../logout.php">Cerrar Sesion<span class="sr-only">(current)</span></a>
                 </li>
               </ul>
             </div>
@@ -87,10 +87,10 @@ if ($now > $_SESSION['expire']) {
                         <tr>
                             <th scope="col">Nombres</th>
                             <th scope="col">Apellidos</th>
-                            <th scope="col">Teléfono</th>
+                            <th scope="col">Telefono</th>
                             <th scope="col">Celular</th>
                             <th scope="col">Correo</th>
-                            <th scope="col">Último Control</th>
+                            <th scope="col">Ultimo Control</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -106,28 +106,30 @@ if ($now > $_SESSION['expire']) {
                                 FROM historia_clinica, cliente
                                 WHERE fk_cliente = '$id_cliente' and fk_cliente = id_cliente";
                                 $usuarios = getData($sql,'root','');
-                                array_push($array1,$usuarios[0]);
-                            }
-                            usort($array1, 'ordenar');
-                              foreach($array1 as $elemento){
-                                $control_usuario = $elemento['control'];
-                                print_r($elemento);
+                                $control_usuario = $usuarios[0]['control'];
+                                array_push($array1,$usuarios);
                                 if($control_usuario<$fecha){
-                                  ?>
-                                  <tr>
-                                      <form action="eliminar.php" method="POST">
-                                          <th scope="row" width="6% "><input type="text" class="form-control" name="nombres" value="<?php print ($elemento["nombres"]);?>"readonly></th>
-                                          <td scope="row" width="17% "><input type="text" class="form-control" name="apellidos" value="<?php print ($elemento["apellidos"]);?>"required readonly></td>
-                                          <td width="15%"> <input type="text" class="form-control" name="telefono" value="<?php print($elemento["telefono"]); ?>" required readonly></td>
-                                          <td scope="row" width="15% "><input type="text" class="form-control" name="celular" value="<?php print ($elemento["celular"]);?>"required readonly></td> 
-                                          <td scope="row" width="14% "><input type="text" class="form-control" name="correo" value="<?php print ($elemento["correo"]);?>"required readonly></td>
-                                          <td scope="row" width="14% "><input type="text" class="form-control" name="control" value="<?php print ($control_usuario);?>"required readonly></td>
-                                      </form>
-                                  </tr>
-                                  <?php
-                              }
+                                    ?>
+                                    <tr>
+                                        <form action="eliminar.php" method="POST">
+                                            <th scope="row" width="6% "><input type="text" class="form-control" name="nombres" value="<?php print ($usuario["nombres"]);?>"readonly></th>
+                                            <td scope="row" width="17% "><input type="text" class="form-control" name="apellidos" value="<?php print ($usuario["apellidos"]);?>"required readonly></td>
+                                            <td width="15%"> <input type="text" class="form-control" name="telefono" value="<?php print($usuario["telefono"]); ?>" required readonly></td>
+                                            <td scope="row" width="15% "><input type="text" class="form-control" name="celular" value="<?php print ($usuario["celular"]);?>"required readonly></td> 
+                                            <td scope="row" width="14% "><input type="text" class="form-control" name="correo" value="<?php print ($usuario["correo"]);?>"required readonly></td>
+                                            <td scope="row" width="14% "><input type="text" class="form-control" name="control" value="<?php print ($usuarios[0]["control"]);?>"required readonly></td>
+                                        </form>
+                                    </tr>
+                                    <?php
+                                }
+                            }
+                            foreach($array1 as $cosa){
+                              foreach($cosa as $elemento){
+                                $control_usuario = $elemento['control'];
+                                echo $control_usuario;
                                 }
                               
+                            }
                             ?>
                     </tbody>
                 </table>
@@ -142,22 +144,24 @@ if ($now > $_SESSION['expire']) {
         <div class="container">
             <div class="row space50"></div>
             <div class="row">
-                <div class="span10">
+                <div class="span6">
                     <div class="logo-footer">
-                    <center><h3>Ópticas Henao está en todo el centro de Cuba - Pereira. Te  hacemos el examen visual computarizado, elaborado por un profesional optometrista, ofreciéndoles gran variedad de   monturas y  lentes. Visítenos sin ningún compromiso en nuestro local o en la página</h3></center>
-            </div>
-          </div>
-          <div class="span10 right">
+                        Design by
+                        <a href="https://www.freshdesignweb.com">freshDesignweb</a>
                     </div>
-          <div class="span3 offset3">
-            <h3>Contacto</h3>
-            Dirección: Calle 69Bis número 25B-16<br>
-            Cuba - Pereira<br>
-            Colombia<br>
-            <br>
-            <i class="icon-phone"></i>6 3374294 <br>
-            <i class="icon-envelope"></i><a href="mailto:support@example.com">opticashenao@gmail.com</a><br>
-            <i class="icon-home"></i><a href="#">www.opticashenao.com</a>
+                </div>
+                <div class="span6 right">
+                    &copy; 2020. All rights reserved.
+                </div>
+                <div class="span3 offset3">
+                    <h3>Address</h3>
+                    81 Sunnyvale Street<br />
+                    Los Angeles, CA 90185<br />
+                    United States<br />
+                    <br />
+                    <i class="icon-phone"></i>+01 880 555 999<br />
+                    <i class="icon-envelope"></i><a href="mailto:support@example.com">support@example.com</a><br />
+                    <i class="icon-home"></i><a href="#">www.example.com</a>
 
                     <div class="row space40"></div>
 

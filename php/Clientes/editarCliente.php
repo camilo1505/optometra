@@ -74,7 +74,8 @@ if ($now > $_SESSION['expire']) {
             </div>
     </header>
     <?php
-    $sql = "SELECT * FROM cliente ";
+    $cliente = $_POST['fk_cliente'];
+    $sql = "SELECT * FROM cliente WHERE cliente.id_cliente = '$cliente'";
     $usuarios = getData($sql, 'root', '');
 
     ?>

@@ -1,11 +1,11 @@
 <?php
-include("../../BDServices.php");
+include("../BDServices.php");
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { } else {
     echo "<script>
-            alert('Inicie Sesion para Continuar');
-            window.location.href='../../../login.html';
-        </script>";
+            alert('Debe Iniciar Sesion');
+            window.location.href='../../login.html';
+           </script>";
     exit;
 }
 
@@ -15,9 +15,9 @@ if ($now > $_SESSION['expire']) {
     session_destroy();
 
     echo "<script>
-            alert('Inicie Sesion para Continuar');
-            window.location.href='../../../login.html';
-        </script>";
+            alert('su sesion ya termino');
+            window.location.href='../../login.html';
+           </script>";
     exit;
 }
 ?>
@@ -27,11 +27,11 @@ if ($now > $_SESSION['expire']) {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ópticas Henao</title>
-    <link href="../../../css/styles.css" rel="stylesheet" />
-    <link href="../../../css/bootstrap-override.css" rel="stylesheet" />
-    <link href="../../../css/font-awesome/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../../../css/flexslider.css" type="../../../text/css" media="../../../screen" />
+    <title>Opticas Henao</title>
+    <link href="../../css/styles.css" rel="stylesheet" />
+    <link href="../../css/bootstrap-override.css" rel="stylesheet" />
+    <link href="../../css/font-awesome/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/flexslider.css" type="../../text/css" media="../../screen" />
 </head>
 
 <body>
@@ -40,34 +40,33 @@ if ($now > $_SESSION['expire']) {
             <div class="row t-container">
                 <div class="span3">
                     <div class="logo">
-                        <a href="../../../index.html"><img src="../../../logo.png" alt="" /></a>
+                        <a href="../../index.html"><img src="../../logo.png" alt="" /></a>
                     </div>
                 </div>
                 <div class="span7">
                     <div class="row space10"></div>
-                    <img src="../../../nombre.png" alt="">
+                    <img src="../../nombre.png" alt="">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="../../../index.html">Ópticas Henao</a>
+                        <a class="navbar-brand" href="../../index.html">Opticas Henao</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="../../../index.html">Inicio<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="../../index.html">Inicio<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="../../../productos.php">Productos<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="../../productos.php">Productos<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="../../../contactanos.html">Contáctenos<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="../../contactanos.html">Contactenos<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li>
                                     <a class="nav-link" href="../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="../../logout.php">Cerrar Sesión<span class="sr-only">(current)</span></a>
-                                </li>
+                                    <a class="nav-link" href="../logout.php">Cerrar Sesion<span class="sr-only">(current)</span></a> </li>
                             </ul>
                         </div>
                     </nav>
@@ -82,7 +81,7 @@ if ($now > $_SESSION['expire']) {
     <div id="content">
         <div class="container">
             <div class="jumbotron">
-                <form action="seleccionarHistoriaCliente.php" method="post">
+                <form action="editarCliente.php" method="post">
                     <div class="d-flex justify-content-center">
                         <label for="fk_cliente"> </label>
                         <select name="fk_cliente">
@@ -93,41 +92,41 @@ if ($now > $_SESSION['expire']) {
                             <?php }
                         ?>
                         </select>
-                        <button class="site-btn">Consultar Historia</button>
+                        <button class="site-btn">Editar Cliente</button>
                     </div>
                 </form>
                 <br>
                 <div class="d-flex justify-content-center">
-                    <button class="btn btn-primary"> <a href="../../historiaClinica.php">Volver</a></button>
+                    <button class="btn btn-primary"> <a href="/clientes.php">Volver</a></button>
                 </div>
             </div>
-
-
         </div>
     </div>
+    </div>
+
     <!-- Footer -->
     <footer id="footer">
         <div class="container">
 
             <div class="row space40"></div>
             <div class="row">
-                <div class="span10">
+                <div class="span6">
                     <div class="logo-footer">
-                    <center><h3>Ópticas Henao está en todo el centro de Cuba - Pereira. Te  hacemos el examen visual computarizado, elaborado por un profesional optometrista, ofreciéndoles gran variedad de   monturas y  lentes. Visítenos sin ningún compromiso en nuestro local o en la página</h3></center>
-            </div>
-          </div>
-          <div class="span10 right">
+                        Design by <a href="https://www.freshdesignweb.com">freshDesignweb</a>
                     </div>
-          <div class="span3 offset3">
-            <h3>Contacto</h3>
-            Dirección: Calle 69Bis número 25B-16<br>
-            Cuba - Pereira<br>
-            Colombia<br>
-            <br>
-            <i class="icon-phone"></i>6 3374294 <br>
-            <i class="icon-envelope"></i><a href="mailto:support@example.com">opticashenao@gmail.com</a><br>
-            <i class="icon-home"></i><a href="#">www.opticashenao.com</a>
-
+                </div>
+                <div class="span6 right">
+                    &copy; 2020. All rights reserved.
+                </div>
+                <div class="span3 offset3">
+                    <h3>Address</h3>
+                    81 Sunnyvale Street<br>
+                    Los Angeles, CA 90185<br>
+                    United States<br>
+                    <br>
+                    <i class="icon-phone"></i>+01 880 555 999<br>
+                    <i class="icon-envelope"></i><a href="mailto:support@example.com">support@example.com</a><br>
+                    <i class="icon-home"></i><a href="#">www.example.com</a>
 
                     <div class="row space40"></div>
 
