@@ -122,23 +122,23 @@ if ($now > $_SESSION['expire']) {
 
             <div class="row space40"></div>
             <div class="row">
-                <div class="span6">
+                <div class="span10">
                     <div class="logo-footer">
-                        Design by <a href="https://www.freshdesignweb.com">freshDesignweb</a>
+                    <center><h3>Ópticas Henao está en todo el centro de Cuba - Pereira. Te  hacemos el examen visual computarizado, elaborado por un profesional optometrista, ofreciéndoles gran variedad de   monturas y  lentes. Visítenos sin ningún compromiso en nuestro local o en la página</h3></center>
+            </div>
+          </div>
+          <div class="span10 right">
                     </div>
-                </div>
-                <div class="span6 right">
-                    &copy; 2020. All rights reserved.
-                </div>
-                <div class="span3 offset3">
-                    <h3>Address</h3>
-                    81 Sunnyvale Street<br>
-                    Los Angeles, CA 90185<br>
-                    United States<br>
-                    <br>
-                    <i class="icon-phone"></i>+01 880 555 999<br>
-                    <i class="icon-envelope"></i><a href="mailto:support@example.com">support@example.com</a><br>
-                    <i class="icon-home"></i><a href="#">www.example.com</a>
+          <div class="span3 offset3">
+            <h3>Contacto</h3>
+            Dirección: Calle 69Bis número 25B-16<br>
+            Cuba - Pereira<br>
+            Colombia<br>
+            <br>
+            <i class="icon-phone"></i>6 3374294 <br>
+            <i class="icon-envelope"></i><a href="mailto:support@example.com">opticashenao@gmail.com</a><br>
+            <i class="icon-home"></i><a href="#">www.opticashenao.com</a>
+
 
                     <div class="row space40"></div>
 

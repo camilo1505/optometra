@@ -29,7 +29,7 @@ if ($now > $_SESSION['expire']) {
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Opticas Henao</title>
+	<title>Ópticas Henao</title>
 	<link href="../../../css/styles.css" rel="stylesheet" />
 	<link href="../../../css/bootstrap-override.css" rel="stylesheet" />
 	<link href="../../../css/font-awesome/font-awesome.css" rel="stylesheet" />
@@ -59,7 +59,7 @@ if ($now > $_SESSION['expire']) {
                     <div class="row space10"></div>
                     <img src="../../../nombre.png" alt="">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="../../../index.html">Opticas Henao</a>
+                        <a class="navbar-brand" href="../../../index.html">Ópticas Henao</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -72,13 +72,13 @@ if ($now > $_SESSION['expire']) {
                                     <a class="nav-link" href="../../../productos.php">Productos<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="../../../contactanos.html">Contactenos<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="../../../contactanos.html">Contáctenos<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="../../panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="../../logout.php">Cerrar Sesion<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="../../logout.php">Cerrar Sesión<span class="sr-only">(current)</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -90,31 +90,31 @@ if ($now > $_SESSION['expire']) {
 	<div id="content">
 		<div class="container">
 			<div class="jumbotron">
-				<h1>Consulta Historia Clinica de: <b style="color:red;"> <?php print($datosClientes[0]['apellidos'] ." " . $datosClientes[0]['nombres']); ?></b>.</h1>
+				<h1>Consulta Historia Clínica de: <b style="color:red;"> <?php print($datosClientes[0]['apellidos'] ." " . $datosClientes[0]['nombres']); ?></b>.</h1>
 				<br>
 				<form action="registrar.php" method="post">
 					<div class="row">
 						<div class="col-sm">
-							<label for="fk_cliente">Cedula Cliente:</label>
+							<label for="fk_cliente">Cédula Cliente:</label>
 							<?php echo $datosClientes[0]["cedula"]?>
 						</div>
 						<div class="col-sm">
-							<label for="fk_usuario">Cedula Optometra: </label>
+							<label for="fk_usuario">Cédula Optómetra: </label>
 							<input type="text" class="form-control" name="fk_usuario" value="<?php echo $_SESSION['cedula']?>" readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="patologia1">Patologia 1:</label>
+							<label for="patologia1">Patología 1:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['patologia1'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="patologia2">Patologia 2:</label>
+							<label for="patologia2">Patología 2:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['patologia2'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="patologia3">Patologia 3:</label>
+							<label for="patologia3">Patología 3:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['patologia3'] ?>" readonly="readonly">
 						</div>
 					</div>
@@ -151,15 +151,15 @@ if ($now > $_SESSION['expire']) {
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="observacion1">Observacion 1:</label>
+							<label for="observacion1">Observación 1:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['observacion1'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="observacion2">Observacion 2:</label>
+							<label for="observacion2">Observación 2:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['observacion2'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="observacion3">Observacion 3:</label>
+							<label for="observacion3">Observación 3:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['observacion3'] ?>" readonly="readonly">
 						</div>
 					</div>
@@ -173,208 +173,208 @@ if ($now > $_SESSION['expire']) {
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="rx_uso_od_esfera">rx uso ojo derecho esfera:</label>
+							<label for="rx_uso_od_esfera">Rx uso ojo derecho esfera:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_od_esfera'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="rx_uso_od_cilindro">rx uso ojo derecho cilindro:</label>
+							<label for="rx_uso_od_cilindro">Rx uso ojo derecho cilindro:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_od_cilindro'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="rx_uso_od_eje">rx uso ojo derecho eje:</label>
+							<label for="rx_uso_od_eje">Rx uso ojo derecho eje:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_od_eje'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="rx_uso_od_adicion">rx uso ojo derecho adicion:</label>
+							<label for="rx_uso_od_adicion">Rx uso ojo derecho adicion:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_od_adicion'] ?>" readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="rx_uso_oi_esfera">rx uso ojo izquierdo esfera:</label>
+							<label for="rx_uso_oi_esfera">Rx uso ojo izquierdo esfera:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_oi_esfera'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="rx_uso_oi_cilindro">rx uso ojo izquierdo cilindro:</label>
+							<label for="rx_uso_oi_cilindro">Rx uso ojo izquierdo cilindro:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_oi_cilindro'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="rx_uso_oi_eje">rx uso ojo izquierdo eje:</label>
+							<label for="rx_uso_oi_eje">Rx uso ojo izquierdo eje:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_oi_eje'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="rx_uso_oi_adicion">rx uso ojo izquierdo adicion:</label>
+							<label for="rx_uso_oi_adicion">Rx uso ojo izquierdo adicion:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_uso_oi_adicion'] ?>" readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="vision_lejos_od">vision lejos ojo derecho:</label>
+							<label for="vision_lejos_od">Visión lejos ojo derecho:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['vision_lejos_od'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="vision_lejos_oi">vision lejos ojo izquierdo:</label>
+							<label for="vision_lejos_oi">Visión lejos ojo izquierdo:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['vision_lejos_oi'] ?>" readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="vision_cerca_od">vision cerca ojo derecho:</label>
+							<label for="vision_cerca_od">Visión cerca ojo derecho:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['vision_cerca_od'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="vision_cerca_oi">vision cerca ojo izquierdo:</label>
+							<label for="vision_cerca_oi">Visión cerca ojo izquierdo:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['vision_cerca_oi'] ?>" readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="examen_externo_od">examen externo ojo derecho:</label>
+							<label for="examen_externo_od">Examen externo ojo derecho:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['examen_externo_od'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for=" examen_externo_oi">examen externo ojo izquierdo:</label>
+							<label for=" examen_externo_oi">Examen externo ojo izquierdo:</label>
 							<input type="text" class="form-control" value=" <?php echo $resultado[0]['examen_externo_oi'] ?>" readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="reflejos_pupilares_fotomotor">reflejos pupilares fotomotor:</label>
+							<label for="reflejos_pupilares_fotomotor">Reflejos pupilares fotomotor:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['reflejos_pupilares_fotomotor'] ?>" readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="reflejos_pupilares_consensual">reflejos pupilares consensual:</label>
+							<label for="reflejos_pupilares_consensual">Reflejos pupilares consensual:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['reflejos_pupilares_consensual'] ?>" readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="reflejos_pupilares_acomodacio">reflejos pupilares acomodacion:</label>
+							<label for="reflejos_pupilares_acomodacio">Reflejos pupilares acomodación:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['reflejos_pupilares_acomodacion'] ?>" readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="cover_test_vision_lejos">cover test vision lejos:</label>
+							<label for="cover_test_vision_lejos">Cover test visión lejos:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['cover_test_vision_lejos'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="cover_test_vision_proxima">cover test vision proxima:</label>
+							<label for="cover_test_vision_proxima">Cover test vision próxima:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['cover_test_vision_proxima'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="cover_test_ducciones">cover test ducciones:</label>
+							<label for="cover_test_ducciones">Cover test ducciones:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['cover_test_ducciones'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="cover_test_versiones">cover test versiones:</label>
+							<label for="cover_test_versiones">Cover test versiones:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['cover_test_versiones'] ?>" readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="oi_oftalmoloscopio">ojo izquierdo oftalmoloscopio:</label>
+							<label for="oi_oftalmoloscopio">Ojo izquierdo oftalmoloscopio:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['oi_oftalmoloscopio'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="od_oftalmoloscopio">ojo derecho oftalmoloscopio:</label>
+							<label for="od_oftalmoloscopio">Ojo derecho oftalmoloscopio:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['od_oftalmoloscopio'] ?>" readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="oi_queratrometra">ojo izquierdo queratrometra:</label>
+							<label for="oi_queratrometra">Ojo izquierdo queratrometra:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['oi_queratrometra'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="od_queratrometra">ojo derecho queratrometra:</label>
+							<label for="od_queratrometra">Ojo derecho queratrometra:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['od_queratrometra'] ?>" readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="od_retinoscopia">ojo derecho retinoscopia:</label>
+							<label for="od_retinoscopia">Ojo derecho retinoscopia:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['od_retinoscopia'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="oi_retinoscopia">ojo izquierdo retinoscopia:</label>
+							<label for="oi_retinoscopia">Ojo izquierdo retinoscopia:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['oi_retinoscopia'] ?>" readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="rx_final_od_esfera">rx final ojo derecho esfera:</label>
+							<label for="rx_final_od_esfera">Rx final ojo derecho esfera:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_esfera'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="rx_final_od_cilindro">rx final ojo derecho cilindro:</label>
+							<label for="rx_final_od_cilindro">Rx final ojo derecho cilindro:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_cilindro'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="rx_final_od_eje">rx final ojo derecho eje:</label>
+							<label for="rx_final_od_eje">Rx final ojo derecho eje:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_eje'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="rx_final_od_adicion">rx final ojo derecho adicion:</label>
+							<label for="rx_final_od_adicion">Rx final ojo derecho adicion:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_adicion'] ?>" readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="rx_final_oi_esfera">rx final ojo izquierdo esfera:</label>
+							<label for="rx_final_oi_esfera">Rx final ojo izquierdo esfera:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_esfera'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="rx_final_oi_cilindro">rx final ojo izquierdo cilindro:</label>
+							<label for="rx_final_oi_cilindro">Rx final ojo izquierdo cilindro:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_cilindro'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="rx_final_oi_eje">rx final ojo izquierdo eje:</label>
+							<label for="rx_final_oi_eje">Rx final ojo izquierdo eje:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_eje'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="rx_final_oi_adicion">rx final ojo izquierdo adicion:</label>
+							<label for="rx_final_oi_adicion">Rx final ojo izquierdo adicion:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_adicion'] ?>" readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="rx_final_od_agudes_visual">rx final ojo derecho agudes visual:</label>
+							<label for="rx_final_od_agudes_visual">Rx final ojo derecho agudes visual:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_od_agudes_visual'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="rx_final_oi_agudes_visual">rx final ojo izquierdo agudes visual:</label>
+							<label for="rx_final_oi_agudes_visual">Rx final ojo izquierdo agudes visual:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['rx_final_oi_agudes_visual'] ?>" readonly="readonly">
 						</div>
 					</div>
 					<br>
 					<div class="row">
 						<div class="col-sm">
-							<label for="diagnostico">diagnostico:</label>
+							<label for="diagnostico">Diagnóstico:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['diagnostico'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="control">control:</label>
+							<label for="control">Control:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['fecha'] ?>" readonly="readonly">
 						</div>
 						<div class="col-sm">
-							<label for="observacion">observacion:</label>
+							<label for="observacion">Observación:</label>
 							<input type="text" class="form-control" value="<?php echo $resultado[0]['observacion'] ?>" readonly="readonly">
 						</div>
 					</div>
@@ -392,23 +392,23 @@ if ($now > $_SESSION['expire']) {
 
 			<div class="row space40"></div>
 			<div class="row">
-				<div class="span6">
+				<div class="span10">
 					<div class="logo-footer">
-						Design by <a href="https://www.freshdesignweb.com">freshDesignweb</a>
-					</div>
-				</div>
-				<div class="span6 right">
-					&copy; 2020. All rights reserved.
-				</div>
-				<div class="span3 offset3">
-					<h3>Address</h3>
-					81 Sunnyvale Street<br>
-					Los Angeles, CA 90185<br>
-					United States<br>
-					<br>
-					<i class="icon-phone"></i>+01 880 555 999<br>
-					<i class="icon-envelope"></i><a href="mailto:support@example.com">support@example.com</a><br>
-					<i class="icon-home"></i><a href="#">www.example.com</a>
+					<center><h3>Ópticas Henao está en todo el centro de Cuba - Pereira. Te  hacemos el examen visual computarizado, elaborado por un profesional optometrista, ofreciéndoles gran variedad de   monturas y  lentes. Visítenos sin ningún compromiso en nuestro local o en la página</h3></center>
+            </div>
+          </div>
+          <div class="span10 right">
+                    </div>
+          <div class="span3 offset3">
+            <h3>Contacto</h3>
+            Dirección: Calle 69Bis número 25B-16<br>
+            Cuba - Pereira<br>
+            Colombia<br>
+            <br>
+            <i class="icon-phone"></i>6 3374294 <br>
+            <i class="icon-envelope"></i><a href="mailto:support@example.com">opticashenao@gmail.com</a><br>
+            <i class="icon-home"></i><a href="#">www.opticashenao.com</a>
+
 
 					<div class="row space40"></div>
 
