@@ -27,7 +27,7 @@ if ($now > $_SESSION['expire']) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opticas Henao</title>
+  <title>Ópticas Henao</title>
   <link href="../css/styles.css" rel="stylesheet">
   <link href="../css/bootstrap-override.css" rel="stylesheet">
   <link href="../css/font-awesome/font-awesome.css" rel="stylesheet">
@@ -47,7 +47,7 @@ if ($now > $_SESSION['expire']) {
           <div class="row space10"></div>
           <img src="../nombre.png" alt="">
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.html">Opticas Henao</a>
+            <a class="navbar-brand" href="index.html">Ópticas Henao</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -60,13 +60,13 @@ if ($now > $_SESSION['expire']) {
                   <a class="nav-link" href="../productos.php">Productos<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="../contactanos.html">Contactenos<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../contactanos.html">Contáctenos<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
                   <a class="nav-link" href="panel-control.php">Panel de Control<span class="sr-only">(current)</span></a>
                 </li>
                 <li>
-                <a class="nav-link" href="logout.php">Cerrar Sesion<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="logout.php">Cerrar Sesión<span class="sr-only">(current)</span></a>
                 </li>
               </ul>
             </div>
@@ -90,16 +90,16 @@ if ($now > $_SESSION['expire']) {
         }
         if (in_array($_SESSION['rol'], array("1", "3"))) {
           ?>
-            <a class="list-group-item list-group-item-action" href="catalogo/addCatalogo.php">Añadir Producto al Catalogo</a>
+            <a class="list-group-item list-group-item-action" href="catalogo/addCatalogo.php">Añadir Producto al Catálogo</a>
             <?php
             if (in_array($_SESSION['rol'], array("1", "3"))) {
               ?>
-              <a class="list-group-item list-group-item-action" href="catalogo/editarCatalogo.php">Editar Productos del Catalogo</a>
+              <a class="list-group-item list-group-item-action" href="catalogo/editarCatalogo.php">Editar Productos del Catálogo</a>
             <?php
           }
           if (in_array($_SESSION['rol'], array("1", "2", "3"))) {
             ?>
-              <a class="list-group-item list-group-item-action" href="catalogo/eliminarCatalogo.php">Eliminar Producto del Catalogo</a>
+              <a class="list-group-item list-group-item-action" href="catalogo/eliminarCatalogo.php">Eliminar Producto del Catálogo</a>
             <?php
           }
           ?>
@@ -119,27 +119,23 @@ if ($now > $_SESSION['expire']) {
   <br>
   <!-- Footer -->
   <footer id="footer">
+  <center><h3>Ópticas Henao está en todo el centro de Cuba - Pereira. Te  hacemos el examen visual computarizado, elaborado por un profesional optometrista, ofreciéndoles gran variedad de   monturas y  lentes. Visítenos sin ningún compromiso en nuestro local o en la página</h3></center>
     <div class="container">
 
       <div class="row space50"></div>
       <div class="row">
-        <div class="span6">
-          <div class="logo-footer">
-            Design by <a href="https://www.freshdesignweb.com">freshDesignweb</a>
-          </div>
-        </div>
-        <div class="span6 right">
-          &copy; 2020. All rights reserved.
-        </div>
-        <div class="span3 offset3">
-          <h3>Address</h3>
-          81 Sunnyvale Street<br>
-          Los Angeles, CA 90185<br>
-          United States<br>
-          <br>
-          <i class="icon-phone"></i>+01 880 555 999<br>
-          <i class="icon-envelope"></i><a href="mailto:support@example.com">support@example.com</a><br>
-          <i class="icon-home"></i><a href="#">www.example.com</a>
+      <div class="span10 right">
+                    </div>
+          <div class="span3 offset3">
+                        <h3>Contacto</h3>
+            Dirección: Calle 69Bis número 25B-16<br>
+            Cuba - Pereira<br>
+            Colombia<br>
+            <br>
+            <i class="icon-phone"></i>6 3374294 <br>
+            <i class="icon-envelope"></i><a href="mailto:support@example.com">opticashenao@gmail.com</a><br>
+            <i class="icon-home"></i><a href="#">www.opticashenao.com</a>
+
 
           <div class="row space40"></div>
 
