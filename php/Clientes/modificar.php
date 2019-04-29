@@ -17,7 +17,7 @@
             SET cedula='$cedula', nombres ='$nombres', apellidos = '$apellidos', nacimiento = '$fecha', ciudad = '$ciudad_vivienda', direccion = '$direccion', telefono = '$telefono', celular = '$celular', correo = '$correo'
             WHERE id_cliente = '$id'";
     $result = setData($sql,'root','');
-    redirect("editarCliente.php");
+    redirect("../clientes.php");
 ?>
 
 
