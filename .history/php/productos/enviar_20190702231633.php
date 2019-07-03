@@ -1,5 +1,5 @@
 <?php
-    include("../BDConection.php");
+    include("../BDservices.php");
     $producto = $_POST["nombre_producto"];
     echo "hola".$producto;
     $username = "jp";
