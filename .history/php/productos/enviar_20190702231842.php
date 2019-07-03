@@ -4,9 +4,7 @@
     $username = "jp";
     $password = "1234";
     $consulta = "INSERT INTO producto(nombre_producto) VALUES('$producto')";
-    
     $respuesta = setData($consulta, $username, $password);
-    
     if($respuesta){
         echo "
         <script>
