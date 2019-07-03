@@ -75,8 +75,8 @@ if ($now > $_SESSION['expire']) {
     <div class="container">
       <div class="f-center">
         <div class="list-group">
-          <a class="list-group-item list-group-item-action" href="Clientes/crearCliente.php">Crear Clientes</a>
-          <a class="list-group-item list-group-item-action" href="Clientes/seleccionarCliente.php">Editar Clientes</a>
+          <a class="list-group-item list-group-item-action" href="clientes/crearCliente.php">Crear Clientes</a>
+          <a class="list-group-item list-group-item-action" href="clientes/seleccionarCliente.php">Editar Clientes</a>
           <!--<a class="list-group-item list-group-item-action" href="clientes/eliminarCliente.php">Eliminar Clientes</a>-->
         </div>
         <br>
