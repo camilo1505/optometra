@@ -3,8 +3,7 @@
     $producto = $_POST["nombre_producto"];
     echo $producto;
     $done = newProducto($producto);
-    echo $done;
-    /*
+
     if($done) {
         echo "
             <script>
@@ -13,12 +12,12 @@
             </script>
         ";
     }
-    if(!$done) {
+    if(! $done) {
         echo "
             <script>
                 alert('Error Guardando el Producto');
                 window.location.href='addProducto.php';
             </script>
         ";
-    }*/
+    }
 ?>

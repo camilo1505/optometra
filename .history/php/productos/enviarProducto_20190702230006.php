@@ -3,7 +3,6 @@
     $producto = $_POST["nombre_producto"];
     echo $producto;
     $done = newProducto($producto);
-    echo $done;
     /*
     if($done) {
         echo "
