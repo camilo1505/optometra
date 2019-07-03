@@ -10,14 +10,14 @@
         echo "
         <script>
             alert('Guardado Correctamente');
-            window.location.href='addProducto.php';
+            window.location.href='productos/addProducto.php';
         </script>
     ";
     }else{
         echo "
         <script>
             alert('Error Guardando el Producto');
-            window.location.href='addProducto.php';
+            window.location.href='productos/addProducto.php';
         </script>
     ";
     }
