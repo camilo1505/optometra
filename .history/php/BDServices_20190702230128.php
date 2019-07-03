@@ -19,8 +19,13 @@ function newProducto($producto){
     $username = "jp";
     $password = "1234";
     $consulta = "INSERT INTO producto(nombre_producto) VALUES('$producto')";
-    $respuesta = setData($consulta, $username, $password);
-    if($respuesta != )
+
+    if(setData($consulta, $username, $password)){
+        return TRUE;
+    }
+    if(!setData($consulta, $username, $password)){
+        return FALSE;
+    }
 }
 
 function redirect($url, $statusCode = 303)
@@ -35,11 +40,7 @@ function getProductos() {
     $consulta = "SELECT producto.id_producto, producto.nombre_producto, producto.activado FROM producto";
 
     $respuesta = getData($consulta, $username, $password);
-    if($respuesta){
-        return true;
-    }else{
-        return false;
-    }
+    return $respuesta;
 }
 
 function newCatalogo($producto) {

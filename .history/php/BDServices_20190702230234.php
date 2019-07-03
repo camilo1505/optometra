@@ -35,11 +35,7 @@ function getProductos() {
     $consulta = "SELECT producto.id_producto, producto.nombre_producto, producto.activado FROM producto";
 
     $respuesta = getData($consulta, $username, $password);
-    if($respuesta){
-        return true;
-    }else{
-        return false;
-    }
+    return $respuesta;
 }
 
 function newCatalogo($producto) {
