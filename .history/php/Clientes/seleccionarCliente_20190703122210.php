@@ -120,7 +120,7 @@ if ($now > $_SESSION['expire']) {
                 </div>
                 <div class="span3 offset3">
                     <h3>Address</h3>
-                    81 Sunnyvale hmm<br>
+                    81 Sunnyvale Street<br>
                     Los Angeles, CA 90185<br>
                     United States<br>
                     <br>
