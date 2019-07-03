@@ -102,14 +102,28 @@ if ($now > $_SESSION['expire']) {
                             <input type="date" class="form-control" name="fecha" required>
                         </div>
                         <div class="col-sm">
-                            <label for="ciudad">Ciudad Residencia:</label>
-                            <select name="ciudad">
+                            <label for="departamento">Departamento Residencia:</label>
+                            <select name="departamento">
                             <?php                   
-                            $sql = "SELECT * FROM municipios WHERE departamento_id = 66";
+                            $sql = "SELECT * FROM departamento";
                             $result = getData($sql,'jp', '1234');
                             foreach ($result as $resultado) {
                                 ?>
-                                <option value="<?php echo $resultado['municipio'];?>"><?php echo $resultado['municipio'];?></option>
+                                <option value="<?php echo $resultado['departamento'];?>"><?php echo $resultado['departamento'];?></option>
+                            <?php 
+                            }
+                        ?>
+                        </select>
+                        </div>
+                        <div class="col-sm">
+                            <label for="municipio">Municipio Residencia:</label>
+                            <select name="municipio">
+                            <?php                   
+                            $sql = "SELECT * FROM municipio";
+                            $result = getData($sql,'jp', '1234');
+                            foreach ($result as $resultado) {
+                                ?>
+                                <option value="<?php echo $resultado['departamento'];?>"><?php echo $resultado['departamento'];?></option>
                             <?php 
                             }
                         ?>

@@ -104,12 +104,12 @@ if ($now > $_SESSION['expire']) {
                         <div class="col-sm">
                             <label for="ciudad">Ciudad Residencia:</label>
                             <select name="ciudad">
-                            <?php                   
-                            $sql = "SELECT * FROM municipios WHERE departamento_id = 66";
+                            <?php
+                            $sql = "SELECT * FROM historia_clinica WHERE fk_cliente = $idCliente";
                             $result = getData($sql,'jp', '1234');
                             foreach ($result as $resultado) {
                                 ?>
-                                <option value="<?php echo $resultado['municipio'];?>"><?php echo $resultado['municipio'];?></option>
+                                <option value="<?php echo $resultado['id_historia_clinica'];?>"><?php echo $resultado['fecha'];?></option>
                             <?php 
                             }
                         ?>

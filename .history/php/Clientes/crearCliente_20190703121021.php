@@ -20,6 +20,8 @@ if ($now > $_SESSION['expire']) {
           </script>";
     exit;
 }
+$sql = "SELECT * FROM departamento";
+$result = getData($sql,'jp', '1234');
 
 ?>
 <!DOCTYPE html>
@@ -103,17 +105,7 @@ if ($now > $_SESSION['expire']) {
                         </div>
                         <div class="col-sm">
                             <label for="ciudad">Ciudad Residencia:</label>
-                            <select name="ciudad">
-                            <?php                   
-                            $sql = "SELECT * FROM municipios WHERE departamento_id = 66";
-                            $result = getData($sql,'jp', '1234');
-                            foreach ($result as $resultado) {
-                                ?>
-                                <option value="<?php echo $resultado['municipio'];?>"><?php echo $resultado['municipio'];?></option>
-                            <?php 
-                            }
-                        ?>
-                        </select>
+                            <input type="text" class="form-control" name="ciudad" required>
                         </div>
                         <div class="col-sm">
                             <label for="direccion">Dirección:</label>

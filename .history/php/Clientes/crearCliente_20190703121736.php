@@ -109,7 +109,7 @@ if ($now > $_SESSION['expire']) {
                             $result = getData($sql,'jp', '1234');
                             foreach ($result as $resultado) {
                                 ?>
-                                <option value="<?php echo $resultado['municipio'];?>"><?php echo $resultado['municipio'];?></option>
+                                <option value="<?php echo $resultado['municipio'];?>"><?php echo $resultado['departamento'];?></option>
                             <?php 
                             }
                         ?>
